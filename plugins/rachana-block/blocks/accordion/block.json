@@ -15,6 +15,6 @@
 	"style": [
 		"file:./build/style-index.css",
 		"file:./src/cgds.css",
-		"file:../../assets/build/css/cgds.css"
+		"file:../../assets/build/css/main.css"
 	]
 }
