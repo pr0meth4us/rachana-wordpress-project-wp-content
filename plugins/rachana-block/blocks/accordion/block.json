@@ -12,9 +12,5 @@
 	"textdomain": "rachana-block",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
-	"style": [
-		"file:./build/style-index.css",
-		"file:./src/cgds.css",
-		"file:../../assets/build/css/main.css"
-	]
+	"style": "file:../../../assets/build/css/main.css"
 }
