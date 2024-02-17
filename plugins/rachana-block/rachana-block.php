@@ -21,9 +21,9 @@
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/writing-your-first-block-type/
  */
 function create_block_rachana_block_init() {
-	register_block_type(plugin_dir_path(__FILE__) . 'blocks/accordion/');
+	register_block_type(plugin_dir_path(__FILE__) . 'components/accordion/');
 
-	// Additional blocks would be registered here
-	register_block_type( plugin_dir_path( __FILE__ ) . 'blocks/hero/' );
+	// Additional components would be registered here
+	register_block_type(plugin_dir_path(__FILE__) . 'components/hero/');
 }
 add_action( 'init', 'create_block_rachana_block_init' );
