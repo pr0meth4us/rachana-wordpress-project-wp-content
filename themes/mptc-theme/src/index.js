@@ -5,4 +5,4 @@ import PhotoGallery from './js/PhotoGallery'
 if ( document.getElementById("gallery") )
 render(<PhotoGallery />, document.getElementById("gallery"))
 
-import 'mptclayout/src/index.js'
+import 'mptclayout/src/index.jsx'
