@@ -6,13 +6,13 @@ const edit = ({ attributes, setAttributes }) => {
     const { accordionItems } = attributes;
 
     const customizedAccordionItems = (index, key, value) => {
-        const customizedAccordionItems = [...accordionItems];
-        customizedAccordionItems[index][key] = value;
-        setAttributes({ accordionItems: customizedAccordionItems });
+        setAttributes({
+            accordionItems: accordionItems.map((item, i) => (i === index ? { ...item, [key]: value } : item)),
+        });
     };
 
     const addNewAccordionItem = () => {
-        setAttributes({ accordionItems: [...accordionItems, defaultAttr] });
+        setAttributes({ accordionItems: [...accordionItems, { ...defaultAttr }] });
     };
 
     return (
