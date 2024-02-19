@@ -1,33 +1,30 @@
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
+import './style.scss';
+import edit from './edit';
+import save from './save';
+
 import { registerBlockType } from '@wordpress/blocks';
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './style.scss';
-
-/**
- * Internal dependencies
- */
-import Edit from './edit';
-import metadata from './block.json';
-
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
-registerBlockType( metadata.name, {
-	/**
-	 * @see ./edit.js
-	 */
-	edit: Edit,
-} );
+registerBlockType('rachana-block/accordion-item', {
+    title: 'Accordion',
+    icon: 'editor-expand',
+    category: 'common',
+    attributes: {
+        accordionItems: {
+            type: 'array',
+            default: [
+                {
+                    accordionTitle: '',
+                    titleColor: '#1c4076',
+                    bodyContent: '',
+                    buttonColor: '#f3f5f8',
+                    iconColor: '#1c4076',
+                    iconType: 'bi-info-circle-fill',
+                    bodyTextColor: '#414c5f',
+                    font: 'Kantumruy Pro',
+                },
+            ],
+        },
+    },
+    edit,
+    save,
+});

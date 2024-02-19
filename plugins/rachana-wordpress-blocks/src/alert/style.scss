@@ -4,8 +4,17 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/mixins/alert";
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import "../../assets/cgds/variables";
+@import "../../assets/cgds/alert";
+@import "../../assets/cgds/typography";
 .wp-block-create-block-alert {
+	border: 1px dotted #f00;
+}
+
+.wp-block-create-block-accordion {
 	background-color: #21759b;
 	color: #fff;
 	padding: 2px;

@@ -17,7 +17,7 @@ if (!defined('ABSPATH')){
 //
 //    wp_enqueue_script(
 //        'editor-scripts',
-//        plugins_url( 'build/index.jsx', __FILE__ ),
+//        plugins_url( 'build/index.js', __FILE__ ),
 //        $asset_file['dependencies'],
 //        $asset_file['version']
 //    );
