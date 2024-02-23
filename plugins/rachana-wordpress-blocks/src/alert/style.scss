@@ -7,8 +7,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~bootstrap-icons/font/bootstrap-icons.css';
 @import "../../assets/cgds/variables";
-@import "../../assets/cgds/accordion";
+@import "../../assets/cgds/mixins/alert";
+@import "../../assets/cgds/alert";
 @import "../../assets/cgds/typography";
+
 .wp-block-create-block-alert {
 	border: 1px dotted #f00;
 }
