@@ -85,7 +85,7 @@
     @return $result;
   }
   
-  // Get multiple keys from a cgds map
+  // Get multiple keys from a sass map
   @function map-get-multiple($map, $values) {
     $result: ();
     @each $key, $value in $map {
