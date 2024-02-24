@@ -1,22 +1,20 @@
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, TextControl } from '@wordpress/components';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
-import defaultAttr from './defaultAttr.json';
 
 const edit = (props) => {
-
     const { attributes, setAttributes } = props;
-
-    const {
-        type,
-        message
-    } = attributes;
+    const { type, message, font } = attributes;
 
     const onChangeType = (newType) => {
-        setAttributes({type: newType});
+        setAttributes({ type: newType });
     };
 
     const onChangeMessage = (newMessage) => {
-        setAttributes({message: newMessage});
+        setAttributes({ message: newMessage });
+    };
+
+    const onChangeFont = (newFont) => {
+        setAttributes({ font: newFont });
     };
 
     return (
@@ -28,14 +26,24 @@ const edit = (props) => {
                         value={type}
                         options={[
                             { label: 'Primary', value: 'primary' },
-                            { label: 'Secondary', value: 'secondary'},
-                            // Other options
+                            { label: 'Secondary', value: 'secondary' },
+                            { label: 'Success', value: 'success' },
+                            { label: 'Danger', value: 'danger' },
+                            { label: 'Warning', value: 'warning' },
+                            { label: 'Info', value: 'info' },
+                            { label: 'Light', value: 'light' },
+                            { label: 'Dark', value: 'dark' },
                         ]}
                         onChange={onChangeType}
                     />
+                    <TextControl
+                        label="Font"
+                        value={font}
+                        onChange={onChangeFont}
+                    />
                 </PanelBody>
             </InspectorControls>
-            <div className={`cgds alert alert-${type} fade d-flex align-items-center alert-dismissible-link show`} role="alert">
+            <div className={`cgds alert alert-${type} fade d-flex align-items-center alert-dismissible-link show`} role="alert" style={{ fontFamily: font }}>
                 <i className="primary bi bi-exclamation-circle me-2"></i>
                 <RichText
                     tagName="div"
@@ -43,7 +51,7 @@ const edit = (props) => {
                     onChange={onChangeMessage}
                     placeholder="Write alert message"
                 />
-                <button type="button" className="btn-close btn-sm"></button>
+                <button type="button" className="btn-close btn-sm" aria-label="Close Alert"></button>
             </div>
         </>
     );
