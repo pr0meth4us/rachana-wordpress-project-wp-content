@@ -1,17 +1,21 @@
 import { PanelBody, TextControl, ColorPicker, SelectControl } from '@wordpress/components';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
 import defaultAttr from './defaultAttr.json';
-import {addNewBlockItem, customizeBlockItem} from "../index";
+import {addNewBlockItem, customizeBlockItem} from "../blockHelpers";
 
 const edit = ({ attributes, setAttributes }) => {
     const { accordionItems } = attributes;
 
-    const customizedAccordionItems = (index, key, value) => {
-        customizeBlockItem(index, key, value, setAttributes, accordionItems, defaultAttr);
+    const addNewAccordionItem = () => {
+        setAttributes({
+            accordionItems: addNewBlockItem(accordionItems, defaultAttr)
+        });
     };
 
-    const addNewAccordionItem = () => {
-        addNewBlockItem(setAttributes, accordionItems, defaultAttr);
+    const customizedAccordionItems = (index, key, value) => {
+        setAttributes({
+            accordionItems: customizeBlockItem(accordionItems, index, key, value)
+        });
     };
 
     return (
