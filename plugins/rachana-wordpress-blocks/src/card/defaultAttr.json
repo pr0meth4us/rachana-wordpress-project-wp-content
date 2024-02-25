@@ -1,9 +1,9 @@
 {
-    "cardTitle": "",
-    "cardText": "",
+    "title": "",
+    "content": "",
     "imageUrl": "",
-    "link": "",
-    "bodyTextColor": "#465163",
-    "cardTitleTextColor": "#1c4076",
+    "contentColor": "#465163",
+    "titleColor": "#1c4076",
+    "href": "",
     "font": "Kantumruy Pro"
 }

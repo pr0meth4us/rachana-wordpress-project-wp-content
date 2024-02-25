@@ -1,22 +1,10 @@
 import { PanelBody, PanelRow, SelectControl, TextControl } from '@wordpress/components';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
+import { onChangeAttribute} from "../blockHelpers";
 
 const edit = (props) => {
     const { attributes, setAttributes } = props;
     const { type, message, font } = attributes;
-
-    const onChangeType = (newType) => {
-        setAttributes({ type: newType });
-    };
-
-    const onChangeMessage = (newMessage) => {
-        setAttributes({ message: newMessage });
-    };
-
-    const onChangeFont = (newFont) => {
-        setAttributes({ font: newFont });
-    };
-
     return (
         <>
             <InspectorControls>
@@ -35,14 +23,14 @@ const edit = (props) => {
                                 { label: 'Light', value: 'light' },
                                 { label: 'Dark', value: 'dark' },
                             ]}
-                            onChange={onChangeType}
+                            onChange={(value) => onChangeAttribute('type', value)}
                         />
                     </PanelRow>
                     <PanelRow>
                         <TextControl
                             label="Font"
                             value={font}
-                            onChange={onChangeFont}
+                            onChange={(value) => onChangeAttribute('font', value)}
                         />
                     </PanelRow>
                 </PanelBody>
@@ -52,7 +40,7 @@ const edit = (props) => {
                 <RichText
                     tagName="div"
                     value={message}
-                    onChange={onChangeMessage}
+                    onChange={(value) => onChangeAttribute('message', value)}
                     placeholder="Write alert message"
                 />
                 <button type="button" className="btn-close btn-sm" aria-label="Close Alert"></button>

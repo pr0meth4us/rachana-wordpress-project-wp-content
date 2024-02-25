@@ -1,16 +1,16 @@
 import { PanelBody, TextControl, ColorPicker, SelectControl } from '@wordpress/components';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
 import defaultAttr from './defaultAttr.json';
-import {addNewBlockItem, customizeBlockItem} from "../index";
+import {addNewBlockItem, customizeBlockItem} from "../blockHelpers";
 
 const edit = ({ attributes, setAttributes }) => {
     const { accordionItems } = attributes;
 
-    const customizedAccordionItems = (index, key, value) => {
-        customizeBlockItem(index, key, value, setAttributes, accordionItems, defaultAttr);
+    const customizeAccordion = (index, key, value) => {
+        customizeBlockItem(index, key, value, setAttributes, cardItems);
     };
 
-    const addNewAccordionItem = () => {
+    const addAccordion = () => {
         addNewBlockItem(setAttributes, accordionItems, defaultAttr);
     };
 
@@ -18,7 +18,7 @@ const edit = ({ attributes, setAttributes }) => {
         <div>
             <InspectorControls>
                 <PanelBody title="Accordion Settings">
-                    <button className="components-button is-secondary" onClick={addNewAccordionItem}>
+                    <button className="components-button is-secondary" onClick={addAccordion}>
                         Add Accordion Item
                     </button>
                 </PanelBody>
@@ -31,7 +31,7 @@ const edit = ({ attributes, setAttributes }) => {
                                 <TextControl
                                     label="Font"
                                     value={item.font}
-                                    onChange={(value) => customizedAccordionItems(index, 'font', value)}
+                                    onChange={(value) => customizeAccordion(index, 'font', value)}
                                 />
                                 <SelectControl
                                     label="Icon Type"
@@ -42,13 +42,13 @@ const edit = ({ attributes, setAttributes }) => {
                                         { label: 'Person', value: 'bi bi-person-fill' },
                                         { label: 'Heart', value: 'bi bi-heart-fill' },
                                     ]}
-                                    onChange={(value) => customizedAccordionItems(index, 'iconType', value)}
+                                    onChange={(value) => customizeAccordion(index, 'iconType', value)}
                                 />
                                 <div className="components-base-control">
                                     <label className="components-base-control__label">Icon Color</label>
                                     <ColorPicker
                                         color={item.iconColor}
-                                        onChangeComplete={(value) => customizedAccordionItems(index, 'iconColor', value.hex)}
+                                        onChangeComplete={(value) => customizeAccordion(index, 'iconColor', value.hex)}
                                         disableAlpha
                                     />
                                 </div>
@@ -56,7 +56,7 @@ const edit = ({ attributes, setAttributes }) => {
                                     <label className="components-base-control__label">Title Color</label>
                                     <ColorPicker
                                         color={item.titleColor}
-                                        onChangeComplete={(value) => customizedAccordionItems(index, 'titleColor', value.hex)}
+                                        onChangeComplete={(value) => customizeAccordion(index, 'titleColor', value.hex)}
                                         disableAlpha
                                     />
                                 </div>
@@ -64,7 +64,7 @@ const edit = ({ attributes, setAttributes }) => {
                                     <label className="components-base-control__label">Button Color</label>
                                     <ColorPicker
                                         color={item.buttonColor}
-                                        onChangeComplete={(value) => customizedAccordionItems(index, 'buttonColor', value.hex)}
+                                        onChangeComplete={(value) => customizeAccordion(index, 'buttonColor', value.hex)}
                                         disableAlpha
                                     />
                                 </div>
@@ -72,7 +72,7 @@ const edit = ({ attributes, setAttributes }) => {
                                     <label className="components-base-control__label">Body Text Color</label>
                                     <ColorPicker
                                         color={item.bodyTextColor}
-                                        onChangeComplete={(value) => customizedAccordionItems(index, 'bodyTextColor', value.hex)}
+                                        onChangeComplete={(value) => customizeAccordion(index, 'bodyTextColor', value.hex)}
                                         disableAlpha
                                     />
                                 </div>
@@ -94,7 +94,7 @@ const edit = ({ attributes, setAttributes }) => {
                                 <RichText
                                     tagName="span"
                                     value={item.accordionTitle}
-                                    onChange={(value) => customizedAccordionItems(index, 'accordionTitle', value)}
+                                    onChange={(value) => customizeAccordion(index, 'accordionTitle', value)}
                                     placeholder="Accordion Title"
                                 />
                             </button>
@@ -109,7 +109,7 @@ const edit = ({ attributes, setAttributes }) => {
                                 tagName="div"
                                 className="accordion-body"
                                 value={item.bodyContent}
-                                onChange={(value) => customizedAccordionItems(index, 'bodyContent', value)}
+                                onChange={(value) => customizeAccordion(index, 'bodyContent', value)}
                                 style={{ color: item.bodyTextColor, fontFamily: item.font }}
                                 placeholder="Write your content here"
                             />
