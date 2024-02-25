@@ -8,7 +8,9 @@ export function generateAttributes(defaultAttributes) {
     }
     return attributes;
 }
-
+export const onChangeAttribute = (key, value, setAttributes) => {
+    setAttributes({ [key]: value });
+};
 const addNewBlockItem = (items, defaultItem) => {
     return [...items, { ...defaultItem }];
 };
