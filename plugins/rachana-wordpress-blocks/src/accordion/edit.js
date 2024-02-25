@@ -6,12 +6,16 @@ import {addNewBlockItem, customizeBlockItem} from "../index";
 const edit = ({ attributes, setAttributes }) => {
     const { accordionItems } = attributes;
 
-    const customizedAccordionItems = (index, key, value) => {
-        customizeBlockItem(index, key, value, setAttributes, accordionItems, defaultAttr);
+    const addNewAccordionItem = () => {
+        setAttributes({
+            accordionItems: addNewBlockItem(accordionItems, defaultAttr)
+        });
     };
 
-    const addNewAccordionItem = () => {
-        addNewBlockItem(setAttributes, accordionItems, defaultAttr);
+    const customizedAccordionItems = (index, key, value) => {
+        setAttributes({
+            accordionItems: customizeBlockItem(accordionItems, index, key, value)
+        });
     };
 
     return (

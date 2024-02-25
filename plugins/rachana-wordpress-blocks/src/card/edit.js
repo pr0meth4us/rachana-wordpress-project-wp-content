@@ -1,7 +1,7 @@
 import { PanelBody, TextControl, ColorPicker, MediaUpload } from '@wordpress/components';
 import { InspectorControls, RichText } from '@wordpress/block-editor';
 import defaultAttr from './defaultAttr.json';
-import { addNewBlockItem, customizeBlockItem } from "../blockHelpers";
+// import { addNewBlockItem, customizeBlockItem } from "../blockHelpers";
 
 const edit = ({ attributes, setAttributes }) => {
     const { cardItems } = attributes;

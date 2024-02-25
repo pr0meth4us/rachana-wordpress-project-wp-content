@@ -9,12 +9,14 @@ export function generateAttributes(defaultAttributes) {
     return attributes;
 }
 
-export const customizeBlockItem = (index, key, value, setAttributes, items) => {
-    setAttributes({
-        items: items.map((item, i) => (i === index ? { ...item, [key]: value } : item)),
-    });
+const addNewBlockItem = (items, defaultItem) => {
+    return [...items, { ...defaultItem }];
 };
 
-export const addNewBlockItem = (setAttributes, items, defaultItem) => {
-    setAttributes({ items: [...items, { ...defaultItem }] });
+const customizeBlockItem = (items, index, key, value) => {
+    return items.map((item, i) => (
+        i === index ? { ...item, [key]: value } : item
+    ));
 };
+
+export { addNewBlockItem, customizeBlockItem };
