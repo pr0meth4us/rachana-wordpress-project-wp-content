@@ -1,5 +1,5 @@
-const save = (props) => {
-    const { type, message, font } = props.attributes;
+const Save = ({ attributes }) => {
+    const { type, message, font } = attributes;
 
     return (
         <div className={`cgds alert alert-${type} fade d-flex align-items-center alert-dismissible-link show`} role="alert" style={{ fontFamily: font }}>
@@ -12,4 +12,4 @@ const save = (props) => {
     );
 };
 
-export default save;
+export default Save;
