@@ -1,0 +1,59 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import "../../assets/cgds/variables";
+@import "../../assets/cgds/card";
+@import "../../assets/cgds/typography";
+.wp-block-create-block-alert {
+	border: 1px dotted #f00;
+}
+
+.wp-block-create-block-accordion {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
+.page-component section[name*='section-'] + section[name*='section-'] { margin-top: 3.5rem; }
+
+.page-component section[name*='section-'] .section-sub + .section-sub { margin-top: 3rem; }
+
+.page-component .subtitle { margin-bottom: 0; }
+
+.page-component .cgds.accordion.code-snippet .accordion-header { display: flex; }
+
+.page-component .cgds.accordion.code-snippet .accordion-item { border-top-left-radius: 0; border-top-right-radius: 0; border-top: 0; }
+
+.page-component .cgds.accordion.code-snippet .accordion-body { padding: 1rem 2rem 1rem 1rem; background-color: #272822; position: relative; }
+
+.page-component .cgds.accordion.code-snippet .accordion-body .btn-copy { position: absolute; right: 0.5rem; }
+
+.page-component .cgds.accordion.code-snippet .accordion-body figure.highlight { margin-bottom: 0; }
+
+.page-component .cgds.accordion.code-snippet + .desc-bottom { margin-top: 1rem; }
+
+.page-component .header-component .header-component-description { width: auto; }
+
+@media (min-width: 1390px) { .page-component .header-component .header-component-description { width: 75ch; } }
+
+.page-component .header-component .component-source-grid { display: flex; gap: 2rem; }
+
+@media (max-width: 1405px) { .page-component .header-component .component-source-grid { display: block; } .page-component .header-component .component-source-grid div + div { margin-top: 0.5rem; } }
+
+.page-component-overview article .page-component-item-wrapper { display: grid; grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr)); gap: 2rem; }
+
+.page-component-overview article .page-component-item-wrapper .cgds.card { transition: all 0.2s ease-in-out; overflow: hidden; background: #f6f7fb; }
+
+.page-component-overview article .page-component-item-wrapper .cgds.card .card-body { z-index: 1; background: var(--cgds-white); background: linear-gradient(0deg, white 74%, #f6f7fb 100%); }
+
+.page-component-overview article .page-component-item-wrapper .cgds.card img { transition: transform 0.2s ease-in-out; }
+
+.page-component-overview article .page-component-item-wrapper .cgds.card:hover { filter: drop-shadow(0 15px 15px rgba(var(--cgds-black-rgb), 0.15)); }
+
+.page-component-overview article .page-component-item-wrapper .cgds.card:hover img { transform: scale(1.03) rotate(0.01deg); }
+
+.page-component-overview article + article { margin-top: 2rem; }

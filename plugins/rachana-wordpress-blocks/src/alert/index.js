@@ -1,30 +1,15 @@
 import './style.scss';
-import edit from './edit';
 import save from './save';
-
+import defaultAttr from './defaultAttr.json';
 import { registerBlockType } from '@wordpress/blocks';
-
-registerBlockType('rachana-block/accordion-item', {
-    title: 'Accordion',
-    icon: 'editor-expand',
+import edit from './edit';
+import {generateAttributes} from "../blockHelpers";
+const attributes = generateAttributes(defaultAttr);
+registerBlockType('rachana-block/alert', {
+    title: 'Alert',
+    icon: 'warning',
     category: 'common',
-    attributes: {
-        accordionItems: {
-            type: 'array',
-            default: [
-                {
-                    accordionTitle: '',
-                    titleColor: '#1c4076',
-                    bodyContent: '',
-                    buttonColor: '#f3f5f8',
-                    iconColor: '#1c4076',
-                    iconType: 'bi-info-circle-fill',
-                    bodyTextColor: '#414c5f',
-                    font: 'Kantumruy Pro',
-                },
-            ],
-        },
-    },
+    attributes: attributes,
     edit,
     save,
 });
