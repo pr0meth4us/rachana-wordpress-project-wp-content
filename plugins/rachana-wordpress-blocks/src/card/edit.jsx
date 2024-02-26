@@ -1,23 +1,32 @@
 import { PanelBody, TextControl, ColorPicker, Button } from "@wordpress/components";
 import { InspectorControls, MediaUpload, RichText } from "@wordpress/block-editor";
 import defaultAttr from "./defaultAttr.json";
-import { addNewBlockItem, customizeBlockItem, onChangeAttribute } from "../blockHelpers";
-
+import { addNewBlockItem, customizeBlockItem } from "../blockHelpers";
+import { mediaUpload } from '@wordpress/block-editor';
 const edit = ({ attributes, setAttributes }) => {
     const { cardItems } = attributes;
 
-    const customizeItem = (index, key, value) => {
-        customizeBlockItem(index, key, value, setAttributes, cardItems);
-    };
-
     const addItem = () => {
-        addNewBlockItem(setAttributes, cardItems, defaultAttr);
+        setAttributes({
+            cardItems: addNewBlockItem(cardItems, defaultAttr)
+        });
     };
 
-    const onSelectImage = (index, media) => {
+    const customizeItem = (index, key, value) => {
         setAttributes({
-            [`cardItems[${index}].imageUrl`]: media.url
-        })
+            cardItems: customizeBlockItem(cardItems, index, key, value)
+        });
+    };
+
+    const onSelectImage = async (media) => {
+
+        const image = await mediaUpload({
+            allowedTypes: ['image'],
+            filesList: media,
+        });
+
+        return image.url;
+
     }
 
     return (
@@ -34,15 +43,22 @@ const edit = ({ attributes, setAttributes }) => {
                 {cardItems.map((item, index) => (
                     <div className="cgds card" key={index}>
                         <InspectorControls>
-                            <PanelBody>
+                            <PanelBody title={`Card Item ${index + 1}`}>
                                 <MediaUpload
-                                    onSelect={(media) => onSelectImage(index, media)}
-                                    value={item.imageUrl}
-                                    render={(open) => (
-                                        <Button onClick={open}>Upload Image</Button>
+                                    onSelect={(media) => {
+                                        const imageUrl = media.url;
+                                        customizeItem(index, "imageUrl", imageUrl);
+                                    }}
+                                    value={item.imageUrl || ""}
+                                    render={({ open }) => (
+                                        <Button
+                                            onClick={open}
+                                            className={`button button-large ${!item.imageUrl ? "button-secondary" : ""}`}
+                                        >
+                                            {!item.imageUrl ? "Upload Image" : "Change Image"}
+                                        </Button>
                                     )}
                                 />
-
                                 <TextControl
                                     label="Font"
                                     value={item.font}
@@ -92,9 +108,9 @@ const edit = ({ attributes, setAttributes }) => {
 
                             <img className="card-img-top" src={item.imageUrl} alt={`Card ${index} image`}/>
 
-                            <div className="card-body" style={{color: item.titleColor, fontFamily: item.font}}>
+                            <div className="card-body">
 
-                                <a className="stretched-link link-primary" href={item.href} onClick={(e) => {e.preventDefault();}}>
+                                <a style={{color: item.titleColor, fontFamily: item.font}} className="stretched-link link-primary" href={item.href} onClick={(e) => {e.preventDefault();}}>
 
                                     <RichText
                                         className="h5 text-primary card-title"

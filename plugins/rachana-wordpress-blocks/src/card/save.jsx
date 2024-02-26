@@ -21,12 +21,8 @@ const save = ({ attributes }) => {
                         >
                             <div
                                 className="h5 text-primary card-title"
-                                style={{
-                                    color: item.titleColor,
-                                    fontFamily: item.font,
-                                }}
                             >
-                                <span>{item.title}</span>
+                                <span style={{color: item.titleColor, fontFamily: item.font}} >{item.title}</span>
                             </div>
                         </a>
                         <p
