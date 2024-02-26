@@ -18,8 +18,8 @@
   "dependencies": {
     "@wordpress/block-editor": "^12.19.1",
     "@wordpress/components": "^26.0.1",
+    "@wordpress/media-utils": "^4.43.0",
     "bootstrap": "^5.3.2",
-    "bootstrap-icons": "^1.11.3",
-    "fsevents": ">=1.2.11"
+    "bootstrap-icons": "^1.11.3"
   }
 }
