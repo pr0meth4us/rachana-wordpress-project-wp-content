@@ -1,0 +1,32 @@
+{
+  "name": "mptc-theme",
+  "version": "1.0.0",
+  "description": "A WordPress Theme.",
+  "author": "sokmean-mptc <ngonsokmean@mptc.gov.kh>",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://sokmean.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sokmean-mptc/mptc-theme"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^18.0.0"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "packages-update": "wp-scripts packages-update",
+    "start": "wp-scripts start"
+  },
+  "dependencies": {
+    "mptclayout": "sokmean-mptc/mptclayout",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-images": "^1.2.0-beta.7",
+    "react-photo-gallery": "^8.0.0"
+  }
+}
