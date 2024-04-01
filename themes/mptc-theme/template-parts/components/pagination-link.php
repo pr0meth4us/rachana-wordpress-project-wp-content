@@ -1,6 +1,6 @@
 <?php
 /**
- * @package MPTC_THEME
+ * @package Rachana_Theme
  */
 ?>
 
