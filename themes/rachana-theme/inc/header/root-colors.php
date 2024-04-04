@@ -1,12 +1,12 @@
 <?php
 $default_colors = array(
     'body-color' => '#1D2939',
-    'body-bg' => 'white',
+    'body-bg' => '#ffffff',
     'primary' => '#1C4076',
     'secondary' => '#3da3cf',
     'text-color' => '#344054',
     'navbar-link-hover-bg' => '#002266',
-    'nav-text-color' => 'white',
+    'nav-text-color' => '#ffffff',
     'footer-link-hover-color' => '#f07d03',
 );
 
