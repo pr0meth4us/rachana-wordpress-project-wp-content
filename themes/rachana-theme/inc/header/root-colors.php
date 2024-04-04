@@ -1,19 +1,12 @@
 <?php
 $default_colors = array(
     'body-color' => '#1D2939',
-    'body-bg' => '#fff',
+    'body-bg' => 'white',
     'primary' => '#1C4076',
     'secondary' => '#3da3cf',
-//    'success-color' => '#0A8217',
-//    'info-color' => '#0F71BB',
-//    'warning-color' => '#F79009',
-//    'danger-color' => '#D7260F',
-//    'light-color' => '#fff',
-//    'dark-color' => '#000',
     'text-color' => '#344054',
     'navbar-link-hover-bg' => '#002266',
-    'nav-text-color' => '#fff',
-    'nav-elements-title-color' => '#fff',
+    'nav-text-color' => 'white',
     'footer-link-hover-color' => '#f07d03',
 );
 

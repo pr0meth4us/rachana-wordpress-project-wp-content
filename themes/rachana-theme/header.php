@@ -2,7 +2,7 @@
 /**
  * Contains the header
  */
-require_once('inc/header/root.php');
+require_once('inc/header/root-colors.php');
 $custom_css = generate_custom_css();
 $header_layout = get_theme_mod('header_layout', 'header-layout-1');
 ?>
