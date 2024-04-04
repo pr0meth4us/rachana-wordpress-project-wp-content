@@ -1,0 +1,82 @@
+.cgds.navbar .nav-item a.nav-link.dropdown-toggle.show {
+  color: var(--cgds-nav-text-color) !important;
+  font-weight: 600;
+}
+
+.cgds.navbar .nav-item a.nav-link:hover {
+  background-color: var(--cgds-navbar-link-hover-bg) !important;
+  color: var(--cgds-nav-text-color) !important;
+  font-weight: 600;
+}
+
+header {
+  &.header-layout-2 {
+    .logo-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .navbar-brand {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &.header-layout-3 {
+    .logo-title {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &.header-layout-1 {
+    .logo-title {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-top {
+      justify-content: center;
+    }
+  }
+
+  &.header-layout-4 {
+    .logo-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+
+      .navbar-brand {
+        max-width: 100%;
+      }
+    }
+  }
+}
+footer{
+  a:hover{
+    color: var(--cgds-footer-link-hover-color) !important;
+  }
+
+}
+
+.social-icon ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox layout */
+}
+
+.social-icon li {
+  margin-right: 10px; /* Adjust the spacing between icons */
+}
+a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
