@@ -1,0 +1,27 @@
+nav.header-layout-2 .logo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav.header-layout-2 .logo-title .navbar-brand {
+    max-width: 100%;
+}
+
+nav.header-layout-3 .logo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: fit-content;
+}
+
+nav.header-layout-3.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+
+

@@ -1,0 +1,665 @@
+#cgds-primary-color,
+.color-styles,
+a:hover,
+.btn-outline-primary,
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled,
+.btn-link:hover,
+.btn-outline-primary,
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled,
+.btn-link:hover,
+.cgds.datepicker > .datepicker-header,
+.cgds.datepicker > .datepicker-header button,
+.cgds.datepicker .month.active,
+.cgds.datepicker .year.active,
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-menu-dark .dropdown-item.active,
+.dropdown-menu-dark .dropdown-item:active,
+.nav-link:hover,
+.nav-link:focus,
+.cgds.navbar header .btn-gt,
+.cgds .card-link,
+.accordion-button:not(.collapsed),
+.cgds.accordion .accordion-button:not(.collapsed) i,
+.accordion-body a,
+.breadcrumb-item a,
+.breadcrumb-item + .breadcrumb-item.active,
+.page-link,
+.page-link:hover,
+.page-link:focus,
+.page-link,
+.page-link:hover,
+.page-link:focus,
+.alert-primary i,
+.cgds.sidenav .sidenav-item .cgds.btn,
+.cgds.sidenav .sidenav-item .cgds.btn:hover,
+.cgds.sidenav .sidenav-item .cgds.btn.active,
+.cgds.sidenav .sidenav-item .collapse a.nav-link.active,
+.cgds.sidenav .sidenav-item .collapse.show a.nav-link.active,
+.cgds.sidenav .sidenav-item .collapsing a.nav-link.active,
+.cgds.sidenav .sidenav-item .collapse a.nav-link:hover,
+.cgds.sidenav .sidenav-item .collapse.show a.nav-link:hover,
+.cgds.sidenav .sidenav-item .collapsing a.nav-link:hover,
+.cgds.stepper .stepper-item.is-active .stepper-marker,
+.cgds.is-primary .toast-header,
+.cgds.nav-tabs:not([variant=tabs-basic-toggle]):not([variant=tabs-info-toggle]) li.nav-item button.nav-link,
+.link-primary,
+.text-primary-500 {
+    color: var(--cgds-primary) !important;
+}
+
+.background-color-styles,
+.form-check-input:checked,
+.form-check-input[type=checkbox]:indeterminate,
+.form-range::-webkit-slider-thumb,
+.form-range::-moz-range-thumb,
+.cgds.footer .footer-top,
+.cgds.footer .footer-bottom,
+.btn-primary,
+.btn-primary:hover,
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-secondary:hover,
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus,
+.btn-success:hover,
+.btn-check:focus + .btn-success,
+.btn-success:focus,
+.btn-info:hover,
+.btn-check:focus + .btn-info,
+.btn-info:focus,
+.btn-warning:hover,
+.btn-check:focus + .btn-warning,
+.btn-warning:focus,
+.btn-danger:hover,
+.btn-check:focus + .btn-danger,
+.btn-danger:focus,
+.btn-light:hover,
+.btn-check:focus + .btn-light,
+.btn-light:focus,
+.btn-dark:hover,
+.btn-check:focus + .btn-dark,
+.btn-dark:focus,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-primary,
+.btn-primary:hover,
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-secondary:hover,
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus,
+.btn-success:hover,
+.btn-check:focus + .btn-success,
+.btn-success:focus,
+.btn-info:hover,
+.btn-check:focus + .btn-info,
+.btn-info:focus,
+.btn-warning:hover,
+.btn-check:focus + .btn-warning,
+.btn-warning:focus,
+.btn-danger:hover,
+.btn-check:focus + .btn-danger,
+.btn-danger:focus,
+.btn-light:hover,
+.btn-check:focus + .btn-light,
+.btn-light:focus,
+.btn-dark:hover,
+.btn-check:focus + .btn-dark,
+.btn-dark:focus,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-menu-dark .dropdown-item.active,
+.dropdown-menu-dark .dropdown-item:active,
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link,
+.cgds.navbar,
+.cgds.navbar header,
+.cgds.navbar .search-bar .search-wrapper button,
+.page-item.active .page-link,
+.page-item.active .page-link,
+.list-group-item.active,
+.progress-bar,
+.cgds.stepper .stepper-item.is-completed .stepper-marker,
+.bg-primary-500 {
+    background-color: var(--cgds-primary) !important;
+}
+
+.border-color-styles,
+.form-check-input:checked,
+.form-check-input[type=checkbox]:indeterminate,
+.btn-primary,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-primary,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.page-item.active .page-link,
+.page-item.active .page-link,
+.list-group-item.active,
+.alert-primary,
+.cgds.stepper .stepper-item.is-active .stepper-marker,
+.cgds.stepper .stepper-item.is-completed .stepper-marker,
+.cgds.is-primary,
+.border-primary {
+    border-color: var(--cgds-primary) !important;
+}
+
+.border-bottom-styles,
+.cgds.navbar .nav-item a.nav-link.dropdown-toggle.show,
+.cgds.nav-tabs:not([variant=tabs-basic-toggle]):not([variant=tabs-info-toggle]) li.nav-item button.nav-link.active {
+    border-bottom: 0.125rem solid var(--cgds-primary);
+}
+
+.border-left-styles,
+.cgds.sidenav .sidenav-item .cgds.btn {
+    border-left: 0.125rem solid var(--cgds-primary);
+}
+
+.border-left-color-styles,
+.cgds.sidenav .sidenav-item .cgds.btn.active {
+    border-left-color: var(--cgds-primary);
+}
+
+.background-styles,
+.cgds.stepper .stepper-item::before {
+    background: linear-gradient(to left, #D0D5DD 50%, var(--cgds-primary) 50%);
+}
+
+/* Primary Color */
+
+.color-styles,
+a:hover,
+.btn-outline-primary,
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled,
+.btn-link:hover,
+.btn-outline-primary,
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled,
+.btn-link:hover,
+.cgds.datepicker > .datepicker-header,
+.cgds.datepicker > .datepicker-header button,
+.cgds.datepicker .month.active,
+.cgds.datepicker .year.active,
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-menu-dark .dropdown-item.active,
+.dropdown-menu-dark .dropdown-item:active,
+.nav-link:hover,
+.nav-link:focus,
+.cgds.navbar header .btn-gt,
+.cgds .card-link,
+.accordion-button:not(.collapsed),
+.cgds.accordion .accordion-button:not(.collapsed) i,
+.accordion-body a,
+.breadcrumb-item a,
+.breadcrumb-item + .breadcrumb-item.active,
+.page-link,
+.page-link:hover,
+.page-link:focus,
+.page-link,
+.page-link:hover,
+.page-link:focus,
+.alert-primary i,
+.cgds.sidenav .sidenav-item .cgds.btn,
+.cgds.sidenav .sidenav-item .cgds.btn:hover,
+.cgds.sidenav .sidenav-item .cgds.btn.active,
+.cgds.sidenav .sidenav-item .collapse a.nav-link.active,
+.cgds.sidenav .sidenav-item .collapse.show a.nav-link.active,
+.cgds.sidenav .sidenav-item .collapsing a.nav-link.active,
+.cgds.sidenav .sidenav-item .collapse a.nav-link:hover,
+.cgds.sidenav .sidenav-item .collapse.show a.nav-link:hover,
+.cgds.sidenav .sidenav-item .collapsing a.nav-link:hover,
+.cgds.stepper .stepper-item.is-active .stepper-marker,
+.cgds.is-primary .toast-header,
+.cgds.nav-tabs:not([variant=tabs-basic-toggle]):not([variant=tabs-info-toggle]) li.nav-item button.nav-link,
+.link-primary,
+.text-primary-500 {
+    color: var(--cgds-primary) !important;
+}
+
+.background-color-styles,
+.form-check-input:checked,
+.form-check-input[type=checkbox]:indeterminate,
+.form-range::-webkit-slider-thumb,
+.form-range::-moz-range-thumb,
+.cgds.footer .footer-top,
+.cgds.footer .footer-bottom,
+.btn-primary,
+.btn-primary:hover,
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-secondary:hover,
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus,
+.btn-success:hover,
+.btn-check:focus + .btn-success,
+.btn-success:focus,
+.btn-info:hover,
+.btn-check:focus + .btn-info,
+.btn-info:focus,
+.btn-warning:hover,
+.btn-check:focus + .btn-warning,
+.btn-warning:focus,
+.btn-danger:hover,
+.btn-check:focus + .btn-danger,
+.btn-danger:focus,
+.btn-light:hover,
+.btn-check:focus + .btn-light,
+.btn-light:focus,
+.btn-dark:hover,
+.btn-check:focus + .btn-dark,
+.btn-dark:focus,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-primary,
+.btn-primary:hover,
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-secondary:hover,
+.btn-check:focus + .btn-secondary,
+.btn-secondary:focus,
+.btn-success:hover,
+.btn-check:focus + .btn-success,
+.btn-success:focus,
+.btn-info:hover,
+.btn-check:focus + .btn-info,
+.btn-info:focus,
+.btn-warning:hover,
+.btn-check:focus + .btn-warning,
+.btn-warning:focus,
+.btn-danger:hover,
+.btn-check:focus + .btn-danger,
+.btn-danger:focus,
+.btn-light:hover,
+.btn-check:focus + .btn-light,
+.btn-light:focus,
+.btn-dark:hover,
+.btn-check:focus + .btn-dark,
+.btn-dark:focus,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-menu-dark .dropdown-item.active,
+.dropdown-menu-dark .dropdown-item:active,
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link,
+.cgds.navbar,
+.cgds.navbar header,
+.cgds.navbar .search-bar .search-wrapper button,
+.page-item.active .page-link,
+.page-item.active .page-link,
+.list-group-item.active,
+.progress-bar,
+.cgds.stepper .stepper-item.is-completed .stepper-marker,
+.bg-primary-500 {
+    background-color: var(--cgds-primary) !important;
+}
+
+.border-color-styles,
+.form-check-input:checked,
+.form-check-input[type=checkbox]:indeterminate,
+.btn-primary,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.btn-primary,
+.btn-primary:disabled,
+.btn-primary.disabled,
+.btn-outline-primary,
+.btn-outline-primary:hover,
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary,
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-outline-primary.dropdown-toggle.show,
+.page-item.active .page-link,
+.page-item.active .page-link,
+.list-group-item.active,
+.alert-primary,
+.cgds.stepper .stepper-item.is-active .stepper-marker,
+.cgds.stepper .stepper-item.is-completed .stepper-marker,
+.cgds.is-primary,
+.border-primary {
+    border-color: var(--cgds-primary) !important;
+}
+
+.border-bottom-styles,
+.cgds.navbar .nav-item a.nav-link.dropdown-toggle.show,
+.cgds.nav-tabs:not([variant=tabs-basic-toggle]):not([variant=tabs-info-toggle]) li.nav-item button.nav-link.active {
+    border-bottom: 0.125rem solid var(--cgds-primary);
+}
+
+.border-left-styles,
+.cgds.sidenav .sidenav-item .cgds.btn {
+    border-left: 0.125rem solid var(--cgds-primary);
+}
+
+.border-left-color-styles,
+.cgds.sidenav .sidenav-item .cgds.btn.active {
+    border-left-color: var(--cgds-primary);
+}
+
+.background-styles,
+.cgds.stepper .stepper-item::before {
+    background: linear-gradient(to left, #D0D5DD 50%, var(--cgds-primary) 50%);
+}
+
+.background-color-styles,
+.btn-secondary,
+.btn-secondary:disabled,
+.btn-secondary.disabled,
+.btn-outline-secondary:hover,
+.btn-check:checked + .btn-outline-secondary,
+.btn-check:active + .btn-outline-secondary,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active,
+.btn-outline-secondary.dropdown-toggle.show,
+.btn-secondary,
+.btn-secondary:disabled,
+.btn-secondary.disabled,
+.btn-outline-secondary:hover,
+.btn-check:checked + .btn-outline-secondary,
+.btn-check:active + .btn-outline-secondary,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active,
+.btn-outline-secondary.dropdown-toggle.show {
+    background-color: var(--cgds-secondary);
+}
+
+.border-color-styles,
+.btn-secondary,
+.btn-secondary:disabled,
+.btn-secondary.disabled,
+.btn-outline-secondary,
+.btn-outline-secondary:hover,
+.btn-check:checked + .btn-outline-secondary,
+.btn-check:active + .btn-outline-secondary,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active,
+.btn-outline-secondary.dropdown-toggle.show,
+.btn-secondary,
+.btn-secondary:disabled,
+.btn-secondary.disabled,
+.btn-outline-secondary,
+.btn-outline-secondary:hover,
+.btn-check:checked + .btn-outline-secondary,
+.btn-check:active + .btn-outline-secondary,
+.btn-outline-secondary:active,
+.btn-outline-secondary.active,
+.btn-outline-secondary.dropdown-toggle.show,
+.cgds.is-secondary,
+.border-secondary {
+    border-color: var(--cgds-secondary) !important;
+}
+
+.color-styles,
+.btn-outline-secondary,
+.btn-outline-secondary:disabled,
+.btn-outline-secondary.disabled,
+.btn-outline-secondary,
+.btn-outline-secondary:disabled,
+.btn-outline-secondary.disabled,
+.cgds.is-secondary .toast-header,
+.link-secondary {
+    color: var(--cgds-secondary);
+}
+
+.color-styles,
+a,
+.blockquote-footer,
+.figure-caption,
+.btn-link,
+.btn-link:disabled,
+.btn-link.disabled,
+.btn-link,
+.btn-link:disabled,
+.btn-link.disabled,
+.dropdown-item,
+.dropdown-header,
+.dropdown-item-text,
+.cgds.fileupload-list .fileupload-list-item .filename,
+.nav-link,
+.nav-link.disabled,
+.nav-tabs .nav-link.disabled,
+.breadcrumb-item + .breadcrumb-item::before,
+.breadcrumb-item.active,
+.breadcrumb-item + .breadcrumb-item::before,
+.page-item.disabled .page-link,
+.list-group-item.disabled,
+.list-group-item:disabled,
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger,
+.alert-light,
+.alert-light i:not(.primary),
+.alert-dark,
+.alert-dark i:not(.primary),
+.cgds.sidenav .sidenav-item .collapse a.nav-link.disabled,
+.cgds.sidenav .sidenav-item .collapse.show a.nav-link.disabled,
+.cgds.sidenav .sidenav-item .collapsing a.nav-link.disabled,
+.toast-header {
+    color: var(--cgds-gray-600);
+}
+
+.box-shadow-styles,
+.cgds.card[variant*=card-action]:hover,
+.cgds.card[variant*=card-action].is-active {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 0 0 2.1px var(--cgds-gray-600);
+}
+
+.border-color-styles,
+.cgds.toast {
+    border-color: var(--cgds-gray-600);
+}
+
+.border-top-color-styles,
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+    border-top-color: var(--cgds-gray-600);
+}
+
+.border-right-color-styles,
+.bs-tooltip-end .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+    border-right-color: var(--cgds-gray-600);
+}
+
+.border-bottom-color-styles,
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+    border-bottom-color: var(--cgds-gray-600);
+}
+
+.border-left-color-styles,
+.bs-tooltip-start .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+    border-left-color: var(--cgds-gray-600);
+}
+
+.background-color-styles,
+.tooltip-inner {
+    background-color: var(--cgds-gray-600);
+}
+
+.site-title,
+.cgds.footer,
+.cgds.navbar .nav-item a.nav-link,
+.cgds.footer .footer-copyrights,
+.cgds.footer .footer-contact-links ul li a,
+.cgds.footer .footer-copyrights ul li a,
+.cgds.footer .footer-mandatory-links ul li a,
+.cgds.footer .footer-top ul li a,
+.footer-list-styling ul li a {
+    color: var(--cgds-nav-text-color);
+}
+
+.background-color-styles,
+.cgds.dropdown .dropdown-menu a.dropdown-item:active,
+.cgds.navbar header .btn-gt.active,
+.cgds.navbar header .btn-gt:hover,
+.cgds.navbar header .social ul li a:hover,
+.cgds.navbar header .social ul li a:focus,
+.cgds.navbar header .social ul li a:active,
+.cgds.navbar .nav-item a.nav-link.active,
+.cgds.navbar .nav-item a.nav-link:hover,
+.bg-primary-900 {
+    background-color: var(--cgds-navbar-link-hover-bg) !important;
+}
+
+.border-bottom-styles,
+.cgds.navbar header {
+    border-bottom: 2px solid var(--cgds-navbar-link-hover-bg) !important;
+}
+
+.color-styles,
+.text-primary-900 {
+    color: var(--cgds-navbar-link-hover-bg) !important;
+}
+
+.--cgds-gray-styles,
+:root {
+    --cgds-gray: var(--cgds-text-color);
+}
+
+.--cgds-gray-600-styles,
+:root {
+    --cgds-gray-600: var(--cgds-text-color);
+}
+
+.color-styles,
+a,
+.blockquote-footer,
+.figure-caption,
+.btn-link,
+.btn-link:disabled,
+.btn-link.disabled,
+.btn-link,
+.btn-link:disabled,
+.btn-link.disabled,
+.dropdown-item,
+.dropdown-header,
+.dropdown-item-text,
+.cgds.fileupload-list .fileupload-list-item .filename,
+.nav-link,
+.nav-link.disabled,
+.nav-tabs .nav-link.disabled,
+.breadcrumb-item+.breadcrumb-item::before,
+.breadcrumb-item.active,
+.breadcrumb-item+.breadcrumb-item::before,
+.page-item.disabled .page-link,
+.list-group-item.disabled,
+.list-group-item:disabled,
+.alert-primary,
+.alert-secondary,
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger,
+.alert-light,
+.alert-light i:not(.primary),
+.alert-dark,
+.alert-dark i:not(.primary),
+.cgds.sidenav .sidenav-item .collapse a.nav-link.disabled,
+.cgds.sidenav .sidenav-item .collapse.show a.nav-link.disabled,
+.cgds.sidenav .sidenav-item .collapsing a.nav-link.disabled,
+.toast-header {
+    color: var(--cgds-text-color);
+}
+
+.box-shadow-styles,
+.cgds.card[variant*=card-action]:hover,
+.cgds.card[variant*=card-action].is-active {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15),inset 0px 0px 0px 2.1px var(--cgds-text-color);
+}
+
+.border-color-styles,
+.cgds.toast {
+    border-color: var(--cgds-text-color);
+}
+
+.border-top-color-styles,
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+    border-top-color: var(--cgds-text-color);
+}
+
+.border-right-color-styles,
+.bs-tooltip-end .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=right] .tooltip-arrow::before {
+    border-right-color: var(--cgds-text-color);
+}
+
+.border-bottom-color-styles,
+.bs-tooltip-bottom .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=bottom] .tooltip-arrow::before {
+    border-bottom-color: var(--cgds-text-color);
+}
+
+.border-left-color-styles,
+.bs-tooltip-start .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=left] .tooltip-arrow::before {
+    border-left-color: var(--cgds-text-color);
+}
+
+.background-color-styles,
+.tooltip-inner {
+    background-color: var(--cgds-text-color);
+}
