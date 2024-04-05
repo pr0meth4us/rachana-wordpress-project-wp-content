@@ -31,5 +31,6 @@ services:
       - ./plugins:/var/www/html/wp-content/plugins
       - ./uploads:/var/www/html/wp-content/uploads
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+
 volumes:
   db_data:
