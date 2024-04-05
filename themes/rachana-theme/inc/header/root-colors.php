@@ -12,7 +12,7 @@ $default_colors = array(
 
 function register_color_setting($wp_customize, $setting_name, $label, $default_color, $section = 'colors') {
     $wp_customize->add_setting($setting_name, array(
-        'default' => $default_color . ' !important',
+        'default' => $default_color ,
         'transport' => 'refresh',
     ));
 

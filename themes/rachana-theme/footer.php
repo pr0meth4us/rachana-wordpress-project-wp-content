@@ -20,9 +20,10 @@
                         </div>
                         <div class="social-icon">
                             <ul>
-
-
-                            <?php  include 'template-parts/footer/social-media.php'; ?>
+                                <?php
+                                require_once('template-parts/footer/social-media.php');
+                                render_social_media_links();
+                                ?>
                             </ul>
                         </div>
                     </div>

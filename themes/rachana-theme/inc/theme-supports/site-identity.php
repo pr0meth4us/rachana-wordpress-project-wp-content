@@ -14,7 +14,7 @@ function site_identity($wp_customize): void
     ));
 
     $wp_customize->add_setting('logo_width', array(
-        'default'           => 150,
+        'default'           => 110,
         'sanitize_callback' => 'absint',
     ));
 

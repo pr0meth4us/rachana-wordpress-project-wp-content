@@ -5,6 +5,14 @@
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  * @param string $section_id The section ID to add the settings to.
  */
+
+$social_media_platforms = array(
+    'facebook' => 'Facebook',
+    'linkedIn' => 'LinkedIn',
+    'telegram' => 'Telegram',
+    'tiktok'   => 'TikTok',
+    'youtube'  => 'YouTube',
+);
 function register_social_media_settings($wp_customize, $section_id)
 {
     $wp_customize->add_setting('social_media_label', array(
@@ -22,16 +30,7 @@ function register_social_media_settings($wp_customize, $section_id)
             'style' => 'font-size: 2em; margin-bottom: 10px;',
         ),
     ));
-
-    $social_media_platforms = array(
-        'facebook' => 'Facebook',
-        'linkedIn' => 'LinkedIn',
-        'telegram' => 'Telegram',
-        'tiktok' => 'TikTok',
-        'youtube' => 'YouTube',
-        'x' => 'X',
-    );
-
+    global $social_media_platforms;
     foreach ($social_media_platforms as $platform_slug => $platform_name) {
         $wp_customize->add_setting($platform_slug . '_link', array(
             'default' => '',

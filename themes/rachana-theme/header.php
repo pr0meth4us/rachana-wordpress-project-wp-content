@@ -54,6 +54,14 @@ $header_layout = get_theme_mod('header_layout', 'header-layout-1');
                                     src="<?php echo get_template_directory_uri() . "/assets/images/icons/Cambodia-flag.svg"; ?>" width="32px" height="24px" alt="Home">
                         </a>
                     </div>
+                    <div class="d-flex align-items-center">
+                        <nav class="social d-flex me-3">
+                            <?php
+                            require_once('template-parts/header/icons.php');
+                            render_nav_icons();
+                            ?>
+                        </nav>
+                    </div>
                     <!--                    <nav class="social d-lg-block me-1">-->
                     <!--                        <ul id="menu-social-menu" class="d-flex">-->
                     <!--                            <li class="nav-icon-social">-->

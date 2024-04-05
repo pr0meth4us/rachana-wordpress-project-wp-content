@@ -10,4 +10,6 @@ require_once get_template_directory() . '/inc/footer/footer-customizer.php';
 require_once get_template_directory() . '/inc/footer/social-media.php';
 require_once get_template_directory() . '/inc/footer/contact.php';
 require_once get_template_directory() . '/inc/footer/other-links.php';
+require_once get_template_directory() . '/inc/header/icons.php';
+
 
