@@ -1,3 +1,4 @@
+version: '3'
 services:
   db:
     image: mariadb:latest
@@ -35,11 +36,13 @@ services:
     image: ubuntu:latest
     volumes:
       - ./:/app
+      - /var/run/docker.sock:/var/run/docker.sock  # Mount Docker socket
       - ./update_db.sh:/app/update_db.sh
     working_dir: /app
     command: /bin/bash -c "chmod +x /app/update_db.sh && while true; do /app/update_db.sh; sleep 60; done"
     depends_on:
       - db
+    privileged: true  # Run in privileged mode
 
 volumes:
   db_data:
