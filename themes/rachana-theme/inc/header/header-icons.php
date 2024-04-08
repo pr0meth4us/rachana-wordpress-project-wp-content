@@ -27,6 +27,7 @@ function custom_nav_icons_customizer($wp_customize) {
         'type' => 'text',
         'settings' => 'nav_icons_label',
         'priority' => 1,
+
     ));
 
     $priority = 2;
@@ -46,7 +47,7 @@ function custom_nav_icons_customizer($wp_customize) {
         ));
 
         $wp_customize->add_setting("show_nav_icon_{$icon}", array(
-            'default' => true,
+            'default' => ($icon == 'person' || $icon == 'notification'), // Set default to true for 'person' and 'notification' icons
             'transport' => 'refresh',
         ));
 

@@ -12,7 +12,6 @@ function register_footer_settings($wp_customize)
     ));
     register_social_media_settings($wp_customize, 'footer_section');
     register_contact_info_settings($wp_customize, 'footer_section');
-    register_footer_third_column_settings($wp_customize, 'footer_section');
 }
 
 add_action('customize_register', 'register_footer_settings');

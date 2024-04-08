@@ -28,10 +28,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="title h3">បញ្ជាប់រហ័ស</div>
                     <?php
-                    include 'template-parts/navigation/footermenu.php';
+                    include 'template-parts/navigation/footer-menu.php';
                     ?>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -42,7 +42,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="title h3">បញ្ជាប់ផ្សេងៗ</div>
-                    <?php include 'template-parts/footer/other-links.php'?>
+                    <ul class="links">
+                        <li><a href="https://mptc.gov.kh/" target="_blank" rel="noopener noreferrer">ក្រសួងប្រៃសណីយ៍និងទូរគមនាគមន៍</a></li>
+                        <li><a href="https://dgc.gov.kh/" target="_blank" rel="noopener noreferrer">គណៈកម្មាធិការរដ្ឋាភិបាលឌីជីថល</a></li>
+                        <li><a href="https://github.com/DGTDept/Rachana" target="_blank" rel="noopener noreferrer">Github របស់ក្រុមការងារ​ រចនា</a></li>
+                    </ul>
                 </div>
             </div>
     </section>

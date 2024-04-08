@@ -8,6 +8,6 @@
         'walker' => new Main_Nav_Walker()
     ));
 
-    include get_template_directory() . '/template-parts/header/search_bar.php';
+    include get_template_directory() . '/template-parts/header/search-bar.php';
     ?>
 </div>

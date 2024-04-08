@@ -131,7 +131,7 @@ class Footer_Nav_Walker extends Walker_Nav_Menu {
     }
 }
 function register_footer_menu() {
-    $menu_title = get_option('footer_menu_title'); // Assuming the title is stored in a theme option named 'footer_menu_title'
+    $menu_title = get_option('footer_menu_title');
 
     register_nav_menu( 'footer-menu', __( $menu_title, 'rachana-theme' ) );
 }

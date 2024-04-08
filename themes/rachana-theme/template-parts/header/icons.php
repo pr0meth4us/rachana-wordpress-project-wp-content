@@ -21,10 +21,10 @@ function render_nav_icons() {
                 <li class="nav-icon-social">
                     <?php if ($link) { ?>
                         <a class="nav-link" aria-current="page" href="<?php echo $link; ?>" target="_blank" >
-                            <i class="<?php echo $bs_class; ?>" ></i>
+                            <i class="<?php echo $bs_class; ?> h3 mb-0 mx-2" ></i>
                         </a>
                     <?php } else { ?>
-                        <i class="<?php echo $bs_class; ?>"></i>
+                        <i class="<?php echo $bs_class; ?> h3 mb-0 mx-2"></i>
                     <?php } ?>
                 </li>
                 <?php
