@@ -11,7 +11,7 @@ With Docker installed and running, in Terminal:
 cd cgds-wordpress-theme
 ````
 
-Then:
+Then: (add sudo if linux)
 
 ````
 docker compose up -d
@@ -21,6 +21,8 @@ Then in your browser:
 ````
 http://localhost:10033/
 ````
+
+(you might encounter database connection error, just wait for a while for the queries to be executed and refresh the page and it should work)
 
 The aforementioned blog post has more information.
 
