@@ -1,9 +1,8 @@
 <?php
 /**
- * Register links settings in the Customizer.
  *
- * @param WP_Customize_Manager $wp_customize The Customizer object.
- * @param string               $section_id   The section ID to add the settings to.
+ * @param WP_Customize_Manager $wp_customize
+ * @param string               $section_id
  */
 function register_links_settings($wp_customize, $section_id) {
     $wp_customize->add_setting('links_title', array(

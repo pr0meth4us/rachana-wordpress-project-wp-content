@@ -1,7 +1,5 @@
 <?php
 /**
- * Register footer settings in the Customizer.
- *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function register_footer_settings($wp_customize)

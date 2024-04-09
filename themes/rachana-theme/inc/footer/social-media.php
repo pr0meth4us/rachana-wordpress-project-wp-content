@@ -1,9 +1,8 @@
 <?php
 /**
- * Register social media settings in the Customizer.
  *
- * @param WP_Customize_Manager $wp_customize The Customizer object.
- * @param string $section_id The section ID to add the settings to.
+ * @param WP_Customize_Manager $wp_customize
+ * @param string $section_id
  */
 
 $social_media_platforms = array(
