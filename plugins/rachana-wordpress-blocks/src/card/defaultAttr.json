@@ -2,8 +2,9 @@
     "title": "",
     "content": "",
     "imageUrl": "",
-    "contentColor": "#465163",
-    "titleColor": "#1c4076",
+    "contentColor": "var(--cgds-text-color)",
+    "titleColor": "var(--cgds-primary)",
     "href": "",
-    "font": "Kantumruy Pro"
+    "font": "Kantumruy Pro",
+    "linkText": ""
 }

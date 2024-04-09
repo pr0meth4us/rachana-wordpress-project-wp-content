@@ -25,7 +25,10 @@ const save = ({ attributes }) => {
                                         <div
                                             className="h5 text-primary card-title"
                                         >
-                                            <span style={{color: item.titleColor, fontFamily: item.font}} >{item.title}</span>
+                                            <span style={{
+                                                color: item.titleColor,
+                                                fontFamily: item.font
+                                            }}>{item.title}</span>
                                         </div>
                                     </a>
                                     <p
@@ -34,6 +37,8 @@ const save = ({ attributes }) => {
                                     >
                                         {item.content}
                                     </p>
+                                    {item.linkText}
+
                                 </div>
                             </div>
                         ))}

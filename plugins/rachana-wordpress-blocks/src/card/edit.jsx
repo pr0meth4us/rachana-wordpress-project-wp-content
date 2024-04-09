@@ -75,6 +75,11 @@ const edit = ({ attributes, setAttributes }) => {
                                                 value={item.href}
                                                 onChange={(value) => customizeItem(index, "href", value)}
                                             />
+                                            <TextControl
+                                                label="Link Guide"
+                                                value={item.linkText}
+                                                onChange={(value) => customizeItem(index, "linkText", value)}
+                                            />
 
                                             <div className="components-base-control">
                                                 <label className="components-base-control__label">Body Text Color</label>
@@ -102,7 +107,11 @@ const edit = ({ attributes, setAttributes }) => {
 
                                         <div className="card-body">
 
-                                            <a style={{color: item.titleColor, fontFamily: item.font}} className="stretched-link link-primary" href={item.href} onClick={(e) => {e.preventDefault();}}>
+                                            <a style={{color: item.titleColor, fontFamily: item.font}}
+                                               className="stretched-link link-primary" href={item.href}
+                                               onClick={(e) => {
+                                                   e.preventDefault();
+                                               }}>
 
                                                 <RichText
                                                     className="h5 text-primary card-title"
@@ -121,6 +130,13 @@ const edit = ({ attributes, setAttributes }) => {
                                                     placeholder="Add card description"
                                                 />
                                             </p>
+                                            <a className="card-link" href="#">
+                                                <i className="bi bi-arrow-right-circle-fill"></i>
+                                                <RichText
+                                                    value={item.linkText}
+                                                    onChange={value => customizeItem(index, "linkText", value)}
+                                                    placeholder="Add link guide"
+                                                />                                            </a>
                                         </div>
                                     </div>
                                 </div>
