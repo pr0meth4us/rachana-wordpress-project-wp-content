@@ -14,12 +14,13 @@ cd cgds-wordpress-theme
 Then:
 
 ````
-docker-compose up -d
+docker compose up -d
 ````
 
 Then in your browser:
 ````
-http://localhost:8000/
+http://localhost:10033/
 ````
 
 The aforementioned blog post has more information.
+
