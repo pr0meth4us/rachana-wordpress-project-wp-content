@@ -36,18 +36,14 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="title h3">
-                        ទំនាក់ទំនង
+                        <?php echo get_theme_mod('contact_info_title','ទំនាក់ទំនង') ?>
                     </div>
                     <?php include 'template-parts/footer/contacts.php'?>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="title h3">បញ្ជាប់ផ្សេងៗ</div>
-                    <ul class="links">
-                        <li><a href="https://mptc.gov.kh/" target="_blank" rel="noopener noreferrer">ក្រសួងប្រៃសណីយ៍និងទូរគមនាគមន៍</a></li>
-                        <li><a href="https://dgc.gov.kh/" target="_blank" rel="noopener noreferrer">គណៈកម្មាធិការរដ្ឋាភិបាលឌីជីថល</a></li>
-                        <li><a href="https://github.com/DGTDept/Rachana" target="_blank" rel="noopener noreferrer">Github របស់ក្រុមការងារ​ រចនា</a></li>
-                    </ul>
-                </div>
+                <?php
+                include 'template-parts/footer/other-links.php';
+                ?>
+
             </div>
     </section>
     <section class="footer-bottom">

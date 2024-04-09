@@ -3,7 +3,7 @@ function header_layout($wp_customize) {
     $wp_customize->add_section('header_layout_section', array(
         'title'       => __('Header Layout', 'rachana-theme'),
         'description' => __('Select the desired header layout', 'rachana-theme'),
-        'priority'    => 120,
+        'priority'    => 20,
     ));
 
     $wp_customize->add_setting('header_layout', array(

@@ -30,6 +30,7 @@ function register_social_media_settings($wp_customize, $section_id)
             'style' => 'font-size: 2em; margin-bottom: 10px;',
         ),
     ));
+
     global $social_media_platforms;
     foreach ($social_media_platforms as $platform_slug => $platform_name) {
         $wp_customize->add_setting($platform_slug . '_link', array(

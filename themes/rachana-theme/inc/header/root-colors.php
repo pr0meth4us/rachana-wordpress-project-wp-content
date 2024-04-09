@@ -40,9 +40,16 @@ function generate_custom_css() {
 }
 
 add_action('customize_register', function ($wp_customize) use ($default_colors) {
+    $color_section_priority = 19;
+
+    $wp_customize->add_section('colors', array(
+        'title'    => __('Colors', 'racahana-theme'),
+        'priority' => $color_section_priority,
+    ));
+
     foreach ($default_colors as $setting_name => $default_color) {
         $label = ucwords(str_replace(array('_', '-'), ' ', $setting_name));
-        register_color_setting($wp_customize, $setting_name, $label, $default_color);
+        register_color_setting($wp_customize, $setting_name, $label, $default_color, 'colors');
     }
 });
 ?>

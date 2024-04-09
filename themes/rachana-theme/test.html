@@ -104,6 +104,40 @@
             </div>
         </div>
     </nav>
+    <textarea id="_customize-input-links" rows="5" aria-describedby="_customize-description-links" placeholder="ក្រសួងប្រៃសណីយ៍និងទូរគមនាគមន៍|https://mptc.gov.kh/ គណៈកម្មាធិការរដ្ឋាភិបាលឌីជីថល|https://dgc.gov.kh/" data-customize-setting-link="links">[{"label":"label1","url":"http:\/\/www.jk.cm"}]</textarea>
+    <div id="output"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the JSON string from the textarea
+            var textarea = document.getElementById('_customize-input-links');
+            var jsonString = textarea.value;
+
+            try {
+                // Parse the JSON string
+                var links = JSON.parse(jsonString);
+
+                // Transform the object into the desired format
+                var formattedString = '';
+                links.forEach(function(link, index) {
+                    formattedString += link.label + '|' + link.url;
+                    if (index < links.length - 1) {
+                        formattedString += ' ';
+                    }
+                });
+
+                // Set the value of the textarea to the formatted string
+                textarea.value = formattedString;
+
+                // Display the transformed string
+                var outputDiv = document.getElementById('output');
+                outputDiv.textContent = formattedString;
+            } catch (error) {
+                console.error('Error parsing JSON:', error);
+            }
+        });
+    </script>
+
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

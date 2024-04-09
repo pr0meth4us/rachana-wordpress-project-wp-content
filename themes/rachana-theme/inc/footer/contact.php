@@ -22,12 +22,22 @@ function register_contact_info_settings($wp_customize, $section_id)
             'style' => 'font-size: 2em; margin-bottom: 10px; margin-top: 40px;',
         ),
     ));
+    $wp_customize->add_setting('contact_info_title', array(
+        'default' => 'ទំនាក់ទំនង',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('contact_info_title', array(
+        'label' => __('Contact Info Section Title', 'rachana-theme'),
+        'section' => $section_id,
+        'type' => 'text',
+        'priority' => 4,
+    ));
 
     $wp_customize->add_section('contact_info_section', array(
         'title' => __('Contact Information', 'rachana-theme'),
         'description' => __('Provide your contact details for the website footer.', 'rachana-theme'),
         'panel' => $section_id,
-        'priority' => 4,
+        'priority' => 5,
     ));
 
     $wp_customize->add_setting('location_label', array(
