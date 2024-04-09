@@ -19,11 +19,11 @@ const save = ({ attributes }) => {
 
                                 <div className="card-body">
                                     <a
-                                        className="stretched-link link-primary"
-                                        href={item.href}
+                                      className="stretched-link link-primary"
+                                      href={item.href}
                                     >
                                         <div
-                                            className="h5 text-primary card-title"
+                                          className="h5 text-primary card-title"
                                         >
                                             <span style={{
                                                 color: item.titleColor,
@@ -32,12 +32,15 @@ const save = ({ attributes }) => {
                                         </div>
                                     </a>
                                     <p
-                                        className="card-text"
-                                        style={{color: item.contentColor, fontFamily: item.font}}
+                                      className="card-text"
+                                      style={{color: item.contentColor, fontFamily: item.font}}
                                     >
                                         {item.content}
                                     </p>
-                                    {item.linkText}
+                                    <a className="card-link" href="#">
+                                        <i className="bi bi-arrow-right-circle-fill"></i>
+                                        {item.linkText}
+                                    </a>
 
                                 </div>
                             </div>
@@ -46,6 +49,7 @@ const save = ({ attributes }) => {
                 </article>
             </section>
         </div>
-    );};
+    );
+};
 
 export default save;
