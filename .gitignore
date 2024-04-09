@@ -2,7 +2,7 @@ themes/twentytwentyfour
 themes/twentytwentythree
 themes/twentytwentytwo
 plugins/rachana-wordpress-blocks/node_modules
-plugins/rachana-wordpress-blocks/node_modules/@wordpress
 uploads
 .DS_Store
 .idea
+plugins/rachana-wordpress-blocks/.idea
