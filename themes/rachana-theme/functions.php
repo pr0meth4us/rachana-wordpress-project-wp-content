@@ -4,6 +4,7 @@ include_once get_template_directory() . "/inc/footer/footer-customizer.php";
 include_once get_template_directory() . "/inc/footer/other-links.php";
 include_once get_template_directory() . "/inc/footer/contact.php";
 include_once get_template_directory() . "/inc/footer/social-media.php";
+include_once get_template_directory() . "/inc/footer/validations.php";
 
 //header functions
 include_once get_template_directory() . "/inc/header/header-customizer.php";
