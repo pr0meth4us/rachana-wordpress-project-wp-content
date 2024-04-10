@@ -1,8 +1,7 @@
 <?php
 /**
- * Display the logo.
  *
- * @param string $location The location of the logo (e.g., 'header', 'footer').
+ * @param string $location
  */
 function display_logo($location) {
     if (function_exists('the_custom_logo')) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * @param WP_Customize_Manager $wp_customize The Customizer object.
+ * @param WP_Customize_Manager $wp_customize
  */
 function register_header_settings($wp_customize) {
     $wp_customize->add_section('header_section', array(

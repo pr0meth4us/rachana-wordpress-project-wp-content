@@ -1,12 +1,10 @@
 <?php
-
 /**
- * Register header and footer logo settings.
  *
- * @param WP_Customize_Manager $wp_customize The Customizer object.
- * @param string $section_id The ID of the Customizer section.
- * @param string $setting_id The ID of the Customizer setting.
- * @param string $label The label for the logo control.
+ * @param WP_Customize_Manager $wp_customize
+ * @param string $section_id
+ * @param string $setting_id
+ * @param string $label
  */
 function register_logo_settings($wp_customize, $section_id, $setting_id, $label)
 {

@@ -1,8 +1,7 @@
 <?php
 /**
- * Register header layout settings.
  *
- * @param WP_Customize_Manager $wp_customize The Customizer object.
+ * @param WP_Customize_Manager $wp_customize
  * @param string $section_id
  */
 function register_header_layout($wp_customize,$section_id)
