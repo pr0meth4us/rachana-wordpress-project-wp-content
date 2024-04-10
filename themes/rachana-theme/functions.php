@@ -13,8 +13,10 @@ include_once get_template_directory() . "/inc/header/header-icons.php";
 include_once get_template_directory() . "/inc/header/header-layouts.php";
 
 //enqueue functions
-require_once get_template_directory() . '/inc/queue/enqueue.php';
-require_once get_template_directory() . '/inc/queue/dequeue.php';
+require_once get_template_directory() . '/inc/queue/customizer/enqueue.php';
+require_once get_template_directory() . '/inc/queue/theme/enqueue.php';
+require_once get_template_directory() . '/inc/queue/theme/dequeue.php';
+
 
 //theme support functions
 require_once get_template_directory() . '/inc/theme-supports/site-identity.php';
