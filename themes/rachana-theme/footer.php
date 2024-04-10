@@ -25,14 +25,16 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="title h3">បញ្ជាប់រហ័ស</div>
+                    <div class="title h3">
+                        <?php echo get_theme_mod('footer_menu_title') ?>
+                    </div>
                     <?php
                     include 'template-parts/navigation/footer-menu.php';
                     ?>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="title h3">
-                        <?php echo get_theme_mod('contact_info_title','ទំនាក់ទំនង') ?>
+                        <?php echo get_theme_mod('contact_info_title') ?>
                     </div>
                     <?php include 'template-parts/footer/contacts.php'?>
                 </div>

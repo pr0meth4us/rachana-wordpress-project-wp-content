@@ -5,8 +5,22 @@
  * @param string               $section_id
  */
 function register_links_settings($wp_customize, $section_id) {
+    $wp_customize->add_setting('links_label', array(
+        'default' => 'Third Column',
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control('links_title;', array(
+        'label' => __('', 'rachana-theme'),
+        'section' => $section_id,
+        'type' => 'text',
+        'settings' => 'links_label',
+        'priority' => 14,
+        'input_attrs' => array(
+            'style' => 'font-size: 2em; margin-bottom: 10px; margin-top: 40px;',
+        ),
+    ));
     $wp_customize->add_setting('links_title', array(
-        'default' => 'Useful Links',
+        'default' => 'បញ្ជាប់ផ្សេងៗ',
         'transport' => 'refresh',
     ));
     $wp_customize->add_control('links_title', array(
@@ -41,11 +55,9 @@ function register_links_settings($wp_customize, $section_id) {
  * @return string
  */
 function rachana_links_sanitize($value) {
-    // Split the input value by newline characters to get each link entry
     $links = explode("\n", $value);
     $sanitized_links = array();
     foreach ($links as $link) {
-        // Trim whitespace from each line to ensure accurate splitting
         $link = trim($link);
         $link_parts = explode('|', $link, 2);
         if (count($link_parts) === 2) {

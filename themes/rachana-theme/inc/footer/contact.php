@@ -7,7 +7,7 @@
 function register_contact_info_settings($wp_customize, $section_id)
 {
     $wp_customize->add_setting('contact_info_label', array(
-        'default' => 'Contact Information',
+        'default' => 'Second Column',
         'transport' => 'refresh',
     ));
 
