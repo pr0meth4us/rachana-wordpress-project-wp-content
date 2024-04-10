@@ -40,7 +40,7 @@ function generate_custom_css() {
 }
 
 add_action('customize_register', function ($wp_customize) use ($default_colors) {
-    $color_section_priority = 19;
+    $color_section_priority = 27;
 
     $wp_customize->add_section('colors', array(
         'title'    => __('Colors', 'racahana-theme'),

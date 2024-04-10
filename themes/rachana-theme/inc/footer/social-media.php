@@ -24,9 +24,9 @@ function register_social_media_settings($wp_customize, $section_id)
         'section' => $section_id,
         'type' => 'text',
         'settings' => 'social_media_label',
-        'priority' => 1,
+        'priority' => 3,
         'input_attrs' => array(
-            'style' => 'font-size: 2em; margin-bottom: 10px;',
+            'style' => 'font-size: 2em; margin-bottom: 10px; margin-top: 20px;',
         ),
     ));
 
@@ -41,7 +41,7 @@ function register_social_media_settings($wp_customize, $section_id)
             'label' => __($platform_name . ' Link', 'rachana-theme'),
             'section' => $section_id,
             'type' => 'url',
-            'priority' => 2,
+            'priority' => 4,
         ));
     }
 }

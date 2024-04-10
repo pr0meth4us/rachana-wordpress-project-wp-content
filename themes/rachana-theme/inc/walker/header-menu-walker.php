@@ -1,10 +1,9 @@
 <?php
 function menus(): void
 {
-
     $locations = array (
         'mainnav' => 'Main navigation',
-        'sidenav' => 'Side navigation'
+        'footernav' => 'Footer menu navigation'
     );
     register_nav_menus($locations);
 }

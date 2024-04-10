@@ -6,11 +6,12 @@ function register_footer_settings($wp_customize)
 {
     $wp_customize->add_section('footer_section', array(
         'title' => __('Footer', 'rachana-theme'),
-        'priority' => 31,
+        'priority' => 32,
     ));
     register_social_media_settings($wp_customize, 'footer_section');
     register_contact_info_settings($wp_customize, 'footer_section');
     register_links_settings($wp_customize, 'footer_section');
+    register_logo_settings($wp_customize, 'footer_section', 'footer_logo', 'Footer Logo');
 }
 
 add_action('customize_register', 'register_footer_settings');

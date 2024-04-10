@@ -11,13 +11,9 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 logo-container">
                     <div class="widget flex-column">
                         <?php
-                        if(function_exists('the_custom_logo')){
-                            $custom_logo_id = get_theme_mod('custom_logo');
-                            $logo = wp_get_attachment_image_src($custom_logo_id);
-                        }?>
-                        <div class="navbar-brand logo">
-                            <img src="<?php echo $logo[0] ?>" style="width: 200px" alt="logo">
-                        </div>
+                        require_once('template-parts/logo.php');
+                        display_logo('footer');
+                        ?>
                         <div class="social-icon">
                             <ul>
                                 <?php

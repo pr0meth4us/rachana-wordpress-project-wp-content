@@ -34,7 +34,10 @@ $header_layout = get_theme_mod('header_layout', 'header-layout-1');
                 <div class="w-100 d-flex px-4 px-md-5 py-4 py-sm-6 py-md-3 py-lg-4 header-top">
                     <div class="logo-title">
                         <!--LOGO-->
-                        <?php include 'template-parts/logo.php'; ?>
+                        <?php
+                        require_once('template-parts/logo.php');
+                        display_logo('header');
+                         ?>
                         <!--TITLE-->
                         <div class="site-title-wrap">
                             <?php

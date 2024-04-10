@@ -16,7 +16,7 @@ function register_contact_info_settings($wp_customize, $section_id)
         'section' => $section_id,
         'type' => 'text',
         'settings' => 'contact_info_label',
-        'priority' => 3,
+        'priority' => 5,
         'input_attrs' => array(
             'style' => 'font-size: 2em; margin-bottom: 10px; margin-top: 40px;',
         ),
@@ -29,14 +29,14 @@ function register_contact_info_settings($wp_customize, $section_id)
         'label' => __('Contact Info Section Title', 'rachana-theme'),
         'section' => $section_id,
         'type' => 'text',
-        'priority' => 4,
+        'priority' => 6,
     ));
 
     $wp_customize->add_section('contact_info_section', array(
         'title' => __('Contact Information', 'rachana-theme'),
         'description' => __('Provide your contact details for the website footer.', 'rachana-theme'),
         'panel' => $section_id,
-        'priority' => 5,
+        'priority' => 7,
     ));
 
     $wp_customize->add_setting('location_label', array(
