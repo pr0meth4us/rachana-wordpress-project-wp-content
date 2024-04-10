@@ -1,17 +1,12 @@
 <?php
-add_action('customize_save_validation_before', 'my_custom_validation');
-function my_custom_validation($manager) {
-    // Validate email
+add_action('customize_save_validation_before', 'validate_customizer_inputs');
+function validate_customizer_inputs($manager) {
     $email_setting_id = 'email_link'; // Replace with your actual setting ID
     add_filter("customize_validate_{$email_setting_id}", 'validate_email_input', 10, 2);
-
-    // Validate URLs
     $url_setting_ids = ['facebook_link', 'linkedIn_link', 'telegram_link', 'tiktok_link', 'youtube_link', 'location_link']; // Replace with your actual setting IDs
     foreach ($url_setting_ids as $setting_id) {
         add_filter("customize_validate_{$setting_id}", 'validate_url_input', 10, 2);
     }
-
-    // Validate phone number
     $phone_setting_id = 'phone_label'; // Replace with your actual setting ID
     add_filter("customize_validate_{$phone_setting_id}", 'validate_phone_input', 10, 2);
 }
