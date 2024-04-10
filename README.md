@@ -24,5 +24,10 @@ http://localhost:10033/
 
 (you might encounter database connection error, just wait for a while for the queries to be executed and refresh the page and it should work)
 
-The aforementioned blog post has more information.
+also a common problem faced by linux is the permission issue, to fix it run the following command:
+
+```` 
+chmod -R 777 . 
+````
+
 
