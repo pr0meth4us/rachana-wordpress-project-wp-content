@@ -17,7 +17,7 @@ function display_logo($location) {
             echo '</a>';
         } else {
             echo '<div class="navbar-brand logo">';
-            echo '<img src="" style="width: ' . $logo_width . 'px" alt="logo">';
+            echo '<img src="'. esc_url($logo[0]) .'" style="width: ' . $logo_width . 'px" alt="logo">';
             echo '</div>';
         }
     }
