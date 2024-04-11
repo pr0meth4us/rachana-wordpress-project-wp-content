@@ -1,6 +1,10 @@
 <?php
 /**
- * @package MPTC_THEME
+ * Template part for displaying posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Rachana_Theme
  */
 
 ?>
