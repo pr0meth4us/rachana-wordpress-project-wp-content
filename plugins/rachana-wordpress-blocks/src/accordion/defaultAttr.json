@@ -1,10 +1,10 @@
 {
     "accordionTitle": "",
-    "titleColor": "#1c4076",
+    "titleColor": "var(--cgds-primary)",
     "bodyContent": "",
-    "buttonColor": "#f3f5f8",
-    "iconColor": "#1c4076",
+    "buttonColor": "rgba(28, 64, 118, 0.05)",
+    "iconColor": "var(--cgds-primary)",
     "iconType": "bi-info-circle-fill",
-    "bodyTextColor": "#414c5f",
+    "bodyTextColor": "var(--cgds-text-color)",
     "font": "Kantumruy Pro"
 }
