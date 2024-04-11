@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template part for displaying posts
  * @package MPTC_THEME
  */
 
