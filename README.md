@@ -16,6 +16,10 @@ Then: (add sudo if linux)
 ````
 docker compose up -d
 ````
+Or
+````
+docker-compose up -d
+````
 
 Then in your browser:
 ````
@@ -26,8 +30,15 @@ http://localhost:10033/
 
 also a common problem faced by linux is the permission issue, to fix it run the following command:
 
+Unlock permision directory
 ```` 
 chmod -R 777 . 
+````
+
+Clear Database
+
+````
+docker composer down -v
 ````
 
 
