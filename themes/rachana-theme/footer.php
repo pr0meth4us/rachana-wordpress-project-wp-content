@@ -50,8 +50,6 @@
                 <div class="col">
                     <div class="d-flex justify-content-lg-start text-start">
                         Rachana - DGC © 2024 រក្សាសិទ្ធិគ្រប់យ៉ាង
-
-
                     </div>
                 </div>
                 <div class="col">
