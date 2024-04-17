@@ -66,6 +66,11 @@ $header_layout = get_theme_mod('header_layout', 'header-layout-1');
                             ?>
                         </nav>
                     </div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item align-self-center">
+                            <a class="cgds btn-gt" aria-current="page" href="">ចូលគណនី</a>
+                        </li>
+                    </ul>
                     <!--                    <nav class="social d-lg-block me-1">-->
                     <!--                        <ul id="menu-social-menu" class="d-flex">-->
                     <!--                            <li class="nav-icon-social">-->

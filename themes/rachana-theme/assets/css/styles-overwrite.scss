@@ -6,11 +6,10 @@
 .cgds.navbar .nav-item a.nav-link:hover {
   background-color: var(--cgds-navbar-link-hover-bg) !important;
   color: var(--cgds-nav-text-color) !important;
-  font-weight: 600;
 }
 
 header {
-  &.header-layout-2 {
+  &.header-layout-3 {
     .logo-title {
       display: flex;
       justify-content: center;
@@ -32,7 +31,19 @@ header {
     }
   }
 
-  &.header-layout-3 {
+  &.header-layout-2 {
+    .logo-title {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    ul.navbar-nav {
+      display: none;
+    }
+  }
+
+  &.header-layout-4 {
     .logo-title {
       display: flex;
       align-items: center;
@@ -43,7 +54,7 @@ header {
     }
   }
 
-  &.header-layout-4 {
+  &.header-layout-5 {
     .logo-title {
       display: flex;
       justify-content: center;

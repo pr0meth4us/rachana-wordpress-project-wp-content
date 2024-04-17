@@ -49,11 +49,8 @@
             <div class="row footer-copyrights">
                 <div class="col">
                     <div class="d-flex justify-content-lg-start text-start">
-                        <?php
-                        $site_title = html_entity_decode(get_bloginfo('name'), ENT_QUOTES, 'UTF-8');
-                        $current_year = date('Y');
-                        echo $site_title . ' © ' . $current_year . ' រក្សាសិទ្ធិគ្រប់យ៉ាង';
-                        ?>
+                        Rachana - DGC © រក្សាសិទ្ធិគ្រប់យ៉ាង
+
 
                     </div>
                 </div>
