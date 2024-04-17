@@ -49,7 +49,7 @@
             <div class="row footer-copyrights">
                 <div class="col">
                     <div class="d-flex justify-content-lg-start text-start">
-                        Rachana - DGC © 2023 ~ © រក្សាសិទ្ធិគ្រប់យ៉ាងដោយគណៈកម្មាធិការរដ្ឋាភិបាលឌីជីថល
+                        DGC - Rachana © 2023 ~ © រក្សាសិទ្ធិគ្រប់យ៉ាងដោយគណៈកម្មាធិការរដ្ឋាភិបាលឌីជីថល
                     </div>
                 </div>
                 <div class="col">
