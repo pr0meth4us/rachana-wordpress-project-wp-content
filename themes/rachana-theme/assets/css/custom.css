@@ -1,0 +1,14 @@
+header{
+    height: 8em;
+}
+
+.navbar-brand img {
+    min-width: 0 !important;
+    max-width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+
+}
