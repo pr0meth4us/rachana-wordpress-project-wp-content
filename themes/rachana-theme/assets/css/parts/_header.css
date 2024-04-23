@@ -1,0 +1,24 @@
+.nav-item a.nav-link:hover {
+  background-color: var(--cgds-navbar-link-hover-bg) !important;
+  color: var(--cgds-nav-text-color) !important;
+}
+
+.nav-item .dropdown-toggle.show {
+  color: var(--cgds-nav-text-color) !important;
+  font-weight: 600;
+}
+
+a.nav-link[target="_blank"]::after {
+  content: none;
+}
+
+header .logo-title {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+header ul.navbar-nav {
+  display: none;
+}
