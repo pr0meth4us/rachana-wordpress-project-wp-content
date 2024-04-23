@@ -33,8 +33,6 @@ function register_header_layout($wp_customize,$section_id)
         'choices' => array(
             'layout-1' => __('Header Layout 1', 'rachana-theme'),
             'layout-2' => __('Header Layout 2', 'rachana-theme'),
-            // 'layout-3' => __('Header Layout 3', 'rachana-theme'),
-            // 'layout-4' => __('Header Layout 4', 'rachana-theme'),
         ),
         'priority' => 3,
     ));

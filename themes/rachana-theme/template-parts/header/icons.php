@@ -26,6 +26,14 @@ function render_nav_icons() {
                     <?php } else { ?>
                         <i class="<?php echo $bs_class; ?> h3 mb-0 mx-2"></i>
                     <?php } ?>
+                    <?php
+                    $header_layout = get_theme_mod( 'header_layout' );
+                    if ( $header_layout === 'layout-1' ) :
+                    ?>
+                        <a class="nav-link" aria-current="page" href="<?php echo $link; ?>" target="_blank" >
+                            <i class="bi bi-person-circle h3 mb-0 mx-2" ></i>
+                        </a>
+                    <?php endif; ?>
                 </li>
                 <?php
             }

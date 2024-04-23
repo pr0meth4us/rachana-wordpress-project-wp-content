@@ -1,0 +1,9 @@
+a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+  }
+}
+a.nav-link[target="_blank"]::after{
+  content: none
+}

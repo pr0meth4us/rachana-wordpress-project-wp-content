@@ -9,7 +9,6 @@ $icons = array(
     'cart' => 'bi bi-cart',
     'github' => 'bi bi-github',
     'notification' => 'bi bi-bell-fill',
-    'person' => 'bi bi-person-circle',
 );
 
 function register_nav_icons($wp_customize, $section_id): void
@@ -55,11 +54,6 @@ function register_nav_icons($wp_customize, $section_id): void
             'input_attrs' => array(
                 'class' => "link_{$icon}",
             ),
-        ));
-
-        $wp_customize->add_setting("show_nav_icon_{$icon}", array(
-            'default'           => ($icon == 'person' || $icon == 'notification'),
-            'transport'         => 'refresh',
         ));
 
         $wp_customize->add_control("show_nav_icon_{$icon}", array(

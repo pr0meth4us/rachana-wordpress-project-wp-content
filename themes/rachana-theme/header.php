@@ -24,6 +24,7 @@ $header_layout = get_theme_mod('header_layout', 'header-layout-1');
         echo $custom_css;
         echo "}\n";
         ?>
+
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
@@ -67,11 +68,16 @@ $header_layout = get_theme_mod('header_layout', 'header-layout-1');
                             ?>
                         </nav>
                     </div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item align-self-center">
-                            <a class="cgds btn-gt" aria-current="page" href="">ចូលគណនី</a>
-                        </li>
-                    </ul>
+                    <!-- layout2--->
+                    <?php
+                    $header_layout = get_theme_mod( 'header_layout' );
+                    if ( $header_layout === 'layout-2' ):?>
+                        <ul class="navbar-nav">
+                            <li class="nav-item align-self-center">
+                                <a class="cgds btn-gt" aria-current="page" href="">ចូលគណនី</a>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
                     <!--                    <nav class="social d-lg-block me-1">-->
                     <!--                        <ul id="menu-social-menu" class="d-flex">-->
                     <!--                            <li class="nav-icon-social">-->

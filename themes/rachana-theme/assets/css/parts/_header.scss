@@ -1,0 +1,22 @@
+.nav-item a.nav-link{
+  &:hover{
+    background-color: var(--cgds-navbar-link-hover-bg) !important;
+    color: var(--cgds-nav-text-color) !important;
+  }
+  .dropdown-toggle.show {
+    color: var(--cgds-nav-text-color) !important;
+    font-weight: 600;
+  }
+}
+
+header {
+  .logo-title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  ul.navbar-nav {
+    display: none;
+  }
+}
