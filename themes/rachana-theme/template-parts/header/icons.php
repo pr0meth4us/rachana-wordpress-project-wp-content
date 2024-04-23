@@ -35,7 +35,6 @@ function render_nav_icons() {
                         <a class="nav-link" aria-current="page" href="<?php echo $link; ?>" target="_blank" >
                             <i class="bi bi-person-circle h3 mb-0 mx-2" ></i>
                         </a>
-
                     <?php endif; ?>
                 </li>
                 <?php
