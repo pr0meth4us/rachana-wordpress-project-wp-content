@@ -27,3 +27,5 @@ require_once get_template_directory() . '/inc/walker/header-menu-walker.php';
 
 //logo
 include_once get_template_directory() . "/inc/logo.php";
+
+add_filter( 'show_admin_bar', '__return_true');
