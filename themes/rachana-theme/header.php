@@ -4,7 +4,7 @@
  */
 require_once('inc/header/root-colors.php');
 $custom_css = generate_custom_css();
-$header_layout = get_theme_mod('header_layout', 'header-layout-1');
+$header_layout = get_theme_mod('header_layout');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,16 +68,8 @@ $header_layout = get_theme_mod('header_layout', 'header-layout-1');
                             ?>
                         </nav>
                     </div>
+
                     <!-- layout2--->
-                    <?php
-                    $header_layout = get_theme_mod( 'header_layout' );
-                    if ( $header_layout === 'layout-2' ):?>
-                        <ul class="navbar-nav">
-                            <li class="nav-item align-self-center">
-                                <a class="cgds btn-gt" aria-current="page" href="">ចូលគណនី</a>
-                            </li>
-                        </ul>
-                    <?php endif; ?>
                     <!--                    <nav class="social d-lg-block me-1">-->
                     <!--                        <ul id="menu-social-menu" class="d-flex">-->
                     <!--                            <li class="nav-icon-social">-->

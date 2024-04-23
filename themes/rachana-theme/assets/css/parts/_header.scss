@@ -8,7 +8,9 @@
     font-weight: 600;
   }
 }
-
+a.nav-link[target="_blank"]::after{
+  content: none
+}
 header {
   .logo-title {
     display: flex;
