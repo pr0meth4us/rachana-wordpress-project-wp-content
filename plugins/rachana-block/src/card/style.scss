@@ -220,3 +220,28 @@
     -webkit-line-clamp: 5;
   }
 }
+.card span{
+  color: #ccc;
+  opacity: 0.5;
+}
+
+.rich-text [data-rich-text-placeholder]::after {
+  color: black;
+}
+.image-upload-placeholder {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.image-upload-instructions {
+  color: #888;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
