@@ -663,8 +663,6 @@ a,
     background-color: var(--cgds-text-color);
 }
 
-footer{
-    a:hover{
-        color: var(--cgds-footer-link-hover-color) !important;
-    }
+footer a:hover{
+    color: var(--cgds-footer-link-hover-color) !important;
 }
