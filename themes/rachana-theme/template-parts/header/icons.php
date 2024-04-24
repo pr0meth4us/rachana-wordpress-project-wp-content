@@ -13,7 +13,6 @@ function render_nav_icons() {
         foreach ($icons as $icon => $bs_class) {
             $link = esc_url(get_theme_mod("nav_icon_{$icon}"));
             $show_icon = get_theme_mod("show_nav_icon_{$icon}", true);
-
             if ($show_icon) {
                 ?>
                 <li class="nav-icon-social">
