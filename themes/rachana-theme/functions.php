@@ -6,10 +6,7 @@
  * @param WP_Customize_Setting $setting The setting object.
  * @return bool The default value for the setting.
  */
-function set_person_icon_default( $setting ) {
-    $header_layout = get_theme_mod( 'header_layout', 'layout-1' );
-    return ( $header_layout === 'layout-1' ) ? true : false;
-}
+
 //footer functions
 include_once get_template_directory() . "/inc/footer/footer-customizer.php";
 include_once get_template_directory() . "/inc/footer/other-links.php";

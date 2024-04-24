@@ -1,8 +1,3 @@
-<?php
-/**
- * Contains footer
- */
-?>
 <?php wp_footer(); ?>
 <footer class="cgds footer">
     <section class="footer-top">
