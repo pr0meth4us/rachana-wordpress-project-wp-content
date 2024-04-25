@@ -45,10 +45,12 @@ const save = ({ attributes }) => {
                                     >
                                         {item.content}
                                     </p>
-                                    <a className="card-link" href="#">
-                                        <i className="bi bi-arrow-right-circle-fill"></i>{" "}
-                                        {item.linkText}
-                                    </a>
+                                    {item.linkText && (
+                                        <a className="card-link" href="#">
+                                            <i className="bi bi-arrow-right-circle-fill"></i>
+                                            {item.linkText}
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         ))}

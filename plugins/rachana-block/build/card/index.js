@@ -252,12 +252,12 @@ const save = ({
       color: item.contentColor,
       fontFamily: item.font
     }
-  }, item.content), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+  }, item.content), item.linkText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     className: "card-link",
     href: "#"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "bi bi-arrow-right-circle-fill"
-  }), " ", item.linkText))))))));
+  }), item.linkText))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (save);
 
