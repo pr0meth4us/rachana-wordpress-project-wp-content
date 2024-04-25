@@ -85,6 +85,9 @@ const edit = ({
       cardItems: (0,_blockHelpers__WEBPACK_IMPORTED_MODULE_4__.customizeBlockItem)(cardItems, index, key, value)
     });
   };
+  const onSelectImage = (index, media) => {
+    customizeItem(index, "imageUrl", media.url);
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
@@ -127,34 +130,40 @@ const edit = ({
     className: "card-title"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col-md-12 image-upload-placeholder"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
-    allowedBlocks: ['core/image']
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "image-upload-instructions"
-  }, "Click to add image")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => onSelectImage(index, media),
+    allowedTypes: ['image'],
+    value: item.imageUrl // Make sure this is the correct attribute for the image URL
+    ,
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      onClick: open
+    }, !item.imageUrl ? 'Upload Image' : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: item.imageUrl,
+      alt: "Card Image"
+    }))
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: item.content,
     onChange: value => customizeItem(index, "content", value),
     placeholder: "Enter card content...",
-    className: "card-content"
+    className: "card-content",
+    allowedFormats: ["core/bold", "core/heading"]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: item.linkText,
     onChange: value => customizeItem(index, "linkText", value),
     placeholder: "Enter link guide e.g., \"Click here for more details\" ...",
-    className: "card-content"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
-    value: item.linkText,
-    onChange: value => customizeItem(index, "linkText", value),
-    placeholder: "Enter link guide e.g., \"Click here for more details\" ...",
-    className: "card-content"
+    className: "card-content",
+    allowedFormats: ["core/bold", "core/heading"]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: item.href,
     onChange: value => customizeItem(index, "href", value),
     placeholder: "Enter the link to the page ...",
-    className: "card-content"
+    className: "card-content",
+    allowedFormats: ["core/bold", "core/heading"]
   })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (edit);
@@ -228,25 +237,21 @@ const save = ({
   }, cardItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cgds card",
     key: index + 1
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, {
-    renderBlockLayout: blocks => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      className: "card-img-top",
-      src: blocks[0]?.attributes?.url,
-      alt: "Card Image"
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-body"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: "stretched-link link-primary",
-    href: item.href
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "h5 text-primary card-title"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "card-body"
+  }, item.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "col-md-12 image-upload-placeholder"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    className: "card-img-top",
+    src: item.imageUrl,
+    alt: "Card Image"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "stretched-link link-primary h3 card-title",
     style: {
       color: item.titleColor,
       fontFamily: item.font
     }
-  }, item.title))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, "\u1785\u17C6\u178E\u1784\u1787\u17BE\u1784\u1780\u17B6\u178F"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "card-text",
     style: {
       color: item.contentColor,
@@ -257,7 +262,7 @@ const save = ({
     href: "#"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "bi bi-arrow-right-circle-fill"
-  }), item.linkText))))))));
+  }), " ", item.linkText))))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (save);
 

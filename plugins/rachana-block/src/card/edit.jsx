@@ -1,5 +1,5 @@
 import { PanelBody, TextControl, ColorPicker, Button } from "@wordpress/components";
-import {InnerBlocks, InspectorControls, RichText, useBlockProps} from "@wordpress/block-editor";
+import { InspectorControls, RichText, useBlockProps, MediaUpload } from "@wordpress/block-editor";
 import defaultAttr from "./defaultAttr.json";
 import { addNewBlockItem, customizeBlockItem } from "../blockHelpers";
 
@@ -17,6 +17,10 @@ const edit = ({ attributes, setAttributes }) => {
         setAttributes({
             cardItems: customizeBlockItem(cardItems, index, key, value),
         });
+    };
+
+    const onSelectImage = (index, media) => {
+        customizeItem(index, "imageUrl", media.url);
     };
 
     return (
@@ -67,8 +71,16 @@ const edit = ({ attributes, setAttributes }) => {
                             className="card-title"
                         />
                         <div className="col-md-12 image-upload-placeholder">
-                            <InnerBlocks allowedBlocks={['core/image']}/>
-                            <div className="image-upload-instructions">Click to add image</div>
+                            <MediaUpload
+                                onSelect={(media) => onSelectImage(index, media)}
+                                allowedTypes={['image']}
+                                value={item.imageUrl} // Make sure this is the correct attribute for the image URL
+                                render={({ open }) => (
+                                    <button onClick={open}>
+                                        {!item.imageUrl ? 'Upload Image' : <img src={item.imageUrl} alt="Card Image" />}
+                                    </button>
+                                )}
+                            />
                         </div>
                         <RichText
                             tagName="p"
@@ -76,6 +88,7 @@ const edit = ({ attributes, setAttributes }) => {
                             onChange={(value) => customizeItem(index, "content", value)}
                             placeholder="Enter card content..."
                             className="card-content"
+                            allowedFormats={["core/bold", "core/heading"]}
                         />
                         <RichText
                             tagName="p"
@@ -83,13 +96,7 @@ const edit = ({ attributes, setAttributes }) => {
                             onChange={(value) => customizeItem(index, "linkText", value)}
                             placeholder='Enter link guide e.g., "Click here for more details" ...'
                             className="card-content"
-                        />
-                        <RichText
-                            tagName="p"
-                            value={item.linkText}
-                            onChange={(value) => customizeItem(index, "linkText", value)}
-                            placeholder='Enter link guide e.g., "Click here for more details" ...'
-                            className="card-content"
+                            allowedFormats={["core/bold", "core/heading"]}
                         />
                         <RichText
                             tagName="p"
@@ -97,7 +104,9 @@ const edit = ({ attributes, setAttributes }) => {
                             onChange={(value) => customizeItem(index, "href", value)}
                             placeholder='Enter the link to the page ...'
                             className="card-content"
+                            allowedFormats={["core/bold", "core/heading"]}
                         />
+
                     </div>
                 </div>
             ))}

@@ -1,4 +1,4 @@
-import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
+import { InnerBlocks, useBlockProps, MediaUpload } from "@wordpress/block-editor";
 
 const save = ({ attributes }) => {
     const { cardItems } = attributes;
@@ -11,44 +11,22 @@ const save = ({ attributes }) => {
                     <div className="cgds page-component-item-wrapper picture-item">
                         {cardItems.map((item, index) => (
                             <div className="cgds card" key={index + 1}>
-                                <InnerBlocks.Content
-                                    renderBlockLayout={(blocks) => (
-                                        <img
-                                            className="card-img-top"
-                                            src={blocks[0]?.attributes?.url}
-                                            alt="Card Image"
-                                        />
-                                    )}
-                                />
                                 <div className="card-body">
-                                    <a
-                                        className="stretched-link link-primary"
-                                        href={item.href}
-                                    >
-                                        <div className="h5 text-primary card-title">
-                                            <span
-                                                style={{
-                                                    color: item.titleColor,
-                                                    fontFamily: item.font,
-                                                }}
-                                            >
-                                                {item.title}
-                                            </span>
+
+                                    {item.imageUrl && (
+                                        <div className="col-md-12 image-upload-placeholder">
+                                            <img className="card-img-top" src={item.imageUrl} alt="Card Image"/>
                                         </div>
-                                    </a>
-                                    <p
-                                        className="card-text"
-                                        style={{
-                                            color: item.contentColor,
-                                            fontFamily: item.font,
-                                        }}
-                                    >
+                                    )}
+                                    <a className="stretched-link link-primary h3 card-title"
+                                       style={{color: item.titleColor, fontFamily: item.font}}>ចំណងជើងកាត</a>
+
+                                    <p className="card-text" style={{color: item.contentColor, fontFamily: item.font}}>
                                         {item.content}
                                     </p>
                                     {item.linkText && (
                                         <a className="card-link" href="#">
-                                            <i className="bi bi-arrow-right-circle-fill"></i>
-                                            {item.linkText}
+                                            <i className="bi bi-arrow-right-circle-fill"></i> {item.linkText}
                                         </a>
                                     )}
                                 </div>
