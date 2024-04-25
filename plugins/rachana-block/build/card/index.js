@@ -123,18 +123,17 @@ const edit = ({
     className: "card",
     id: "card-" + (index + 1)
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Card ", index + 1), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "h2",
-    value: item.title,
-    onChange: value => customizeItem(index, "title", value),
-    placeholder: "Enter card title...",
-    className: "card-title"
+    tagName: "p",
+    value: item.lastUpdated,
+    onChange: value => customizeItem(index, "lastUpdated", value),
+    placeholder: "Last updated: [date/time]...",
+    className: "card-text"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col-md-12 image-upload-placeholder"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => onSelectImage(index, media),
     allowedTypes: ['image'],
-    value: item.imageUrl // Make sure this is the correct attribute for the image URL
-    ,
+    value: item.imageUrl,
     render: ({
       open
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
@@ -144,6 +143,12 @@ const edit = ({
       alt: "Card Image"
     }))
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "h2",
+    value: item.title,
+    onChange: value => customizeItem(index, "title", value),
+    placeholder: "Enter card title...",
+    className: "card-title"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: item.content,
     onChange: value => customizeItem(index, "content", value),
@@ -195,9 +200,6 @@ __webpack_require__.r(__webpack_exports__);
       default: [_defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__]
     }
   },
-  supports: {
-    innerBlocks: true
-  },
   edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
@@ -239,7 +241,11 @@ const save = ({
     key: index + 1
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "card-body"
-  }, item.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, item.lastUpdated && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "card-text"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", {
+    className: "text-muted"
+  }, item.lastUpdated)), item.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col-md-12 image-upload-placeholder"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     className: "card-img-top",
@@ -326,7 +332,7 @@ module.exports = window["wp"]["components"];
   \***********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","imageUrl":"","contentColor":"var(--cgds-text-color)","titleColor":"var(--cgds-primary)","href":"","font":"Kantumruy Pro","linkText":""}');
+module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","imageUrl":"","contentColor":"var(--cgds-text-color)","titleColor":"var(--cgds-primary)","href":"","font":"Kantumruy Pro","linkText":"","lastUpdated":""}');
 
 /***/ })
 

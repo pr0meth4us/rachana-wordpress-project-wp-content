@@ -11,9 +11,6 @@ registerBlockType('rachana-block/card', {
             default: [defaultAttr],
         },
     },
-    supports: {
-        innerBlocks: true,
-    },
     edit,
     save,
 });

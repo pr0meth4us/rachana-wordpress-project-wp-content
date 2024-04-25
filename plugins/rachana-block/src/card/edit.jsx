@@ -64,17 +64,17 @@ const edit = ({ attributes, setAttributes }) => {
                     <div className="card" id={"card-" + (index + 1)}>
                         <span>Card {index + 1}</span>
                         <RichText
-                            tagName="h2"
-                            value={item.title}
-                            onChange={(value) => customizeItem(index, "title", value)}
-                            placeholder="Enter card title..."
-                            className="card-title"
+                            tagName="p"
+                            value={item.lastUpdated}
+                            onChange={(value) => customizeItem(index, "lastUpdated", value)}
+                            placeholder="Last updated: [date/time]..."
+                            className="card-text"
                         />
                         <div className="col-md-12 image-upload-placeholder">
                             <MediaUpload
                                 onSelect={(media) => onSelectImage(index, media)}
                                 allowedTypes={['image']}
-                                value={item.imageUrl} // Make sure this is the correct attribute for the image URL
+                                value={item.imageUrl}
                                 render={({ open }) => (
                                     <button onClick={open}>
                                         {!item.imageUrl ? 'Upload Image' : <img src={item.imageUrl} alt="Card Image" />}
@@ -82,6 +82,13 @@ const edit = ({ attributes, setAttributes }) => {
                                 )}
                             />
                         </div>
+                        <RichText
+                            tagName="h2"
+                            value={item.title}
+                            onChange={(value) => customizeItem(index, "title", value)}
+                            placeholder="Enter card title..."
+                            className="card-title"
+                        />
                         <RichText
                             tagName="p"
                             value={item.content}

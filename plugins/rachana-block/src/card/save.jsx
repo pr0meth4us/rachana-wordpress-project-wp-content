@@ -12,7 +12,11 @@ const save = ({ attributes }) => {
                         {cardItems.map((item, index) => (
                             <div className="cgds card" key={index + 1}>
                                 <div className="card-body">
-
+                                    {item.lastUpdated && (
+                                        <p className="card-text">
+                                            <small className="text-muted">{item.lastUpdated}</small>
+                                        </p>
+                                    )}
                                     {item.imageUrl && (
                                         <div className="col-md-12 image-upload-placeholder">
                                             <img className="card-img-top" src={item.imageUrl} alt="Card Image"/>

@@ -16,10 +16,11 @@
     "@wordpress/scripts": "^27.2.0"
   },
   "dependencies": {
+    "@dgtdept/rachana": "^1.0.3",
     "@wordpress/block-editor": "^12.19.1",
     "@wordpress/components": "^26.0.1",
     "@wordpress/media-utils": "^4.43.0",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "css": "^3.0.0"
   }
