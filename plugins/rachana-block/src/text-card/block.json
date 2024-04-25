@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "rachana-block/text-card",
 	"version": "0.1.0",
-	"title": "Card",
+	"title": "Text Card",
 	"category": "rachana-block",
 	"textdomain": "rachana-block",
 	"editorScript": "file:./index.js",

@@ -4,33 +4,33 @@ import defaultAttr from "./defaultAttr.json";
 import { addNewBlockItem, customizeBlockItem } from '../blockHelpers';
 
 const edit = ({ attributes, setAttributes }) => {
-    const { cardItems } = attributes;
+    const { textCard } = attributes;
     const blockProps = useBlockProps();
 
     const addItem = () => {
         setAttributes({
-            cardItems: addNewBlockItem(cardItems, defaultAttr),
+            textCard: addNewBlockItem(textCard, defaultAttr),
         });
     };
 
     const customizeItem = (index, key, value) => {
         setAttributes({
-            cardItems: customizeBlockItem(cardItems, index, key, value),
+            textCard: customizeBlockItem(textCard, index, key, value),
         });
     };
 
     return (
         <div {...blockProps}>
             <InspectorControls>
-                <PanelBody title="Card Settings">
-                    <Button isSecondary onClick={addItem}>Add Card Item</Button>
+                <PanelBody title="Text Card Settings">
+                    <Button isSecondary onClick={addItem}>Add Text Card Item</Button>
                 </PanelBody>
             </InspectorControls>
 
-            {cardItems.map((item, index) => (
+            {textCard.map((item, index) => (
                 <div key={index}>
                     <InspectorControls>
-                        <PanelBody title={`Card Item ${index + 1}`}>
+                        <PanelBody title={`Text Card Item ${index + 1}`}>
                             <TextControl
                                 label="Font"
                                 value={item.font}
@@ -77,5 +77,4 @@ const edit = ({ attributes, setAttributes }) => {
         </div>
     );
 };
-
 export default edit;

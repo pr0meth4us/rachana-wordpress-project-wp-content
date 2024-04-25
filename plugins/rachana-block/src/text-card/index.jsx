@@ -6,7 +6,12 @@ import edit from "./edit";
 import { generateAttributes } from '../blockHelpers';
 
 registerBlockType('rachana-block/text-card', {
-    attributes: generateAttributes(defaultAttr),
+    attributes: {
+        textCard: {
+            type: 'array',
+            default: [defaultAttr],
+        },
+    },
     edit,
     save,
 });

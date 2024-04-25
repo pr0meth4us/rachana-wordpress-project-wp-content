@@ -1,12 +1,12 @@
-import { useBlockProps } from "@wordpress/block-editor";
+import {useBlockProps} from "@wordpress/block-editor";
 
 const save = ({ attributes }) => {
-    const { cardItems } = attributes;
+    const { textCard } = attributes;
     const blockProps = useBlockProps.save();
 
     return (
         <div {...blockProps}>
-            {cardItems.map((item, index) => (
+            {textCard.map((item, index) => (
                 <div className="card" key={index}>
                     {item.titleTag === 'h1' ? (
                         <h1 className="card-title" style={{ color: item.titleColor, fontFamily: item.font }}>{item.title}</h1>
