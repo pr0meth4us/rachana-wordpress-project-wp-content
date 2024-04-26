@@ -6,9 +6,9 @@ import edit from "./edit";
 
 registerBlockType('rachana-block/table', {
     attributes: {
-        tableItems: {
-            type: 'array',
-            default: defaultAttr.tableItems,
+        table: {
+            type: 'object',
+            default: defaultAttr,
         },
     },
     edit,

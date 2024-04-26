@@ -1,12 +1,11 @@
 {
-  "tableItems": [
+  "caption": "",
+  "rows": [
     {
-      "caption": "",
-      "rows": [
-        {
-          "cells": ["", "", "", ""]
-        }
-      ]
+      "cells": ["", "", "", ""]
     }
-  ]
+  ],
+  "columns": 4,
+  "style": "",
+  "width": 100
 }
