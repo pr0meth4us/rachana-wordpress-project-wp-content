@@ -1,7 +1,7 @@
 <?php
 function menus(): void
 {
-    $locations = array (
+    $locations = array(
         'mainnav' => 'Main navigation',
         'footernav' => 'Footer menu navigation'
     );
@@ -35,7 +35,7 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
 
         $args = apply_filters('nav_menu_item_args', $args, $item, $depth);
 
-        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
+        $class_names = join(' nav-item ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
         $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
@@ -66,14 +66,17 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
 
         $item_output = $args->before;
 
+        $active = $item->current ? 'active' : '';
+
+
         if ($args->walker->has_children) {
-            $item_output .= '<a class="nav-link cgds dropdown-toggle"' . $attributes . ' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+            $item_output .= '<a class="nav-link ' . $active . '  cgds dropdown-toggle"' . $attributes . ' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
             $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
             $item_output .= ' <i class="bi bi-chevron-down"></i>';
             $item_output .= '</a>';
         } else {
             if ($depth === 0) {
-                $item_output .= '<a class="nav-link"' . $attributes . '>';
+                $item_output .= '<a class="nav-link  ' . $active . ' "' . $attributes . '>';
             } else {
                 $item_output .= '<a class="dropdown-item"' . $attributes . '>';
             }
@@ -92,7 +95,8 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
     }
 }
 
-function disable_menu_cache() {
+function disable_menu_cache()
+{
     add_filter('pre_set_transient_expiration', function ($expiration, $transient) {
         if (strpos($transient, 'nav_menu_item') !== false) {
             $expiration = 0;
