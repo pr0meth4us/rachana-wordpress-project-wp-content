@@ -4,11 +4,11 @@ import defaultAttr from './defaultAttr.json';
 import { registerBlockType } from '@wordpress/blocks';
 import edit from "./edit";
 
-registerBlockType('rachana-block/card', {
+registerBlockType('rachana-block/table', {
     attributes: {
-        cardItems: {
+        tableItems: {
             type: 'array',
-            default: [defaultAttr],
+            default: defaultAttr.tableItems,
         },
     },
     edit,
