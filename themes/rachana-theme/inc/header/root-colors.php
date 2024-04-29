@@ -4,9 +4,9 @@ $default_colors = array(
     'body-bg' => '#ffffff',
     'primary' => '#1C4076',
     'secondary' => '#3da3cf',
-    'text-color' => '#344054',
+    'text-color-content' => '#344054',
     'navbar-link-hover-bg' => '#002266',
-    'nav-text-color' => '#ffffff',
+    'text-color-theme' => '#ffffff',
     'footer-link-hover-color' => '#f07d03',
 );
 
@@ -17,7 +17,7 @@ function register_color_setting($wp_customize, $setting_name, $label, $default_c
     ));
 
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, $setting_name, array(
-        'label' => __($label, 'racahana-theme'),
+        'label' => __($label, 'rachana-theme'),
         'section' => $section,
         'settings' => $setting_name,
     )));
@@ -33,7 +33,7 @@ function generate_custom_css() {
 
     $custom_css = '';
     foreach ($colors as $key => $value) {
-        $custom_css .= "--cgds-{$key}: {$value} !important;\n";
+        $custom_css .= "--rachana-{$key}: {$value} !important;\n";
     }
 
     return $custom_css;
@@ -43,7 +43,7 @@ add_action('customize_register', function ($wp_customize) use ($default_colors) 
     $color_section_priority = 27;
 
     $wp_customize->add_section('colors', array(
-        'title'    => __('Colors', 'racahana-theme'),
+        'title'    => __('Colors', 'rachana-theme'),
         'priority' => $color_section_priority,
     ));
 
