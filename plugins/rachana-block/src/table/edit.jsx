@@ -6,10 +6,6 @@ const edit = ({ attributes, setAttributes }) => {
     const { table } = attributes;
     const blockProps = useBlockProps();
 
-    const updateStyle = (newStyle) => {
-        setAttributes({ table: { ...table, style: newStyle } });
-    };
-
     const customizeTable = (key, value) => {
         setAttributes({ table: { ...table, [key]: value } });
     };
