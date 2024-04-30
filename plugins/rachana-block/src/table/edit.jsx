@@ -1,6 +1,5 @@
 import { PanelBody, TextControl, Button, SelectControl, RangeControl } from "@wordpress/components";
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
-import defaultAttr from "./defaultAttr.json";
 
 const edit = ({ attributes, setAttributes }) => {
     const { table } = attributes;
