@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb:10.6.4-focal
+    image: mariadb:latest
     volumes:
       - db_data:/var/lib/mysql
       - ./local.sql:/docker-entrypoint-initdb.d/local.sql
@@ -16,7 +16,7 @@ services:
   wordpress:
     depends_on:
       - db
-    image: wordpress:6.4
+    image: wordpress:latest
     ports:
       - "10033:80"
     restart: always
@@ -32,4 +32,4 @@ services:
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 
 volumes:
-  db_data: {}
+  db_data:
