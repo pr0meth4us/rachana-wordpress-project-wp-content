@@ -1,9 +1,14 @@
 import { PanelBody, TextControl, Button, SelectControl, RangeControl } from "@wordpress/components";
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
+import { plus, trash } from '@wordpress/icons';
 
 const edit = ({ attributes, setAttributes }) => {
     const { table } = attributes;
     const blockProps = useBlockProps();
+
+    const updateStyle = (newStyle) => {
+        setAttributes({ table: { ...table, style: newStyle } });
+    };
 
     const customizeTable = (key, value) => {
         setAttributes({ table: { ...table, [key]: value } });
@@ -20,6 +25,19 @@ const edit = ({ attributes, setAttributes }) => {
             cells: [...row.cells, ""],
         }));
         setAttributes({ table: { ...table, columns: table.columns + 1, rows: updatedRows } });
+    };
+
+    const removeRow = rowIndex => {
+        const updatedRows = table.rows.filter((_, index) => index !== rowIndex);
+        setAttributes({ table: { ...table, rows: updatedRows } });
+    };
+
+    const removeColumn = columnIndex => {
+        const updatedRows = table.rows.map(row => ({
+            ...row,
+            cells: row.cells.filter((_, index) => index !== columnIndex)
+        }));
+        setAttributes({ table: { ...table, rows: updatedRows } });
     };
 
     const customizeCell = (rowIndex, cellIndex, value) => {
@@ -50,14 +68,7 @@ const edit = ({ attributes, setAttributes }) => {
                     <SelectControl
                         label="Table Style"
                         value={table.style}
-                        options={[
-                            { label: "Default", value: "" },
-                            { label: "Small", value: "table-sm" },
-                            { label: "Bordered", value: "table-bordered" },
-                            { label: "Borderless", value: "table-borderless" },
-                            { label: "Hover", value: "table-hover" },
-                            { label: "Dark", value: "table-dark" },
-                        ]}
+                        options={table.styleOptions}
                         onChange={(value) => customizeTable("style", value)}
                     />
                     <RangeControl
@@ -89,12 +100,11 @@ const edit = ({ attributes, setAttributes }) => {
                                     onChange={(value) => customizeCell(0, cellIndex, value)}
                                     placeholder={`Header ${cellIndex + 1}`}
                                 />
+                                <Button isSmall icon={trash} onClick={() => removeColumn(cellIndex)} />
                             </th>
                         ))}
                         <th>
-                            <Button isSecondary onClick={addColumn}>
-                                Add Column
-                            </Button>
+                            <Button isSmall icon={plus} onClick={addColumn} />
                         </th>
                     </tr>
                     </thead>
@@ -111,13 +121,14 @@ const edit = ({ attributes, setAttributes }) => {
                                     />
                                 </td>
                             ))}
+                            <td>
+                                <Button isSmall icon={trash} onClick={() => removeRow(rowIndex)} />
+                            </td>
                         </tr>
                     ))}
                     <tr>
-                        <td colSpan={table.columns}>
-                            <Button isSecondary onClick={addRow}>
-                                Add Row
-                            </Button>
+                        <td colSpan={table.columns + 1} style={{border: "none"}}>
+                            <Button isSmall icon={plus} onClick={addRow}></Button>
                         </td>
                     </tr>
                     </tbody>

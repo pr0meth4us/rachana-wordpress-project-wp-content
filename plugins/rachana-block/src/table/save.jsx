@@ -1,6 +1,6 @@
 import { useBlockProps } from "@wordpress/block-editor";
 
-const save = ({ attributes }) => {
+const Save = ({ attributes }) => {
     const { table } = attributes;
     const blockProps = useBlockProps.save();
 
@@ -31,4 +31,4 @@ const save = ({ attributes }) => {
     );
 };
 
-export default save;
+export default Save;

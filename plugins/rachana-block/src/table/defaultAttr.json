@@ -5,7 +5,14 @@
       "cells": ["", "", "", ""]
     }
   ],
-  "columns": 4,
   "style": "",
-  "width": 100
+  "width": 100,
+  "styleOptions": [
+    { "label": "Default", "value": "" },
+    { "label": "Small", "value": "table-sm" },
+    { "label": "Bordered", "value": "table-bordered" },
+    { "label": "Borderless", "value": "table-borderless" },
+    { "label": "Hover", "value": "table-hover" },
+    { "label": "Dark", "value": "table-dark" }
+  ]
 }
