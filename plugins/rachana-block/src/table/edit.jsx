@@ -64,7 +64,14 @@ const edit = ({ attributes, setAttributes }) => {
                     <SelectControl
                         label="Table Style"
                         value={table.style}
-                        options={table.styleOptions}
+                        options={[
+                            { label: "Default", value: "" },
+                            { label: "Small", value: "table-sm" },
+                            { label: "Bordered", value: "table-bordered" },
+                            { label: "Borderless", value: "table-borderless" },
+                            { label: "Hover", value: "table-hover" },
+                            { label: "Dark", value: "table-dark" },
+                        ]}
                         onChange={(value) => customizeTable("style", value)}
                     />
                     <RangeControl

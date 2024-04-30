@@ -94,14 +94,6 @@ const edit = ({
     table
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-  const updateStyle = newStyle => {
-    setAttributes({
-      table: {
-        ...table,
-        style: newStyle
-      }
-    });
-  };
   const customizeTable = (key, value) => {
     setAttributes({
       table: {
@@ -189,7 +181,25 @@ const edit = ({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
     label: "Table Style",
     value: table.style,
-    options: table.styleOptions,
+    options: [{
+      label: "Default",
+      value: ""
+    }, {
+      label: "Small",
+      value: "table-sm"
+    }, {
+      label: "Bordered",
+      value: "table-bordered"
+    }, {
+      label: "Borderless",
+      value: "table-borderless"
+    }, {
+      label: "Hover",
+      value: "table-hover"
+    }, {
+      label: "Dark",
+      value: "table-dark"
+    }],
     onChange: value => customizeTable("style", value)
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RangeControl, {
     label: "Table Width",
@@ -398,7 +408,7 @@ module.exports = window["wp"]["primitives"];
   \************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"caption":"","rows":[{"cells":["","","",""]}],"style":"","width":100,"styleOptions":[{"label":"Default","value":""},{"label":"Small","value":"table-sm"},{"label":"Bordered","value":"table-bordered"},{"label":"Borderless","value":"table-borderless"},{"label":"Hover","value":"table-hover"},{"label":"Dark","value":"table-dark"}]}');
+module.exports = /*#__PURE__*/JSON.parse('{"caption":"","rows":[{"cells":["","","",""]}],"style":"","width":100}');
 
 /***/ })
 
