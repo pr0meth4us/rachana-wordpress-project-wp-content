@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Rachana_Theme
+ * @package MPTC_THEME
  */
 
 ?>

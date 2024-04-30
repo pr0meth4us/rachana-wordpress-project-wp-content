@@ -11,15 +11,14 @@
 if ( ! defined( 'AS3CF_SETTINGS' ) ) {
     define( 'AS3CF_SETTINGS', serialize( array(
         'provider' => 'aws',
-        'access-key-id' => 'ub3Mavt3KSDShryHxzzR', // Replace with your real access key ID
-        'secret-access-key' => 'arLybrQpaiEAqyiDfEa3RKLrbNjP50MR8H1tucm8', // Replace with your real secret access key
+        'access-key-id' => 'ub3Mavt3KSDShryHxzzR',
+        'secret-access-key' => 'arLybrQpaiEAqyiDfEa3RKLrbNjP50MR8H1tucm8',
     ) ) );
 }
 
-// Customizes the S3 client arguments for MinIO
 function minio_s3_client_args( $args ) {
     $args['endpoint'] = 'https://api-minio.cc.mptc.gov.kh';
-    $args['use_path_style_endpoint'] = true;
+//    $args['use_path_style_endpoint'] = true;
 return $args;
 }
 add_filter( 'as3cf_aws_s3_client_args', 'minio_s3_client_args'  );

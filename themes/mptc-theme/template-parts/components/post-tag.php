@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Rachana_Theme
+ * @package MPTC_THEME
  */
 
 $term_list = get_the_term_list( get_the_ID(), 'post_tag', '<li class="list-inline-item">', '</li><li class="list-inline-item">', '</li>' );

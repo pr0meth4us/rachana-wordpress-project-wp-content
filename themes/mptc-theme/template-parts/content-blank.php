@@ -1,7 +1,7 @@
 <?php
 /**
  * Template part for displaying posts
- * @package Rachana_Theme
+ * @package MPTC_THEME
  */
 
 ?>
