@@ -413,7 +413,7 @@ module.exports = window["wp"]["primitives"];
   \************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"caption":"","rows":[{"cells":["","","",""]}],"style":"","width":100}');
+module.exports = /*#__PURE__*/JSON.parse('{"caption":"","rows":[{"cells":["","","",""]},{"cells":["","","",""]}],"style":"","width":100}');
 
 /***/ })
 
