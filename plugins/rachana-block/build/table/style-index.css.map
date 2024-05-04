@@ -1,0 +1,1 @@
+{"version":3,"file":"table/style-index.css","mappings":";;;AACE;EACE;AAAJ,C","sources":["webpack://rachana-wordpress-blocks/./src/table/style.scss"],"sourcesContent":[".wp-block-rachana-block-table {\n  div {\n    padding: 0.75rem;\n  }\n}"],"names":[],"sourceRoot":""}

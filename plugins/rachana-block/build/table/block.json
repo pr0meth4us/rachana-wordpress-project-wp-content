@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "rachana-block/card",
+  "name": "rachana-block/table",
   "version": "0.1.0",
-  "title": "Card",
+  "title": "Table",
   "category": "rachana-block",
   "textdomain": "rachana-block",
   "editorScript": "file:./index.js"
