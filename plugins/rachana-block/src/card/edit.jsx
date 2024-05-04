@@ -1,10 +1,10 @@
-import { PanelBody, TextControl, ColorPicker, Button } from "@wordpress/components";
+import { PanelBody, TextControl, ColorPicker, Button, SelectControl } from "@wordpress/components";
 import { InspectorControls, RichText, useBlockProps, MediaUpload } from "@wordpress/block-editor";
 import defaultAttr from "./defaultAttr.json";
 import { addNewBlockItem, customizeBlockItem } from "../blockHelpers";
 
-const edit = ({ attributes, setAttributes }) => {
-    const { cardItems } = attributes;
+const edit = ({ attributes, setAttributes, styleOptions }) => {
+    const { cardItems, styles } = attributes;
     const blockProps = useBlockProps();
 
     const addItem = () => {
@@ -31,6 +31,12 @@ const edit = ({ attributes, setAttributes }) => {
                         Add Card Item
                     </Button>
                 </PanelBody>
+                <SelectControl
+                    label="Select Style"
+                    value={styles}
+                    options={styleOptions}
+                    onChange={(value) => setAttributes({ styles: value })}
+                />
             </InspectorControls>
 
             {cardItems.map((item, index) => (
@@ -61,7 +67,7 @@ const edit = ({ attributes, setAttributes }) => {
                             </div>
                         </PanelBody>
                     </InspectorControls>
-                    <div className="card" id={"card-" + (index + 1)}>
+                    <div className="card cgds" variant={styles === "horizontal" ? "card-horizontal" : undefined}>
                         <span>Card {index + 1}</span>
                         <RichText
                             tagName="p"
@@ -113,7 +119,6 @@ const edit = ({ attributes, setAttributes }) => {
                             className="card-content"
                             allowedFormats={["core/bold", "core/heading"]}
                         />
-
                     </div>
                 </div>
             ))}

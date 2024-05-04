@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   addNewBlockItem: () => (/* binding */ addNewBlockItem),
 /* harmony export */   customizeBlockItem: () => (/* binding */ customizeBlockItem),
 /* harmony export */   generateAttributes: () => (/* binding */ generateAttributes),
+/* harmony export */   generateStyleOptions: () => (/* binding */ generateStyleOptions),
 /* harmony export */   onChangeAttribute: () => (/* binding */ onChangeAttribute)
 /* harmony export */ });
 function generateAttributes(defaultAttributes) {
@@ -40,6 +41,12 @@ const customizeBlockItem = (items, index, key, value) => {
     ...item,
     [key]: value
   } : item);
+};
+const generateStyleOptions = styles => {
+  return Object.entries(styles).map(([key, value]) => ({
+    label: key,
+    value: value
+  }));
 };
 
 /***/ }),
@@ -69,10 +76,12 @@ __webpack_require__.r(__webpack_exports__);
 
 const edit = ({
   attributes,
-  setAttributes
+  setAttributes,
+  styleOptions
 }) => {
   const {
-    cardItems
+    cardItems,
+    styles
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
   const addItem = () => {
@@ -95,7 +104,14 @@ const edit = ({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     isSecondary: true,
     onClick: addItem
-  }, "Add Card Item"))), cardItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Add Card Item")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: "Select Style",
+    value: styles,
+    options: styleOptions,
+    onChange: value => setAttributes({
+      styles: value
+    })
+  })), cardItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: index
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
     title: `Card Item ${index + 1}`
@@ -120,8 +136,8 @@ const edit = ({
     onChangeComplete: value => customizeItem(index, "titleColor", value.hex),
     disableAlpha: true
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card",
-    id: "card-" + (index + 1)
+    className: "card cgds",
+    variant: styles === "horizontal" ? "card-horizontal" : undefined
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Card ", index + 1), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: item.lastUpdated,
@@ -188,19 +204,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/card/edit.jsx");
+/* harmony import */ var _blockHelpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../blockHelpers */ "./src/blockHelpers.js");
 
 
 
 
 
+
+const styleOptions = (0,_blockHelpers__WEBPACK_IMPORTED_MODULE_5__.generateStyleOptions)(_defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__.styles);
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)('rachana-block/card', {
   attributes: {
-    cardItems: {
-      type: 'array',
-      default: [_defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__]
+    ...(0,_blockHelpers__WEBPACK_IMPORTED_MODULE_5__.generateAttributes)(_defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__),
+    styles: {
+      type: 'string',
+      default: Object.keys(_defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__.styles)[0]
     }
   },
-  edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
+  edit: props => {
+    return (0,_edit__WEBPACK_IMPORTED_MODULE_4__["default"])({
+      ...props,
+      styleOptions
+    });
+  },
   save: _save__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
@@ -226,49 +251,44 @@ const save = ({
   attributes
 }) => {
   const {
-    cardItems
+    cardItems,
+    styles
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...blockProps,
-    className: "wrapper-fluid"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
-    className: "page-component-overview"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("article", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cgds page-component-item-wrapper picture-item"
+    ...blockProps
   }, cardItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cgds card",
-    key: index + 1
+    key: index,
+    className: "cgds-example-card-grid"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card-body"
-  }, item.lastUpdated && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "card-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", {
-    className: "text-muted"
-  }, item.lastUpdated)), item.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "col-md-12 image-upload-placeholder"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    className: "card-img-top",
+    className: "card cgds",
+    variant: styles === "horizontal" ? "card-horizontal" : undefined
+  }, item.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: item.imageUrl,
-    alt: "Card Image"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: "stretched-link link-primary h3 card-title",
+    alt: "Card Image",
+    className: "card-img-top"
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-body"
+  }, item.title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+    className: "card-title",
     style: {
       color: item.titleColor,
       fontFamily: item.font
     }
-  }, "\u1785\u17C6\u178E\u1784\u1787\u17BE\u1784\u1780\u17B6\u178F"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, item.title), item.content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "card-text",
     style: {
       color: item.contentColor,
       fontFamily: item.font
     }
-  }, item.content), item.linkText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: "card-link",
-    href: "#"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-    className: "bi bi-arrow-right-circle-fill"
-  }), " ", item.linkText))))))));
+  }, item.content), item.linkText && item.href && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: item.href,
+    className: "btn btn-primary"
+  }, item.linkText), item.lastUpdated && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "card-text"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", {
+    className: "text-muted"
+  }, "Last updated: ", item.lastUpdated)))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (save);
 
@@ -332,7 +352,7 @@ module.exports = window["wp"]["components"];
   \***********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","imageUrl":"","contentColor":"var(--cgds-text-color)","titleColor":"var(--cgds-primary)","href":"","font":"Kantumruy Pro","linkText":"","lastUpdated":""}');
+module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","imageUrl":"","contentColor":"var(--cgds-text-color)","titleColor":"var(--cgds-primary)","href":"","font":"Kantumruy Pro","linkText":"","lastUpdated":"","styles":{"vertical":"","horizontal":"variant=\\"card-horizontal\\""}}');
 
 /***/ })
 

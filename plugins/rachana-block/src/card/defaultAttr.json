@@ -7,5 +7,9 @@
     "href": "",
     "font": "Kantumruy Pro",
     "linkText": "",
-    "lastUpdated": ""
+    "lastUpdated": "",
+    "styles": {
+        "vertical": "",
+        "horizontal": "variant=\"card-horizontal\""
+    }
 }

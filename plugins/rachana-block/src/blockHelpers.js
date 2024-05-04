@@ -19,3 +19,10 @@ export const customizeBlockItem = (items, index, key, value) => {
         i === index ? { ...item, [key]: value } : item
     ));
 };
+
+export const generateStyleOptions = (styles) => {
+    return Object.entries(styles).map(([key, value]) => ({
+        label: key,
+        value: value,
+    }));
+};

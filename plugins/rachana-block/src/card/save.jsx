@@ -1,44 +1,42 @@
-import { InnerBlocks, useBlockProps, MediaUpload } from "@wordpress/block-editor";
+import { useBlockProps } from "@wordpress/block-editor";
 
 const save = ({ attributes }) => {
-    const { cardItems } = attributes;
+    const { cardItems, styles } = attributes;
     const blockProps = useBlockProps.save();
 
     return (
-        <div {...blockProps} className="wrapper-fluid">
-            <section className="page-component-overview">
-                <article>
-                    <div className="cgds page-component-item-wrapper picture-item">
-                        {cardItems.map((item, index) => (
-                            <div className="cgds card" key={index + 1}>
-                                <div className="card-body">
-                                    {item.lastUpdated && (
-                                        <p className="card-text">
-                                            <small className="text-muted">{item.lastUpdated}</small>
-                                        </p>
-                                    )}
-                                    {item.imageUrl && (
-                                        <div className="col-md-12 image-upload-placeholder">
-                                            <img className="card-img-top" src={item.imageUrl} alt="Card Image"/>
-                                        </div>
-                                    )}
-                                    <a className="stretched-link link-primary h3 card-title"
-                                       style={{color: item.titleColor, fontFamily: item.font}}>ចំណងជើងកាត</a>
-
-                                    <p className="card-text" style={{color: item.contentColor, fontFamily: item.font}}>
-                                        {item.content}
-                                    </p>
-                                    {item.linkText && (
-                                        <a className="card-link" href="#">
-                                            <i className="bi bi-arrow-right-circle-fill"></i> {item.linkText}
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
+        <div {...blockProps}>
+            {cardItems.map((item, index) => (
+                <div key={index} className="cgds-example-card-grid">
+                    <div className="card cgds" variant={styles === "horizontal" ? "card-horizontal" : undefined}>
+                        {item.imageUrl && (
+                            <img src={item.imageUrl} alt="Card Image" className="card-img-top" />
+                        )}
+                        <div className="card-body">
+                            {item.title && (
+                                <h2 className="card-title" style={{ color: item.titleColor, fontFamily: item.font }}>
+                                    {item.title}
+                                </h2>
+                            )}
+                            {item.content && (
+                                <p className="card-text" style={{ color: item.contentColor, fontFamily: item.font }}>
+                                    {item.content}
+                                </p>
+                            )}
+                            {item.linkText && item.href && (
+                                <a href={item.href} className="btn btn-primary">
+                                    {item.linkText}
+                                </a>
+                            )}
+                            {item.lastUpdated && (
+                                <p className="card-text">
+                                    <small className="text-muted">Last updated: {item.lastUpdated}</small>
+                                </p>
+                            )}
+                        </div>
                     </div>
-                </article>
-            </section>
+                </div>
+            ))}
         </div>
     );
 };
