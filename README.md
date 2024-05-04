@@ -11,15 +11,34 @@ With Docker installed and running, in Terminal:
 cd cgds-wordpress-theme
 ````
 
-Then:
+Then: (add sudo if linux)
 
+````
+docker compose up -d
+````
+Or
 ````
 docker-compose up -d
 ````
 
 Then in your browser:
 ````
-http://localhost:8000/
+http://localhost:10033/
 ````
 
-The aforementioned blog post has more information.
+(you might encounter database connection error, just wait for a while for the queries to be executed and refresh the page and it should work)
+
+also a common problem faced by linux is the permission issue, to fix it run the following command:
+
+Unlock permision directory
+```` 
+chmod -R 777 . 
+````
+
+Clear Database
+
+````
+docker composer down -v
+````
+
+
