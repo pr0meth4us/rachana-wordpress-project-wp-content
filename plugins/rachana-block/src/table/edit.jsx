@@ -11,7 +11,6 @@ const edit = ({ attributes, setAttributes }) => {
     };
 
     const addRow = () => {
-        // Determine the number of cells based on the first row
         const numberOfCells = table.rows[0].cells.length;
         const newRow = { cells: Array(numberOfCells).fill("") };
         setAttributes({ table: { ...table, rows: [...table.rows, newRow] } });
@@ -22,7 +21,6 @@ const edit = ({ attributes, setAttributes }) => {
             ...row,
             cells: [...row.cells, ""],
         }));
-        // Update the number of columns in the table
         setAttributes({ table: { ...table, columns: table.rows[0].cells.length + 1, rows: updatedRows } });
     };
 
@@ -31,7 +29,6 @@ const edit = ({ attributes, setAttributes }) => {
             ...row,
             cells: row.cells.filter((_, index) => index !== columnIndex)
         }));
-        // Update the number of columns in the table
         setAttributes({ table: { ...table, columns: table.rows[0].cells.length - 1, rows: updatedRows } });
     };
 

@@ -59,10 +59,10 @@ const generateStyleOptions = styles => {
 
 /***/ }),
 
-/***/ "./src/card/edit.jsx":
-/*!***************************!*\
-  !*** ./src/card/edit.jsx ***!
-  \***************************/
+/***/ "./src/text-card/edit.jsx":
+/*!********************************!*\
+  !*** ./src/text-card/edit.jsx ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -75,7 +75,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _defaultAttr_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defaultAttr.json */ "./src/card/defaultAttr.json");
+/* harmony import */ var _defaultAttr_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defaultAttr.json */ "./src/text-card/defaultAttr.json");
 /* harmony import */ var _blockHelpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../blockHelpers */ "./src/blockHelpers.js");
 
 
@@ -87,153 +87,100 @@ const edit = ({
   setAttributes
 }) => {
   const {
-    cardItems,
-    style
+    textCard
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-  const handleStyleChange = value => {
-    setAttributes({
-      style: value
-    });
-  };
   const addItem = () => {
     setAttributes({
-      cardItems: [...cardItems, {
-        ..._defaultAttr_json__WEBPACK_IMPORTED_MODULE_3__
-      }]
+      textCard: (0,_blockHelpers__WEBPACK_IMPORTED_MODULE_4__.addNewBlockItem)(textCard, _defaultAttr_json__WEBPACK_IMPORTED_MODULE_3__)
     });
   };
-  const updateItem = (index, key, value) => {
-    const updatedItems = cardItems.map((item, i) => {
-      if (i === index) {
-        return {
-          ...item,
-          [key]: value
-        };
-      }
-      return item;
-    });
+  const customizeItem = (index, key, value) => {
     setAttributes({
-      cardItems: updatedItems
+      textCard: (0,_blockHelpers__WEBPACK_IMPORTED_MODULE_4__.customizeBlockItem)(textCard, index, key, value)
     });
-  };
-  const onSelectImage = (index, media) => {
-    updateItem(index, "imageUrl", media.url);
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-    title: "Card Settings"
+    title: "Text Card Settings"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
     isSecondary: true,
     onClick: addItem
-  }, "Add Card Item"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-    label: "Card Style",
-    value: style || "",
-    options: [{
-      label: "Vertical",
-      value: ""
-    }, {
-      label: "Horizontal",
-      value: "card-horizontal"
-    }],
-    onChange: handleStyleChange
-  }))), cardItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: index,
-    className: "card"
+  }, "Add Text Card Item"))), textCard.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: index
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
-    title: `Card Item ${index + 1}`
+    title: `Text Card Item ${index + 1}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
     label: "Font",
     value: item.font,
-    onChange: value => updateItem(index, "font", value)
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
-    label: "Body Text Color",
-    color: item.contentColor,
-    onChangeComplete: value => updateItem(index, "contentColor", value.hex),
-    disableAlpha: true
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ColorPicker, {
-    label: "Card Title Color",
-    color: item.titleColor,
-    onChangeComplete: value => updateItem(index, "titleColor", value.hex),
-    disableAlpha: true
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
-    value: item.lastUpdated,
-    onChange: value => updateItem(index, "lastUpdated", value),
-    placeholder: "Last updated: [date/time]...",
-    className: "card-text"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    onSelect: media => onSelectImage(index, media),
-    allowedTypes: ["image"],
-    value: item.imageUrl,
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "image-upload-placeholder"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
-      onClick: open
-    }, item.imageUrl ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: item.imageUrl,
-      alt: "Card Image"
-    }) : "Upload Image"))
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "h2",
+    onChange: value => customizeItem(index, "font", value)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RadioControl, {
+    label: "Title Tag",
+    selected: item.titleTag,
+    options: [{
+      label: 'H1',
+      value: 'h1'
+    }, {
+      label: 'H5',
+      value: 'h5'
+    }],
+    onChange: value => customizeItem(index, "titleTag", value)
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.RadioControl, {
+    label: "Content Tag",
+    selected: item.contentTag,
+    options: [{
+      label: 'Strong',
+      value: 'strong'
+    }, {
+      label: 'Anchor',
+      value: 'a'
+    }],
+    onChange: value => customizeItem(index, "contentTag", value)
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card",
+    id: "card-" + (index + 1)
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: item.titleTag,
     value: item.title,
-    onChange: value => updateItem(index, "title", value),
+    onChange: value => customizeItem(index, "title", value),
     placeholder: "Enter card title...",
     className: "card-title"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
+    tagName: item.contentTag,
     value: item.content,
-    onChange: value => updateItem(index, "content", value),
+    onChange: value => customizeItem(index, "content", value),
     placeholder: "Enter card content...",
-    className: "card-content",
-    allowedFormats: ["core/bold", "core/heading"]
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
-    value: item.linkText,
-    onChange: value => updateItem(index, "linkText", value),
-    placeholder: "Enter link text...",
-    className: "card-link-text"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
-    label: "Link URL",
-    value: item.href,
-    onChange: value => updateItem(index, "href", value),
-    placeholder: "Enter link URL..."
-  }))));
+    className: "card-text"
+  })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (edit);
 
 /***/ }),
 
-/***/ "./src/card/index.jsx":
-/*!****************************!*\
-  !*** ./src/card/index.jsx ***!
-  \****************************/
+/***/ "./src/text-card/index.jsx":
+/*!*********************************!*\
+  !*** ./src/text-card/index.jsx ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/card/style.scss");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/card/save.jsx");
-/* harmony import */ var _defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./defaultAttr.json */ "./src/card/defaultAttr.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ "./src/text-card/style.scss");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./save */ "./src/text-card/save.jsx");
+/* harmony import */ var _defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./defaultAttr.json */ "./src/text-card/defaultAttr.json");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/card/edit.jsx");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/text-card/edit.jsx");
 
 
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)('rachana-block/card', {
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.registerBlockType)('rachana-block/text-card', {
   attributes: {
-    cardItems: {
+    textCard: {
       type: 'array',
       default: [_defaultAttr_json__WEBPACK_IMPORTED_MODULE_2__]
-    },
-    style: {
-      type: 'string',
-      default: ''
     }
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -242,10 +189,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/card/save.jsx":
-/*!***************************!*\
-  !*** ./src/card/save.jsx ***!
-  \***************************/
+/***/ "./src/text-card/save.jsx":
+/*!********************************!*\
+  !*** ./src/text-card/save.jsx ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -262,53 +209,52 @@ const save = ({
   attributes
 }) => {
   const {
-    cardItems,
-    style
+    textCard
   } = attributes;
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-    className: "cgds card",
-    variant: style
-  });
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, cardItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    key: index,
-    className: "card-item"
-  }, item.lastUpdated && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "card-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", {
-    className: "text-muted"
-  }, item.lastUpdated)), item.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    className: `card-image ${style === "card-horizontal" ? "card-image-left" : "card-image-top"}`,
-    src: item.imageUrl,
-    alt: "Card Image"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
+  }, textCard.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cgds-example-card-grid"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cgds card"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "card-body",
+    key: index
+  }, item.titleTag === 'h1' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h1", {
     className: "card-title",
     style: {
       color: item.titleColor,
       fontFamily: item.font
     }
-  }, item.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    className: "card-content",
+  }, item.title) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+    className: "card-title",
+    style: {
+      color: item.titleColor,
+      fontFamily: item.font
+    }
+  }, item.title), item.contentTag === 'strong' ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", {
+    className: "card-text",
     style: {
       color: item.contentColor,
       fontFamily: item.font
     }
-  }, item.content), item.linkText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-    className: "card-link",
-    href: item.href
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-    className: "bi bi-arrow-right-circle-fill"
-  }), " ", item.linkText))));
+  }, item.content) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    className: "card-text",
+    style: {
+      color: item.contentColor,
+      fontFamily: item.font
+    }
+  }, item.content))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (save);
 
 /***/ }),
 
-/***/ "./src/card/style.scss":
-/*!*****************************!*\
-  !*** ./src/card/style.scss ***!
-  \*****************************/
+/***/ "./src/text-card/style.scss":
+/*!**********************************!*\
+  !*** ./src/text-card/style.scss ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -357,13 +303,13 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
-/***/ "./src/card/defaultAttr.json":
-/*!***********************************!*\
-  !*** ./src/card/defaultAttr.json ***!
-  \***********************************/
+/***/ "./src/text-card/defaultAttr.json":
+/*!****************************************!*\
+  !*** ./src/text-card/defaultAttr.json ***!
+  \****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","imageUrl":"","contentColor":"var(--cgds-text-color)","titleColor":"var(--cgds-primary)","href":"","font":"Kantumruy Pro","linkText":"","lastUpdated":""}');
+module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","titleTag":"h5","contentTag":"a","titleColor":"var(--cgds-primary)","contentColor":"var(--cgds-text-color)","font":"Kantumruy Pro"}');
 
 /***/ })
 
@@ -477,8 +423,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","imageUrl":""
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"card/index": 0,
-/******/ 			"card/style-index": 0
+/******/ 			"text-card/index": 0,
+/******/ 			"text-card/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -528,7 +474,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"title":"","content":"","imageUrl":""
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["card/style-index"], () => (__webpack_require__("./src/card/index.jsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["text-card/style-index"], () => (__webpack_require__("./src/text-card/index.jsx")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
