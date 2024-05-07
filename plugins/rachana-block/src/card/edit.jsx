@@ -6,27 +6,22 @@ import { addNewBlockItem, customizeBlockItem } from "../blockHelpers";
 const edit = ({ attributes, setAttributes }) => {
     const { cardItems, style } = attributes;
     const blockProps = useBlockProps();
-
     const handleStyleChange = (value) => {
         setAttributes({ style: value });
     };
-
     const addItem = () => {
         setAttributes({
             cardItems: addNewBlockItem(cardItems, defaultAttr),
         });
     };
-
     const customizeItem = (index, key, value) => {
         setAttributes({
             cardItems: customizeBlockItem(cardItems, index, key, value),
         });
     };
-
     const onSelectImage = (index, media) => {
         customizeItem(index, "imageUrl", media.url);
     };
-
     return (
         <div {...blockProps}>
             <InspectorControls>
