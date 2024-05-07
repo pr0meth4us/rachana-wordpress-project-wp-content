@@ -1,44 +1,46 @@
-import {useBlockProps} from "@wordpress/block-editor";
+import { useBlockProps } from "@wordpress/block-editor";
 
 const save = ({ attributes }) => {
     const { cardItems, style } = attributes;
-    const blockProps = useBlockProps.save({
-        className: "cgds card",
-        variant: style,
-    });
+    const blockProps = useBlockProps.save();
 
     return (
-        <div {...blockProps}>
-            {cardItems.map((item, index) => (
-                <div key={index} className="card-item">
-                    {item.lastUpdated && (
-                        <p className="card-text">
-                            <small className="text-muted">{item.lastUpdated}</small>
-                        </p>
-                    )}
-                    {item.imageUrl && (
-                        <img
-                            className={`card-image ${style === "card-horizontal" ? "card-image-left" : "card-image-top"}`}
-                            src={item.imageUrl}
-                            alt="Card Image"
-                        />
-                    )}
-                    <h2
-                        className="card-title"
-                        style={{ color: item.titleColor, fontFamily: item.font }}
-                    >
-                        {item.title}
-                    </h2>
-                    <p className="card-content" style={{ color: item.contentColor, fontFamily: item.font }}>
-                        {item.content}
-                    </p>
-                    {item.linkText && (
-                        <a className="card-link" href={item.href}>
-                            <i className="bi bi-arrow-right-circle-fill"></i> {item.linkText}
-                        </a>
-                    )}
-                </div>
-            ))}
+        <div {...blockProps} className="wrapper-fluid">
+            <section className="page-component-overview">
+                <article>
+                    <div className="cgds page-component-item-wrapper picture-item">
+                        {cardItems.map((item, index) => (
+                            <div className={`cgds card`} key={index + 1} variant={`${style}`}>
+                                <div className="card-body">
+                                    {item.lastUpdated && (
+                                        <p className="card-text">
+                                            <small className="text-muted">{item.lastUpdated}</small>
+                                        </p>
+                                    )}
+                                    {item.imageUrl && (
+                                        <img
+                                            className={style === 'card-horizontal' ? 'card-img-left' : 'card-img-top'}
+                                            src={item.imageUrl}
+                                            alt="Card Image"
+                                        />
+                                    )}
+                                    <a className="stretched-link link-primary h3 card-title"
+                                       style={{color: item.titleColor, fontFamily: item.font}}>ចំណងជើងកាត</a>
+
+                                    <p className="card-text" style={{color: item.contentColor, fontFamily: item.font}}>
+                                        {item.content}
+                                    </p>
+                                    {item.linkText && (
+                                        <a className="card-link" href="#">
+                                            <i className="bi bi-arrow-right-circle-fill"></i> {item.linkText}
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </article>
+            </section>
         </div>
     );
 };

@@ -10,10 +10,6 @@ registerBlockType('rachana-block/card', {
             type: 'array',
             default: [defaultAttr],
         },
-        style: {
-            type: 'string',
-            default: '',
-        },
     },
     edit,
     save,
