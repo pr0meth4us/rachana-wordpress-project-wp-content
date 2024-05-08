@@ -45,12 +45,6 @@ const edit = ({ attributes, setAttributes }) => {
                 <div key={index}>
                     <InspectorControls>
                         <PanelBody title={`Card Item ${index + 1}`}>
-                            <TextControl
-                                label="Font"
-                                value={item.font}
-                                onChange={(value) => customizeItem(index, "font", value)}
-                            />
-
                             <div className="components-base-control">
                                 <label className="components-base-control__label">Body Text Color</label>
                                 <ColorPicker

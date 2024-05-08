@@ -11,14 +11,14 @@ const save = ({ attributes }) => {
                     <div className="cgds card">
                         <div className="card-body" key={index}>
                             {item.titleTag === 'h1' ? (
-                                <h1 className="card-title" style={{ color: item.titleColor, fontFamily: item.font }}>{item.title}</h1>
+                                <h1 className="card-title" style={{ color: item.titleColor }}>{item.title}</h1>
                             ) : (
-                                <h5 className="card-title" style={{ color: item.titleColor, fontFamily: item.font }}>{item.title}</h5>
+                                <h5 className="card-title" style={{ color: item.titleColor }}>{item.title}</h5>
                             )}
                             {item.contentTag === 'strong' ? (
-                                <strong className="card-text" style={{ color: item.contentColor, fontFamily: item.font }}>{item.content}</strong>
+                                <strong className="card-text" style={{ color: item.contentColor }}>{item.content}</strong>
                             ) : (
-                                <a className="card-text" style={{ color: item.contentColor, fontFamily: item.font }}>{item.content}</a>
+                                <a className="card-text" style={{ color: item.contentColor }}>{item.content}</a>
                             )}
                         </div>
                     </div>

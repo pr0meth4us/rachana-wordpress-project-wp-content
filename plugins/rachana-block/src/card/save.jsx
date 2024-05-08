@@ -25,9 +25,9 @@ const save = ({ attributes }) => {
                                         />
                                     )}
                                     <a className="stretched-link link-primary h3 card-title"
-                                       style={{color: item.titleColor, fontFamily: item.font}}>ចំណងជើងកាត</a>
+                                       style={{color: item.titleColor}}>ចំណងជើងកាត</a>
 
-                                    <p className="card-text" style={{color: item.contentColor, fontFamily: item.font}}>
+                                    <p className="card-text" style={{color: item.contentColor}}>
                                         {item.content}
                                     </p>
                                     {item.linkText && (

@@ -4,6 +4,5 @@
     "titleTag": "h5",
     "contentTag": "a",
     "titleColor": "var(--cgds-primary)",
-    "contentColor": "var(--cgds-text-color)",
-    "font": "Kantumruy Pro"
+    "contentColor": "var(--cgds-text-color)"
 }

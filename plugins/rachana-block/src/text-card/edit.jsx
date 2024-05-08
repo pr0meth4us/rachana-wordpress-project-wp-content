@@ -31,11 +31,6 @@ const edit = ({ attributes, setAttributes }) => {
                 <div key={index}>
                     <InspectorControls>
                         <PanelBody title={`Text Card Item ${index + 1}`}>
-                            <TextControl
-                                label="Font"
-                                value={item.font}
-                                onChange={(value) => customizeItem(index, "font", value)}
-                            />
                             <RadioControl
                                 label="Title Tag"
                                 selected={item.titleTag}
