@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "rachana-block/slide-show",
+  "title": "Slide Show",
+  "version": "1.0.0",
+  "category": "rachana-block-category",
+  "textdomain": "rachana-block",
+  "editorScript": "file:./index.js"
+}
+
