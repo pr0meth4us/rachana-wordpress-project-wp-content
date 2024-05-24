@@ -26,5 +26,6 @@ add_filter( 'block_categories_all', 'register_layout_category' );
 function wp_scripts_rachana_wordpress_block_init()
 {
     register_block_type(__DIR__.'/build/table');
+    register_block_type(__DIR__.'/build/button');
 }
 add_action('init', 'wp_scripts_rachana_wordpress_block_init');
