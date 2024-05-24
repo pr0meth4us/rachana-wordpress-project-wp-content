@@ -27,5 +27,8 @@ function wp_scripts_rachana_wordpress_block_init()
 {
     register_block_type(__DIR__.'/build/table');
     register_block_type(__DIR__.'/build/button');
+    register_block_type(__DIR__.'/build/card');
+    register_block_type(__DIR__.'/build/text-card');
+    register_block_type(__DIR__.'/build/button');
 }
 add_action('init', 'wp_scripts_rachana_wordpress_block_init');
