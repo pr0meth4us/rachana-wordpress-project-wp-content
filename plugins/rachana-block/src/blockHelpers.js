@@ -1,13 +1,17 @@
 import shortid from 'shortid';
-import {format} from "date-fns";
+export function generateAttributes(defaultAttributes) {
+    const id = shortid.generate();
+    const attributes = { id };
 
-export const generateAttributes = (defaultAttributes) => {
-    const attributes = {};
     for (const key in defaultAttributes) {
-        attributes[key] = { type: typeof defaultAttributes[key], default: defaultAttributes[key] };
+        attributes[key] = {
+            type: typeof defaultAttributes[key],
+            default: defaultAttributes[key]
+        };
     }
+
     return attributes;
-};
+}
 
 export const onChangeAttribute = (key, value, setAttributes) => {
     setAttributes({ [key]: value });
