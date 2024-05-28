@@ -6,6 +6,10 @@ import PersonIcon from "../../assets/img/icons/person-icon.svg";
 const save = ({ attributes }) => {
     const { posts } = attributes;
     const blockProps = useBlockProps.save();
+    const categoryUrls = {
+        0: "/topics/news",
+        1: "/topics/events"
+    };
 
     return (
         <div {...blockProps} id="postCarousel" className="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
@@ -23,9 +27,9 @@ const save = ({ attributes }) => {
                             <div className="card-body carousel-card-body">
                                 <div className="container">
                                     <p className="card-text">
-                                        <img src={TimeIcon} alt="Time Icon" />
+                                        <img src={TimeIcon} className="slide-show-icon" alt="Time Icon" />
                                         <small className="text-muted card-text-muted">{" "}{post.formattedDate}{" "}|{" "}</small>
-                                        <img src={PersonIcon} alt="Person Icon" />
+                                        <img src={PersonIcon} className="slide-show-icon" alt="Person Icon" />
                                         <small className="text-muted card-text-muted">{" "}{post.author}</small>
                                     </p>
                                     <a href={post.link} className="link-primary h3 card-title" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></a>
@@ -33,14 +37,14 @@ const save = ({ attributes }) => {
                                         {post.categories.length > 0 && (
                                             <div className="category-links">
                                                 {post.categories.map((categoryName, categoryId) => (
-                                                    <a key={categoryId} role="button" href={`/category/${categoryId}`} className="cgds btn btn-primary btn-sm category-link">
+                                                    <a role="button" href={categoryUrls[categoryId]} className="cgds btn btn-primary btn-sm category-link">
                                                         {categoryName}
                                                     </a>
                                                 ))}
                                             </div>
                                         )}
                                         <div className="card-link-wrapper">
-                                            <a className="card-link blog-btn" href="#">
+                                            <a className="card-link blog-btn" href={post.link}>
                                                 <i className="bi bi-arrow-right-circle-fill"></i>
                                                 ចុចអានបន្ថែម
                                             </a>

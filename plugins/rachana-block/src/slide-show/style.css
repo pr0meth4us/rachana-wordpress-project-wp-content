@@ -290,3 +290,10 @@
   width: 1440px;
   height: 444px;
 }
+.card .slide-show-icon {
+  width: auto;
+  margin-bottom: 0;
+}
+.carousel-inner .card-img-left{
+  height: 444px;
+}
