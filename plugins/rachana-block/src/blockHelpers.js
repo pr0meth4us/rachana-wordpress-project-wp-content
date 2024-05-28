@@ -43,3 +43,11 @@ export const formatDate = (date) => {
 export const customizeAttribute = (block, key, value) => {
     return {...block, [key]: value };
 };
+
+export const cleansePostContent = (dirtyContent) => {
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = dirtyContent;
+    const cleanContent = tempDiv.textContent || tempDiv.innerText || '';
+    const imageLink = tempDiv.querySelector('img') ? tempDiv.querySelector('img').src : null;
+    return { cleanContent, imageLink };
+}
