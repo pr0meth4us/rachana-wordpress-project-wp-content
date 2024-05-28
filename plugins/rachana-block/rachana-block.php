@@ -19,10 +19,9 @@ function register_layout_category( $categories ) {
     );
 
     $categories[] = array(
-        'slug' => 'rachana-dynamic',
+        'slug'  => 'rachana-dynamic',
         'title' => 'Rachana Dynamic Blocks',
     );
-
 
     return $categories;
 }
@@ -38,5 +37,6 @@ function wp_scripts_rachana_wordpress_block_init()
     register_block_type(__DIR__.'/build/button');
     register_block_type(__DIR__.'/build/slide-show');
     register_block_type(__DIR__.'/build/alert');
+    register_block_type(__DIR__.'/build/page-portal');
 }
 add_action('init', 'wp_scripts_rachana_wordpress_block_init');

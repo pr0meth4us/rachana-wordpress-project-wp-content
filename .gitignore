@@ -1,7 +1,6 @@
 themes/twentytwentyfour
 themes/twentytwentythree
 themes/twentytwentytwo
-plugins/rachana-block/node_modules
 .DS_Store
 .idea
-plugins/rachana-block/.idea
+plugins/rachana-block/node_modules
