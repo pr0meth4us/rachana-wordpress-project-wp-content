@@ -16,7 +16,10 @@ const cardData = [
 ];
 const Card = ({ icon, url, text }) => (
     <div className="card cgds">
-        <img className="card-img-top" src={icon} alt={`${text} Icon`} />
+        <a className="card-img-top" href={typeof url === 'function' ? url() : url}>
+            <img src={icon} alt={`${text} Icon`}/>
+        </a>
+
         <div className="card-body">
             <a href={typeof url === 'function' ? url() : url}>
                 <div className="icon-text">{text}</div>
