@@ -18,7 +18,7 @@ docker compose up -d
 ````
 Or
 ````
-docker-compose up -d
+docker compose up -d
 ````
 
 Then in your browser:

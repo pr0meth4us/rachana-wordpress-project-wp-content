@@ -55,7 +55,7 @@ const edit = ({ attributes, setAttributes }) => {
         const categories = await Promise.all(
             categoryIds.map(async (id) => {
                 const category = await apiFetch({ path: `/wp/v2/categories/${id}` });
-                return { [id]: category.name };
+                return { [id]: category };
             })
         );
         return Object.assign({}, ...categories);
