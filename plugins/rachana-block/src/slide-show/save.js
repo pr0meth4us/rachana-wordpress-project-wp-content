@@ -6,11 +6,6 @@ import PersonIcon from "../../assets/img/icons/person-icon.svg";
 const save = ({ attributes }) => {
     const { posts } = attributes;
     const blockProps = useBlockProps.save();
-    const categoryUrls = {
-        0: "/topics/news",
-        1: "/topics/events"
-    };
-
     return (
         <div {...blockProps} id="postCarousel" className="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
             <ol className="carousel-indicators">
@@ -36,9 +31,10 @@ const save = ({ attributes }) => {
                                     <div className="category-links-wrapper">
                                         {post.categories.length > 0 && (
                                             <div className="category-links">
-                                                {post.categories.map((categoryName, categoryId) => (
-                                                    <a role="button" href={categoryUrls[categoryId]} className="cgds btn btn-primary btn-sm category-link">
-                                                        {categoryName}
+                                                {post.categories.map((category, index) => (
+                                                    <a key={index} role="button" href={category.link}
+                                                       className="cgds btn btn-primary btn-sm category-link">
+                                                        {category.name}
                                                     </a>
                                                 ))}
                                             </div>
@@ -58,12 +54,11 @@ const save = ({ attributes }) => {
             </div>
 
             <a className="carousel-control-prev" href="#postCarousel" role="button" data-slide="prev">
-                <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous" aria-hidden="true" />
+                <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous" aria-hidden="true"/>
                 <span className="sr-only">Previous</span>
             </a>
             <a className="carousel-control-next" href="#postCarousel" role="button" data-slide="next">
                 <img src={ChevronIcon} className="carousel-control-next-icon" alt="Next" aria-hidden="true" />
-                <span className="sr-only">Next</span>
             </a>
         </div>
     );
