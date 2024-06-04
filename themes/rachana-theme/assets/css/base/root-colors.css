@@ -1,33 +1,35 @@
 .cgds.navbar {
-  background-color: var(--rachana-primary);
+  background-color: var(--cgds-primary);
 }
 
 .cgds.navbar header {
-  background-color: var(--rachana-primary) !important;
+  background-color: var(--cgds-primary) !important;
 }
 
 .cgds.navbar .nav-item {
   a.nav-link {
-    color: var(--rachana-text-color-theme) !important;
+    color: var(--cgds-text-color-theme) !important;
   }
 }
 
 .cgds.footer {
-  color: var(--rachana-text-color-theme);
+  color: var(--cgds-text-color-theme);
 
   .footer-top {
-    background-color: var(--rachana-primary);
+    background-color: var(--cgds-primary);
 
     a {
-      color: var(--rachana-text-color-theme) !important;
+      color: var(--cgds-text-color-theme) !important;
     }
   }
 
   .footer-bottom {
-    background-color: var(--rachana-primary);
+    background-color: var(--cgds-primary);
 
     a {
-      color: var(--rachana-text-color-theme) !important;
+      color: var(--cgds-text-color-theme) !important;
     }
   }
 }
+
+
