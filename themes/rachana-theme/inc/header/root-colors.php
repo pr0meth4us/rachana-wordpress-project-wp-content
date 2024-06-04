@@ -33,7 +33,7 @@ function generate_custom_css() {
 
     $custom_css = '';
     foreach ($colors as $key => $value) {
-        $custom_css .= "--rachana-{$key}: {$value} !important;\n";
+        $custom_css .= "--cgds-{$key}: {$value} !important;\n";
     }
 
     return $custom_css;
