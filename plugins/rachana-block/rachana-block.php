@@ -38,5 +38,7 @@ function wp_scripts_rachana_wordpress_block_init()
     register_block_type(__DIR__.'/build/slide-show');
     register_block_type(__DIR__.'/build/alert');
     register_block_type(__DIR__.'/build/page-portal');
+    register_block_type(__DIR__.'/build/news-block');
+
 }
 add_action('init', 'wp_scripts_rachana_wordpress_block_init');

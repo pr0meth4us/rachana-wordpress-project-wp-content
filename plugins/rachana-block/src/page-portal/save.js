@@ -15,7 +15,7 @@ const cardData = [
     { id: 'news', icon: newsIcon, url: "/ក្របខ័ណ្ឌអភិវឌ្ឍន៍ខេត្", text: "គម្រោងអភិវឌ្ឍន៍" }
 ];
 const Card = ({ icon, url, text }) => (
-    <div className="card cgds">
+    <div className="card cgds page-portal">
         <a className="card-img-top" href={typeof url === 'function' ? url() : url}>
             <img src={icon} alt={`${text} Icon`}/>
         </a>

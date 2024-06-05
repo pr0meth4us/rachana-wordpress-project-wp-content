@@ -5,7 +5,7 @@ import defaultAttr from "./defaultAttr.json";
 import edit from "./edit";
 import save from "./save";
 
-registerBlockType('rachana-block/slide-show', {
+registerBlockType('rachana-block/news-block', {
     attributes:generateAttributes(defaultAttr),
     edit,
     save,
