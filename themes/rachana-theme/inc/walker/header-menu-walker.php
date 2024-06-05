@@ -38,6 +38,11 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
         $class_names = join(' nav-item ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
 
+        $active = '';
+        if (strpos($class_names, "current-menu-") !== false) {
+            $active = ' active ';
+        }
+
         $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth);
         $id = $id ? ' id="' . esc_attr($id) . '"' : '';
 
@@ -66,8 +71,6 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
 
         $item_output = $args->before;
 
-        $active = $item->current ? 'active' : '';
-
 
         if ($args->walker->has_children) {
             $item_output .= '<a class="nav-link ' . $active . '  cgds dropdown-toggle"' . $attributes . ' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
@@ -78,7 +81,7 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
             if ($depth === 0) {
                 $item_output .= '<a class="nav-link  ' . $active . ' "' . $attributes . '>';
             } else {
-                $item_output .= '<a class="dropdown-item"' . $attributes . '>';
+                $item_output .= '<a class="dropdown-item ' . $active . '"' . $attributes . '>';
             }
             $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
             $item_output .= '</a>';

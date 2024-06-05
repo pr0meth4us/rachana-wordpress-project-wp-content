@@ -26,3 +26,8 @@ header ul.navbar-nav {
 .site-title {
   color: var(--cgds-text-color-theme);
 }
+
+.cgds.dropdown .dropdown-menu a.dropdown-item.active {
+  color: var(--cgds-text-color-theme);
+  font-weight: 600;
+}
