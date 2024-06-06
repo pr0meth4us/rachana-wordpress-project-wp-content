@@ -8,19 +8,18 @@ const save = ({ attributes }) => {
     const blockProps = useBlockProps.save();
     const blockId = `postCarousel-${attributes.id}`;
     return (
-        <div {...blockProps} id={blockId} className="cgds slide-show carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+        <div {...blockProps} id={blockId} className="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
             <ol className="carousel-indicators">
                 {posts.map((post, index) => (
                     <li key={post.key} data-target={`#${blockId}`} data-slide-to={index} className={index === 0 ? 'active' : ''}></li>
                 ))}
             </ol>
-
-            <div className="carousel-inner page-component-item-wrapper picture-item">
+            <div className="carousel-inner cgds slide page-component-item-wrapper picture-item">
                 {posts.map((post, index) => (
                     <div key={post.key} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                        <div className="cgds card card-horizontal carousel-card">
+                        <div className="cgds card card-horizontal slide-card">
                             {post.imageLink && <img className="card-img-left" src={post.imageLink} alt="Post Image" />}
-                            <div className="card-body carousel-card-body">
+                            <div className="card-body slide-card-body">
                                 <div className="container">
                                     <p className="card-text">
                                         <img src={TimeIcon} className="slide-show-icon" alt="Time Icon" />

@@ -1,10 +1,7 @@
-.cgds.news.carousel.slide .card-body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.cgds.news.carousel.slide .cgds.card{
+   width: 430px;
+  height: 510px;
 }
-
 .cgds.news.carousel.slide .card-title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -56,7 +53,7 @@
     flex: 0 0 100%;
   }
 }
-.carousel-item:not(.active) {
+.news-chunk .carousel-item:not(.active) {
   display: none !important;
 }
 
@@ -101,3 +98,11 @@
 .cgds.news.carousel.slide .news-block-icon{
   fill: var(--cgds-primary);
 }
+.cgds.news.carousel.slide .carousel-item:not(.active) {
+  display: none !important;
+}
+
+.cgds.news.carousel.slide .carousel-inner{
+  padding:2em;
+}
+

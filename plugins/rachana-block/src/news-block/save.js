@@ -34,12 +34,11 @@ const save = ({ attributes }) => {
                                     <img className="card-img-top img-fluid" src={post.imageLink} alt="Post Image"/>}
                                 <div className="card-body">
                                     <p className="card-text">
-                                        <img src={TimeIcon} className="news-block-icon" alt="Time Icon"/>
+                                        <span className="news-block-icon"></span>
                                         <small className="text-muted">{getRelativeTime(post.date)}</small>
                                     </p>
-                                    <a href={post.link} className="card-title link-primary h3"
-                                       dangerouslySetInnerHTML={{__html: post.title.rendered}}></a>
-                                    <p className="card-text">{post.cleanContent}</p>
+                                    <p className="card-text"
+                                       dangerouslySetInnerHTML={{__html: post.title.rendered}}></p>
                                     <a className="card-link blog-btn" href={post.link}>
                                         <i className="bi bi-arrow-right-circle-fill"></i>
                                         ចុចសម្រាប់ទៅទំព័រផ្សេងៗ

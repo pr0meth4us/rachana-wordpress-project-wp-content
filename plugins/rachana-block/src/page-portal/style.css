@@ -14,11 +14,17 @@
 }
 .icon-container .card-body {
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
-.card img {
+.icon-container .card img {
     height: auto;
     margin-bottom: 10px;
-    width: 50%}
+}
+
+.icon-container .card-img-top{
+    width: inherit;
+}
 .icon-text {
     margin-top: 5px;
 }
