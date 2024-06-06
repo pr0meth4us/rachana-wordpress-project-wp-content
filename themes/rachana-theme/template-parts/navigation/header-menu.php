@@ -7,7 +7,5 @@
         'items_wrap' => '<ul id="" class="navbar-nav">%3$s</ul>',
         'walker' => new Main_Nav_Walker()
     ));
-
-    include get_template_directory() . '/template-parts/header/search-bar.php';
     ?>
 </div>
