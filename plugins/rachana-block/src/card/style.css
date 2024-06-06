@@ -1,132 +1,28 @@
-.page-component-overview section[name*=section-] + section[name*=section-] {
-  margin-top: 3.5rem;
-}
-.page-component-overview section[name*=section-] .section-sub + .section-sub {
-  margin-top: 3rem;
-}
-.page-component-overview .subtitle {
-  margin-bottom: 0;
-}
-.page-component-overview .cgds.accordion.code-snippet .accordion-header {
-  display: flex;
-}
-.page-component-overview .cgds.accordion.code-snippet .accordion-item {
-  border-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.page-component-overview .cgds.accordion.code-snippet .accordion-body {
-  background-color: #272822;
-  padding: 1rem 2rem 1rem 1rem;
-  position: relative;
-}
-.page-component-overview .cgds.accordion.code-snippet .accordion-body .btn-copy {
-  position: absolute;
-  right: 0.5rem;
-}
-.page-component-overview .cgds.accordion.code-snippet .accordion-body figure.highlight {
-  margin-bottom: 0;
-}
-.page-component-overview .cgds.accordion.code-snippet + .desc-bottom {
-  margin-top: 1rem;
-}
-.page-component-overview .header-component .header-component-description {
-  width: auto;
-}
-@media (min-width: 1390px) {
-  .page-component-overview .header-component .header-component-description {
-    width: 75ch;
-  }
-}
-.page-component-overview .header-component .component-source-grid {
-  display: flex;
-  gap: 2rem;
-}
-@media (max-width: 1405px) {
-  .page-component-overview .header-component .component-source-grid {
-    display: block;
-  }
-  .page-component-overview .header-component .component-source-grid div + div {
-    margin-top: 0.5rem;
-  }
-}
-.page-component section[name*=section-] + section[name*=section-] {
-  margin-top: 3.5rem;
-}
-.page-component section[name*=section-] .section-sub + .section-sub {
-  margin-top: 3rem;
-}
-.page-component .subtitle {
-  margin-bottom: 0;
-}
-.page-component .cgds.accordion.code-snippet .accordion-header {
-  display: flex;
-}
-.page-component .cgds.accordion.code-snippet .accordion-item {
-  border-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.page-component .cgds.accordion.code-snippet .accordion-body {
-  background-color: #272822;
-  padding: 1rem 2rem 1rem 1rem;
-  position: relative;
-}
-.page-component .cgds.accordion.code-snippet .accordion-body .btn-copy {
-  position: absolute;
-  right: 0.5rem;
-}
-.page-component .cgds.accordion.code-snippet .accordion-body figure.highlight {
-  margin-bottom: 0;
-}
-.page-component .cgds.accordion.code-snippet + .desc-bottom {
-  margin-top: 1rem;
-}
-.page-component .header-component .header-component-description {
-  width: auto;
-}
-@media (min-width: 1390px) {
-  .page-component .header-component .header-component-description {
-    width: 75ch;
-  }
-}
-.page-component .header-component .component-source-grid {
-  display: flex;
-  gap: 2rem;
-}
-@media (max-width: 1405px) {
-  .page-component .header-component .component-source-grid {
-    display: block;
-  }
-  .page-component .header-component .component-source-grid div + div {
-    margin-top: 0.5rem;
-  }
-}
-.page-component-overview article .page-component-item-wrapper {
+.card-wrapper article .card-item-wrapper {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
 }
-.page-component-overview article .page-component-item-wrapper .cgds.card {
+.card-wrapper article .card-item-wrapper .cgds.card {
   background: #f6f7fb;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
 }
-.page-component-overview article .page-component-item-wrapper .cgds.card .card-body {
+.card-wrapper article .card-item-wrapper .cgds.card .card-body {
   background: var(--cgds-white);
   background: linear-gradient(0deg, #fff 74%, #f6f7fb);
   z-index: 1;
 }
-.page-component-overview article .page-component-item-wrapper .cgds.card img {
+.card-wrapper article .card-item-wrapper .cgds.card img {
   transition: transform 0.2s ease-in-out;
 }
-.page-component-overview article .page-component-item-wrapper .cgds.card:hover {
+.card-wrapper .card-item-wrapper .cgds.card:hover {
   filter: drop-shadow(0 15px 15px rgba(var(--cgds-black-rgb)));
 }
-.page-component-overview article .page-component-item-wrapper .cgds.card:hover img {
+.card-wrapper .card-item-wrapper .cgds.card:hover img {
   transform: scale(1.03) rotate(0.01deg);
 }
-.page-component-overview article + article {
+.card-wrapper article + article {
   margin-top: 2rem;
 }
 .cgds.card .card-title {

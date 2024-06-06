@@ -6,9 +6,9 @@ const save = ({ attributes }) => {
 
     return (
         <div {...blockProps} className="wrapper-fluid">
-            <section className="page-component-overview">
+            <section className="card-wrapper">
                 <article>
-                    <div className="cgds page-component-item-wrapper picture-item">
+                    <div className="cgds card-item-wrapper picture-item">
                         {cardItems.map((item) => (
                             <div className={`cgds card ${style}`} key={item.id}>
                                 {item.imageUrl && (

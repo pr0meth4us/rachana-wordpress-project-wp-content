@@ -24,8 +24,8 @@ const save = ({ attributes }) => {
     const chunks = chunkArray(posts, 3);
 
     return (
-        <div {...blockProps} id={blockId} className="carousel slide " data-ride="carousel" data-interval="false">
-            <div className="carousel-inner cgds news">
+        <div {...blockProps} id={blockId} className="cgds news carousel slide " data-ride="carousel" data-interval="false">
+            <div className="carousel-inner">
                 {chunks.map((chunk, chunkIndex) => (
                     <div key={chunkIndex} className={`carousel-item news-chunk ${chunkIndex === 0 ? 'active' : ''}`}>
                         {chunk.map((post) => (
