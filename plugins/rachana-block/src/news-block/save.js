@@ -34,7 +34,7 @@ const save = ({ attributes }) => {
                                     <img className="card-img-top img-fluid" src={post.imageLink} alt="Post Image"/>}
                                 <div className="card-body">
                                     <p className="card-text">
-                                        <img src="../../assets/img/icons/time-icon.svg" className="slide-show-icon" alt="Time Icon"/>
+                                        <img src={TimeIcon} className="news-block-icon" alt="Time Icon"/>
                                         <small className="text-muted">{getRelativeTime(post.date)}</small>
                                     </p>
                                     <a href={post.link} className="card-title link-primary h3"
