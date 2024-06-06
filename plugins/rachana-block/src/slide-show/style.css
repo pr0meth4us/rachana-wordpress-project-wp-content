@@ -33,18 +33,6 @@
 .cgds.slide .carousel-control-next{
     right: -5% !important
 }
-.cgds.slide .carousel-indic li {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.custom-indicators li.active {
-  background-color: #007bff;
-}
 
  .carousel-card-body{
   background-color: #25487c;
