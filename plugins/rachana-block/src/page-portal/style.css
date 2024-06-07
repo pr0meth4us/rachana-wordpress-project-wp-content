@@ -1,9 +1,9 @@
-.icon-container, .icon-container .card {
+.page-portal, .page-portal .card {
     align-items: center;
     display: flex;
     padding: 20px;
 }
-.icon-container .card {
+.page-portal .card {
     border: 1px solid #e5e7eb!important;
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px #0000001a;
@@ -12,19 +12,19 @@
     justify-content: center;
     margin: 10px;
 }
-.icon-container .card-body {
+.page-portal .card-body {
     padding: 0;
     display: flex;
     justify-content: center;
 }
-.icon-container .card img {
+.page-portal .card img {
     height: auto;
     margin-bottom: 10px;
 }
 
-.icon-container .card-img-top{
+.page-portal .card-img-top{
     width: inherit;
 }
-.icon-text {
+.page-portal {
     margin-top: 5px;
 }

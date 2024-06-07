@@ -15,7 +15,7 @@ const cardData = [
     { id: 'news', icon: newsIcon, url: "/ក្របខ័ណ្ឌអភិវឌ្ឍន៍ខេត្", text: "គម្រោងអភិវឌ្ឍន៍" }
 ];
 const Card = ({ icon, url, text }) => (
-    <div className="card cgds page-portal">
+    <div className="card cgds">
         <a className="card-img-top" href={typeof url === 'function' ? url() : url}>
             <img src={icon} alt={`${text} Icon`}/>
         </a>
@@ -31,7 +31,7 @@ const Card = ({ icon, url, text }) => (
 const save = () => {
     const blockProps = useBlockProps.save();
     return (
-        <div {...blockProps} className="icon-container">
+        <div {...blockProps} className="page-portal">
             {cardData.map((card) => <Card key={card.id} {...card} />)}
         </div>
     );

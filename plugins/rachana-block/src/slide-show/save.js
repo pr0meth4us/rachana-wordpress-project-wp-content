@@ -40,7 +40,7 @@ const save = ({ attributes }) => {
                                             </div>
                                         )}
                                         <div className="card-link-wrapper">
-                                            <a className="card-link blog-btn" href={post.link}>
+                                            <a className="card-link blog-btn btn-secondary" href={post.link}>
                                                 <i className="bi bi-arrow-right-circle-fill"></i>
                                                 ចុចអានបន្ថែម
                                             </a>
