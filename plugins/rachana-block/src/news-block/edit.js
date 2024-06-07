@@ -51,15 +51,20 @@ const edit = ({ attributes, setAttributes }) => {
         })();
     }, []);
 
+    const handleRangeChange = (value) => {
+        const nearestMultipleOfThree = Math.round(value / 3) * 3;
+        setAttributes({ postCount: nearestMultipleOfThree });
+    };
+
     return (
         <div {...blockProps}>
             <h2>Latest Posts Slide Show</h2>
             <RangeControl
                 label="Number of Posts"
                 value={attributes.postCount}
-                onChange={(value) => setAttributes({ postCount: value })}
-                min={1}
-                max={20}
+                onChange={handleRangeChange}
+                min={6}
+                max={30}
             />
             <SelectControl
                 label="Category"
