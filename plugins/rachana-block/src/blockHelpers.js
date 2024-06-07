@@ -78,37 +78,3 @@ export const fetchAuthors = async (posts) => {
     );
     return Object.assign({}, ...authors);
 };
-const fetchCategoriesList = async () => {
-    const categories = await apiFetch({ path: '/wp/v2/categories' });
-    return categories.map((category) => ({
-        label: category.name,
-        value: category.id,
-    }));
-};
-export const fetchPosts = async (includeCategory = false) => {
-    const categoryIDs = includeCategory ? attributes.categoryId : [];
-    const path = includeCategory
-        ? `/wp/v2/posts?order=desc&orderby=date&per_page=${attributes.postCount}&categories=${categoryIDs.join(',')}`
-        : `/wp/v2/posts?order=desc&orderby=date&per_page=${attributes.postCount}`;
-
-    const res = await apiFetch({ path });
-    const authors = await fetchAuthors(res);
-    const categories = await fetchCategories(res);
-
-    const processedPosts = res.map((post) => {
-        const { cleanContent, imageLink } = cleansePostContent(post.content.rendered);
-        return {
-            ...post,
-            author: authors[post.author],
-            categories: post.categories.map((id) => categories[id]),
-            cleanContent,
-            imageLink,
-            date: formatDate(post.date),
-            link: post.link,
-            key: shortid.generate(),
-        };
-    });
-
-    setAttributes({ posts: processedPosts });
-    setAttributes({ id: shortid.generate() });
-};
