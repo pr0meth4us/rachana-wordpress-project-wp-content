@@ -1,5 +1,5 @@
 .cgds.news .cgds.card{
-   width: 430px;
+  width: 430px;
   height: 510px;
 }
 .cgds.news .card-title {
@@ -106,6 +106,7 @@
 .cgds.news .news-block-icon{
   fill: var(--cgds-primary);
 }
+
 .cgds.news .carousel-item:not(.active) {
   display: none !important;
 }

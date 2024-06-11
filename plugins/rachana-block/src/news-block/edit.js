@@ -1,5 +1,5 @@
 import { RangeControl, SelectControl } from '@wordpress/components';
-import { useState, useEffect } from '@wordpress/element';
+import { useEffect } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
 import apiFetch from '@wordpress/api-fetch';
 import { cleansePostContent, fetchAuthors, fetchCategories, formatDate } from "../blockHelpers";
@@ -7,17 +7,17 @@ import shortid from "shortid";
 
 const edit = ({ attributes, setAttributes }) => {
     const blockProps = useBlockProps();
+    const { categoryId}
 
     const fetchCategoriesList = async () => {
         const categories = await apiFetch({ path: '/wp/v2/categories' });
-        return categories.map((category) => ({
-            label: category.name,
-            value: category.id,
+        return categories.map(({name, id}) => ({
+            label: name,
+            value: id,
         }));
     };
 
     const fetchPosts = async () => {
-        const categoryIDs = [attributes.categoryId];
         const res = await apiFetch({
             path: `/wp/v2/posts?order=desc&orderby=date&per_page=${attributes.postCount}&categories=${categoryIDs.join(',')}`,
         });

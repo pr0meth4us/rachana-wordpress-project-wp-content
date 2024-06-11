@@ -8,23 +8,23 @@ const save = ({ attributes }) => {
     const blockProps = useBlockProps.save();
     const blockId = `postCarousel-${attributes.id}`;
     return (
-        <div {...blockProps} id={blockId} className="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+        <div {...blockProps} id={blockId} className="carousel cgds slide" data-ride="carousel" data-interval="3000" data-pause="hover">
             <ol className="carousel-indicators">
                 {posts.map((post, index) => (
                     <li key={post.key} data-target={`#${blockId}`} data-slide-to={index} className={index === 0 ? 'active' : ''}></li>
                 ))}
             </ol>
-            <div className="carousel-inner cgds slide page-component-item-wrapper picture-item">
+            <div className="carousel-inner">
                 {posts.map((post, index) => (
                     <div key={post.key} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                        <div className="cgds card card-horizontal slide-card">
+                        <div className="cgds card card-horizontal">
                             {post.imageLink && <img className="card-img-left" src={post.imageLink} alt="Post Image" />}
-                            <div className="card-body slide-card-body">
+                            <div className="card-body">
                                 <div className="container">
                                     <p className="card-text">
-                                        <img src={TimeIcon} className="slide-show-icon" alt="Time Icon" />
+                                        <img src={TimeIcon} className="slide-icon" alt="Time Icon" />
                                         <small className="text-muted card-text-muted">{" "}{post.date}{" "}|{" "}</small>
-                                        <img src={PersonIcon} className="slide-show-icon" alt="Person Icon" />
+                                        <img src={PersonIcon} className="slide-icon" alt="Person Icon" />
                                         <small className="text-muted card-text-muted">{" "}{post.author}</small>
                                     </p>
                                     <a href={post.link} className="link-primary h3 card-title" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></a>
@@ -40,7 +40,7 @@ const save = ({ attributes }) => {
                                             </div>
                                         )}
                                         <div className="card-link-wrapper">
-                                            <a className="card-link blog-btn btn-secondary" href={post.link}>
+                                            <a className="card-link blog-btn" href={post.link}>
                                                 <i className="bi bi-arrow-right-circle-fill"></i>
                                                 ចុចអានបន្ថែម
                                             </a>
