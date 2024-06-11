@@ -4,7 +4,7 @@ services:
 #    uncomment whichever data u want to use
     volumes:
       - db_data:/var/lib/mysql
-#      - ./kandal.sql:/docker-entrypoint-initdb.d/kandal.sql
+      # - ./kandal.sql:/docker-entrypoint-initdb.d/kandal.sql
       - ./shv.sql:/docker-entrypoint-initdb.d/shv.sql
     restart: always
     environment:
