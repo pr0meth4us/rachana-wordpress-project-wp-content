@@ -112,7 +112,7 @@
 }
 
 .cgds.news .carousel-control-prev-icon {
-  margin-right: 120px;
+  margin-right: 90px;
 }
 
 .cgds.news .news-block-icon{
@@ -141,6 +141,11 @@
   position: absolute;
   right: 31em;
 }
+
 footer{
     margin-top: 2em;
+}
+
+.cgds.news .cgds.card.imageless{
+  height: auto;
 }

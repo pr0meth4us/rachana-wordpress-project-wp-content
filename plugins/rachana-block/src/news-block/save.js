@@ -5,7 +5,7 @@ import TimeIcon from "../../assets/img/icons/time-icon-primary-color.svg";
 import PersonIcon from "../../assets/img/icons/person-icon-primary-color.svg";
 
 const save = ({ attributes }) => {
-    const { posts, id, categoryId, categoryName } = attributes;
+    const { posts, id, categoryLink, categoryName } = attributes;
     const blockProps = useBlockProps.save();
     const blockId = `postCarousel-${id}`;
     const chunkArray = (array, size) => {
@@ -31,16 +31,15 @@ const save = ({ attributes }) => {
                     <div key={chunkIndex} className={`carousel-item news-chunk ${chunkIndex === 0 ? 'active' : ''}`}>
                         {chunk.map((post) => (
                             <div key={post.key} className="cgds card">
-                                {post.imageLink &&
-                                    <img className="card-img-top img-fluid" src={post.imageLink} alt="Post Image"/>}
+                                <img className="card-img-top img-fluid" src={post.imageLink} alt="Post Image" />
                                 <div className="card-body">
                                     <p className="card-text">
-                                        <img src={TimeIcon} style={{ fill: 'var(--cgds-primary)' }} alt="Time Icon"/>
+                                        <img src={TimeIcon} style={{ fill: 'var(--cgds-primary)' }} alt="Time Icon" />
                                         <small className="text-muted">{" "}{getRelativeTime(post.date)}{" "}</small>
-                                        <img src={PersonIcon} className="slide-show-icon" alt="Person Icon"/>
+                                        <img src={PersonIcon} className="slide-show-icon" alt="Person Icon" />
                                         <small className="text-muted card-text-muted">{" "}{post.author}</small>
                                     </p>
-                                    <p className="card-text" dangerouslySetInnerHTML={{__html: post.title.rendered}}></p>
+                                    <p className="card-text" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></p>
                                     <a className="card-link blog-btn" href={post.link}>
                                         <i className="bi bi-arrow-right-circle-fill"></i>
                                         ចុចអានបន្ថែម
@@ -55,22 +54,18 @@ const save = ({ attributes }) => {
                 <ol className="carousel-indicators d-flex align-items-center flex-grow-1">
                     <li>
                         <a className="carousel-control-prev" href={`#${blockId}`} role="button" data-slide="prev">
-                            <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous"
-                                 aria-hidden="true"/>
+                            <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous" aria-hidden="true" />
                         </a>
                     </li>
                     {chunks.map((chunk, index) => (
-                        <li key={index} data-target={`#${blockId}`} data-slide-to={index}
-                            className={index === 0 ? 'active' : ''}></li>
+                        <li key={index} data-target={`#${blockId}`} data-slide-to={index} className={index === 0 ? 'active' : ''}></li>
                     ))}
                     <li>
                         <a className="carousel-control-next" href={`#${blockId}`} role="button" data-slide="next">
-                            <img src={ChevronIcon} className="carousel-control-next-icon" alt="Next"
-                                 aria-hidden="true"/>
+                            <img src={ChevronIcon} className="carousel-control-next-icon" alt="Next" aria-hidden="true" />
                         </a>
                     </li>
-                    <a role="button" href={`/?cat=${categoryId}`}
-                       className="cgds btn-sm btn btn-primary">ចុចមើលទាំងអស់</a>
+                    <a role="button" href={categoryLink} className="cgds btn-sm btn btn-primary">ចុចមើលទាំងអស់</a>
                 </ol>
             </div>
         </div>

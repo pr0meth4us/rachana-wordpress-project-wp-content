@@ -1,4 +1,4 @@
-import { RangeControl, SelectControl, TextControl } from '@wordpress/components';
+import { CheckboxControl, RangeControl, SelectControl, TextControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
 import apiFetch from '@wordpress/api-fetch';
@@ -7,7 +7,7 @@ import shortid from "shortid";
 
 const edit = ({ attributes, setAttributes }) => {
     const blockProps = useBlockProps();
-    const { categoryId, postCount, categoryLink, categoryList, categoryName } = attributes;
+    const { categoryId, postCount, categoriesList, categoryName } = attributes;
 
     const fetchCategoriesList = async () => {
         const categories = await apiFetch({ path: '/wp/v2/categories' });
@@ -42,16 +42,12 @@ const edit = ({ attributes, setAttributes }) => {
 
     useEffect(() => {
         fetchPosts();
-    }, [postCount, categoryId]);
+    }, [postCount, categoryId, categoryName]);
 
     useEffect(() => {
         (async () => {
             const categoriesList = await fetchCategoriesList();
             setAttributes({ categoriesList });
-            const selectedCategory = categoriesList.find(category => category.value === categoryId);
-            if (selectedCategory) {
-                setAttributes({ categoryLink: selectedCategory.link, categoryName: selectedCategory.label });
-            }
         })();
     }, []);
 
@@ -61,9 +57,14 @@ const edit = ({ attributes, setAttributes }) => {
     };
 
     const handleCategoryChange = (value) => {
-        const selectedCategory = attributes.categoriesList.find(category => category.value === value);
+        const intCategoryId = parseInt(value, 10);
+        const selectedCategory = categoriesList.find(category => category.value === intCategoryId);
         if (selectedCategory) {
-            setAttributes({ categoryId: value, categoryLink: selectedCategory.link, categoryName: selectedCategory.label });
+            setAttributes({
+                categoryId: intCategoryId,
+                categoryLink: selectedCategory.link,
+                categoryName: selectedCategory.label,
+            });
         }
     };
 
@@ -72,7 +73,7 @@ const edit = ({ attributes, setAttributes }) => {
             <h2>News Block</h2>
             <RangeControl
                 label="Number of Posts"
-                value={attributes.postCount}
+                value={postCount}
                 onChange={handleRangeChange}
                 min={6}
                 max={30}
@@ -80,10 +81,10 @@ const edit = ({ attributes, setAttributes }) => {
             <SelectControl
                 label="Category"
                 value={categoryId}
-                options={attributes.categoriesList || []}
+                options={categoriesList || []}
                 onChange={handleCategoryChange}
             />
-            <p>This block will display a slide show of the latest {attributes.postCount} posts from the selected category.</p>
+            <p>This block will display a slide show of the latest {postCount} posts from the selected category.</p>
         </div>
     );
 };

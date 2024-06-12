@@ -1,9 +1,10 @@
 {
-  "postCount": 5,
+  "postCount": 9,
   "posts": [],
   "id": "",
-  "categoryId": 6,
+  "categoryId": 0,
   "categoryLink": "",
   "categoryList": [],
-  "title": ""
+  "title": "",
+  "categoryName": ""
 }
