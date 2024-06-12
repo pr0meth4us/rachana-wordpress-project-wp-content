@@ -40,5 +40,6 @@ function wp_scripts_rachana_wordpress_block_init()
     register_block_type(__DIR__.'/build/page-portal');
     register_block_type(__DIR__.'/build/news-block');
     register_block_type(__DIR__.'/build/card');
+    register_block_type(__DIR__.'/build/announcement-block');
 }
 add_action('init', 'wp_scripts_rachana_wordpress_block_init');
