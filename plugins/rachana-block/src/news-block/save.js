@@ -5,15 +5,14 @@ import TimeIcon from "../../assets/img/icons/time-icon-primary-color.svg";
 import PersonIcon from "../../assets/img/icons/person-icon-primary-color.svg";
 
 const save = ({ attributes }) => {
-    const { posts } = attributes;
+    const { posts, id, categoryId, categoryName } = attributes;
     const blockProps = useBlockProps.save();
-    const blockId = `postCarousel-${attributes.id}`;
+    const blockId = `postCarousel-${id}`;
     const chunkArray = (array, size) => {
-        const chunkedArr = [];
-        for (let i = 0; i < array.length; i += size) {
-            chunkedArr.push(array.slice(i, i + size));
-        }
-        return chunkedArr;
+        return array.reduce((acc, _, i) => {
+            if (i % size === 0) acc.push(array.slice(i, i + size));
+            return acc;
+        }, []);
     };
 
     const getRelativeTime = (date) => {
@@ -24,6 +23,9 @@ const save = ({ attributes }) => {
 
     return (
         <div {...blockProps} id={blockId} className="cgds news carousel" data-ride="carousel" data-interval="false">
+            <div className="w block-title text-left mb-1 mb-sm-2 mb-md-3 mb-lg-4">
+                <h2>{categoryName}</h2>
+            </div>
             <div className="carousel-inner">
                 {chunks.map((chunk, chunkIndex) => (
                     <div key={chunkIndex} className={`carousel-item news-chunk ${chunkIndex === 0 ? 'active' : ''}`}>
@@ -33,7 +35,7 @@ const save = ({ attributes }) => {
                                     <img className="card-img-top img-fluid" src={post.imageLink} alt="Post Image"/>}
                                 <div className="card-body">
                                     <p className="card-text">
-                                        <img src={TimeIcon} style={{fill: 'var(--cgds-primary'}}/>
+                                        <img src={TimeIcon} style={{ fill: 'var(--cgds-primary)' }} alt="Time Icon"/>
                                         <small className="text-muted">{" "}{getRelativeTime(post.date)}{" "}</small>
                                         <img src={PersonIcon} className="slide-show-icon" alt="Person Icon"/>
                                         <small className="text-muted card-text-muted">{" "}{post.author}</small>
@@ -49,17 +51,26 @@ const save = ({ attributes }) => {
                     </div>
                 ))}
             </div>
-            <div className="news-nav d-flex align-items-center justify-content-between">
-                <ol className="carousel-indicators d-flex align-items-center">
+            <div className="news-nav d-flex flex-wrap align-items-center justify-content-between">
+                <ol className="carousel-indicators d-flex align-items-center flex-grow-1">
+                    <li>
+                        <a className="carousel-control-prev" href={`#${blockId}`} role="button" data-slide="prev">
+                            <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous"
+                                 aria-hidden="true"/>
+                        </a>
+                    </li>
                     {chunks.map((chunk, index) => (
                         <li key={index} data-target={`#${blockId}`} data-slide-to={index}
                             className={index === 0 ? 'active' : ''}></li>
                     ))}
                     <li>
                         <a className="carousel-control-next" href={`#${blockId}`} role="button" data-slide="next">
-                            <img src={ChevronIcon} className="carousel-control-next-icon" alt="Next" aria-hidden="true"/>
+                            <img src={ChevronIcon} className="carousel-control-next-icon" alt="Next"
+                                 aria-hidden="true"/>
                         </a>
                     </li>
+                    <a role="button" href={`/?cat=${categoryId}`}
+                       className="cgds btn-sm btn btn-primary">ចុចមើលទាំងអស់</a>
                 </ol>
             </div>
         </div>

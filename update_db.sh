@@ -3,4 +3,4 @@
 # Export the updated database from the container add sudo if linux
 # docker compose exec db mariadb-dump -u wordpress -pwordpress local > ./{the sql file name}
 
-docker compose exec db mariadb-dump -u wordpress -pwordpress local > ./shv.sql
+sudo docker-compose exec db mariadb-dump -u wordpress -pwordpress local > ./shv.sql
