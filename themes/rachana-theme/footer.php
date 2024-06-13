@@ -1,7 +1,11 @@
 <?php wp_footer(); ?>
 <footer class="cgds footer">
-    <section class="footer-top">
-        <div class="container-fluid">
+    <section class="footer-contact-info">
+        <?php include 'template-parts/footer/contacts.php' ?>
+    </section>
+    <section class="footer-container">
+        <div class="footer-top">
+
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 logo-container">
                     <div class="widget flex-column">
@@ -19,43 +23,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="title h3">
-                        <?php echo get_theme_mod('footer_menu_title') ?>
-                    </div>
+                <div class="col">
                     <?php
                     include 'template-parts/navigation/footer-menu.php';
                     ?>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="title h3">
-                        <?php echo get_theme_mod('contact_info_title') ?>
-                    </div>
-                    <?php include 'template-parts/footer/contacts.php'?>
-                </div>
-                <?php
-                include 'template-parts/footer/other-links.php';
-                ?>
 
-            </div>
-    </section>
-    <section class="footer-bottom">
-        <div class="container-fluid">
-            <div class="row footer-copyrights">
-                <div class="col">
-                    <div class="d-flex justify-content-lg-start text-start">
-                        DGC - Rachana © 2023 ~ © រក្សាសិទ្ធិគ្រប់យ៉ាងដោយគណៈកម្មាធិការរដ្ឋាភិបាលឌីជីថល
-                    </div>
                 </div>
-                <div class="col">
-                    <div class="d-flex justify-content-lg-end text-end">
-                        <ul>
-                            <li><a href="" target="_blank"
-                                   rel="noopener noreferrer">រាយការណ៍ពីភាពខ្វះខាត</a></li>
-                            <li><a href="">ឯកជនភាព</a></li>
-                            <li><a href="">លក្ខខណ្ឌនៃប្រើប្រាស់</a></li>
-                        </ul>
-                    </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="row footer-copyrights">
+                <!-- fix: static text fix later -->
+                <div class="d-flex justify-content-lg-start text-start">
+                    រក្សាសិទ្ធិគ្រប់យ៉ាងដោយ៖ រដ្ឋាបាលខេត្តព្រះសីហនុ ~ © 2024 Copyright by: Sihanoukville Administration
                 </div>
             </div>
         </div>

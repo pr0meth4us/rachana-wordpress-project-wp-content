@@ -96,14 +96,22 @@ $header_layout = get_theme_mod('header_layout');
                                 </div>
                             <?php endif ?>
 
-                                <?php
-                                require_once('template-parts/header/icons.php');
-                                render_nav_icons();
-                                ?>
+                            <!-- <?php
+                                    require_once('template-parts/header/icons.php');
+                                    render_nav_icons();
+                                    ?>
 
                         <?php if ($header_layout === "layout-2") : ?>
-                        <?php endif; ?>
+                        <?php endif; ?> -->
 
+                            <div class="mobile-toggle d-flex align-items-center d-lg-none">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavExample1" aria-controls="navbarNavExample1" aria-expanded="false" aria-label="Toggle navigation">
+                                    <i class="bi bi-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </header>
                 <!--NAVIGATION BAR-->
                 <div class="px-4 px-md-5">
                     <?php include('template-parts/navigation/header-menu.php'); ?>
