@@ -14,10 +14,6 @@ const edit = (props) => {
         setAttributes({ message: newMessage });
     };
 
-    const onChangeFont = (newFont) => {
-        setAttributes({ font: newFont });
-    };
-
     return (
         <div {...blockProps}>
             <InspectorControls>
