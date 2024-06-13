@@ -1,4 +1,4 @@
-import { PanelBody, PanelRow, SelectControl, TextControl } from '@wordpress/components';
+import { PanelBody, PanelRow, SelectControl } from '@wordpress/components';
 import {InspectorControls, RichText, useBlockProps} from '@wordpress/block-editor';
 
 const edit = (props) => {

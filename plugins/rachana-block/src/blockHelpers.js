@@ -1,16 +1,13 @@
 import shortid from 'shortid';
-import apiFetch from "@wordpress/api-fetch";
 export const generateAttributes = (defaultAttributes) =>{
     const id = shortid.generate();
     const attributes = { id };
-
     for (const key in defaultAttributes) {
         attributes[key] = {
             type: typeof defaultAttributes[key],
             default: defaultAttributes[key]
         };
     }
-
     return attributes;
 }
 
@@ -56,25 +53,3 @@ export const formatDate = (date) =>{
         year: 'numeric'
     }).replace(/ /g, '/'))
 }
-
-export const fetchCategories = async (posts) => {
-    const categoryIds = [...new Set(posts.flatMap((post) => post.categories))];
-    const categories = await Promise.all(
-        categoryIds.map(async (id) => {
-            const category = await apiFetch({ path: `/wp/v2/categories/${id}` });
-            return { [id]: category };
-        })
-    );
-    return Object.assign({}, ...categories);
-};
-
-export const fetchAuthors = async (posts) => {
-    const authorIds = [...new Set(posts.map((post) => post.author))];
-    const authors = await Promise.all(
-        authorIds.map(async (id) => {
-            const author = await apiFetch({ path: `/wp/v2/users/${id}` });
-            return { [id]: `${author.name} (${author.slug})` };
-        })
-    );
-    return Object.assign({}, ...authors);
-};

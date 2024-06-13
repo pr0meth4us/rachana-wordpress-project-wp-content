@@ -1,7 +1,6 @@
 import { PanelBody, TextControl, Button, SelectControl, RangeControl, ColorPicker } from "@wordpress/components";
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
-import { plus, trash, undo } from '@wordpress/icons'; // Import the undo icon
-import { customizeAttribute } from "../blockHelpers";
+import { plus, trash, undo } from '@wordpress/icons';
 
 const edit = ({ attributes, setAttributes }) => {
     const { table } = attributes;

@@ -1,48 +1,21 @@
-import { CheckboxControl, RangeControl, SelectControl, TextControl } from '@wordpress/components';
+import { RangeControl, SelectControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
-import apiFetch from '@wordpress/api-fetch';
-import { cleansePostContent, fetchAuthors, fetchCategories, formatDate } from "../blockHelpers";
-import shortid from "shortid";
+import {categoryValue, fetchCategoriesList, fetchPosts} from "../api";
 
 const edit = ({ attributes, setAttributes }) => {
     const blockProps = useBlockProps();
-    const { categoryId, postCount, categoriesList, categoryName } = attributes;
-
-    const fetchCategoriesList = async () => {
-        const categories = await apiFetch({ path: '/wp/v2/categories' });
-        return categories.map(({ name, id, link }) => ({
-            label: name,
-            value: id,
-            link,
-        }));
-    };
-
-    const fetchPosts = async () => {
-        const res = await apiFetch({
-            path: `/wp/v2/posts?order=desc&orderby=date&per_page=${postCount}&categories=${categoryId}`,
-        });
-        const authors = await fetchAuthors(res);
-        const categories = await fetchCategories(res);
-        const processedPosts = res.map((post) => {
-            const { cleanContent, imageLink } = cleansePostContent(post.content.rendered);
-            return {
-                ...post,
-                author: authors[post.author],
-                categories: post.categories.map((id) => categories[id]),
-                cleanContent,
-                imageLink,
-                date: formatDate(post.date),
-                link: post.link,
-                key: shortid.generate(),
-            };
-        });
-        setAttributes({ posts: processedPosts, id: shortid.generate() });
-    };
+    const { categoryId, postCount, categoriesList } = attributes;
 
     useEffect(() => {
-        fetchPosts();
-    }, [postCount, categoryId, categoryName]);
+        fetchPosts(postCount, categoryId)
+            .then(({ posts, id }) => {
+                setAttributes({ posts: posts, id: id });
+            })
+            .catch((error) => {
+                console.error("Error fetching posts:", error);
+            });
+    }, [postCount, categoryId]);
 
     useEffect(() => {
         (async () => {
@@ -55,18 +28,15 @@ const edit = ({ attributes, setAttributes }) => {
         const nearestMultipleOfThree = Math.round(value / 3) * 3;
         setAttributes({ postCount: nearestMultipleOfThree });
     };
-
-    const handleCategoryChange = (value) => {
-        const intCategoryId = parseInt(value, 10);
-        const selectedCategory = categoriesList.find(category => category.value === intCategoryId);
-        if (selectedCategory) {
-            setAttributes({
-                categoryId: intCategoryId,
-                categoryLink: selectedCategory.link,
-                categoryName: selectedCategory.label,
-            });
-        }
+    const handleCategoryChange = (newValue) => {
+        const { link, label, intCategoryId } = categoryValue(newValue, categoriesList);
+        setAttributes({
+            categoryId: intCategoryId,
+            categoryLink: link,
+            categoryName: label
+        });
     };
+
 
     return (
         <div {...blockProps}>

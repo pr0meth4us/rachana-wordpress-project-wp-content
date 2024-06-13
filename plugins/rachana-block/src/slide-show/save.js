@@ -3,7 +3,7 @@ import ChevronIcon from "../../assets/img/icons/chevron-right-normal.svg";
 import TimeIcon from "../../assets/img/icons/time-icon.svg";
 import PersonIcon from "../../assets/img/icons/person-icon.svg";
 
-const save = ({ attributes }) => {
+export const save = ({ attributes }) => {
     const { posts } = attributes;
     const blockProps = useBlockProps.save();
     const blockId = `postCarousel-${attributes.id}`;

@@ -1,10 +1,11 @@
+import React from 'react';
 import moment from 'moment';
 import { useBlockProps } from "@wordpress/block-editor";
 import ChevronIcon from "../../assets/img/icons/chevron-right-normal.svg";
 import TimeIcon from "../../assets/img/icons/time-icon-primary-color.svg";
 import PersonIcon from "../../assets/img/icons/person-icon-primary-color.svg";
 
-const save = ({ attributes }) => {
+const save = ({ attributes, includeImage }) => {
     const { posts, id, categoryLink, categoryName } = attributes;
     const blockProps = useBlockProps.save();
     const blockId = `postCarousel-${id}`;
@@ -19,6 +20,29 @@ const save = ({ attributes }) => {
         return moment(date).fromNow();
     };
 
+    const renderPostContent = (post) => {
+        return (
+            <div key={post.key} className={`cgds card ${includeImage ? 'image' : 'imageless'}`}>
+                {includeImage && post.imageLink && (
+                    <img className="card-img-top img-fluid" src={post.imageLink} alt="Post Image" />
+                )}
+                <div className="card-body">
+                    <p className="card-text">
+                        <img src={TimeIcon} style={{ fill: 'var(--cgds-primary)' }} alt="Time Icon" />
+                        <small className="text-muted">{" "}{getRelativeTime(post.date)}{" "}</small>
+                        <img src={PersonIcon} className="slide-show-icon" alt="Person Icon" />
+                        <small className="text-muted card-text-muted">{" "}{post.author}</small>
+                    </p>
+                    <p className="card-text" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></p>
+                    <a className="card-link blog-btn" href={post.link}>
+                        <i className="bi bi-arrow-right-circle-fill"></i>
+                        ចុចអានបន្ថែម
+                    </a>
+                </div>
+            </div>
+        );
+    };
+
     const chunks = chunkArray(posts, 3);
 
     return (
@@ -29,24 +53,7 @@ const save = ({ attributes }) => {
             <div className="carousel-inner">
                 {chunks.map((chunk, chunkIndex) => (
                     <div key={chunkIndex} className={`carousel-item news-chunk ${chunkIndex === 0 ? 'active' : ''}`}>
-                        {chunk.map((post) => (
-                            <div key={post.key} className="cgds card">
-                                <img className="card-img-top img-fluid" src={post.imageLink} alt="Post Image" />
-                                <div className="card-body">
-                                    <p className="card-text">
-                                        <img src={TimeIcon} style={{ fill: 'var(--cgds-primary)' }} alt="Time Icon" />
-                                        <small className="text-muted">{" "}{getRelativeTime(post.date)}{" "}</small>
-                                        <img src={PersonIcon} className="slide-show-icon" alt="Person Icon" />
-                                        <small className="text-muted card-text-muted">{" "}{post.author}</small>
-                                    </p>
-                                    <p className="card-text" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></p>
-                                    <a className="card-link blog-btn" href={post.link}>
-                                        <i className="bi bi-arrow-right-circle-fill"></i>
-                                        ចុចអានបន្ថែម
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
+                        {chunk.map((post) => renderPostContent(post))}
                     </div>
                 ))}
             </div>

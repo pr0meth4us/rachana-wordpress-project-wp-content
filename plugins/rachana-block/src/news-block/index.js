@@ -8,5 +8,5 @@ import save from "./save";
 registerBlockType('rachana-block/news-block', {
     attributes:generateAttributes(defaultAttr),
     edit,
-    save,
+    save: (props) => save({ ...props, includeImage: true }),
 });
