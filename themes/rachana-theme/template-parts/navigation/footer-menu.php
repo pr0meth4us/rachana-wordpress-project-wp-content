@@ -1,9 +1,8 @@
 <?php
-$footer_menu = new Footer_Nav_Walker();
-$menu_locations = get_nav_menu_locations();
-$menu_id = $menu_locations['footernav'];
-
-if ( $menu_id ) {
-    echo $footer_menu->render_footer_menu( $menu_id );
-}
-?>
+wp_nav_menu(array(
+    'menu' => 'footernav',
+    'container' => '',
+    'theme_location' => 'footernav',
+    'items_wrap' => '<ul id="" class="footer-menu-wrapper">%3$s</ul>',
+    'walker' => new Footer_Nav_Walker()
+));

@@ -22,6 +22,7 @@ header .logo-title {
 header ul.navbar-nav {
   display: none;
 }
+
 .cgds.navbar .left-header-container {
   display: flex;
   align-items: center;
@@ -46,6 +47,7 @@ header ul.navbar-nav {
   height: 24px;
   font-size: 24px;
 }
+
 .dropdown.dropdown-language .dropdown-active {
   height: 48px;
   width: 146px;
@@ -61,18 +63,22 @@ header ul.navbar-nav {
   color: var(--cgds-text-color-theme);
   font-weight: 600;
 }
-#navbarSubDropdown.dropdown-toggle.show  {
+
+#navbarSubDropdown.dropdown-toggle.show {
   background-color: var(--cgds-navbar-link-hover-bg) !important;
   font-weight: 600;
 }
+
 .cgds.dropdown .dropdown-menu {
   left: 0;
   right: 0;
   min-width: none;
 }
-.cgds.dropdown .dropdown-menu .dropdown-item{
+
+.cgds.dropdown .dropdown-menu .dropdown-item {
   text-wrap: wrap;
 }
+
 .cgds.dropdown .sub-menu.dropdown-menu.show {
   left: 0;
   top: 0;

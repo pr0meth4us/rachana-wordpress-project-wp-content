@@ -1,35 +1,50 @@
-<ul class="links">
-    <?php if (get_theme_mod('location_label') && get_theme_mod('location_link')): ?>
-        <li>
-            <a class="d-flex flex-nowrap" href="<?php echo esc_url(get_theme_mod('location_link')); ?>">
-                <i class="bi bi-geo-alt-fill d-flex"></i>
-                <div class="text-link lh-1">
-                    អាសយដ្ឋាន៖ <?php echo esc_html(get_theme_mod('location_label')); ?>
+<div>
+    <ul class="list-unstyled mb-0 d-flex gap-5 justify-content-center">
+
+
+        <?php if (get_theme_mod('web_link')) : ?>
+            <li>
+                <a class="d-flex flex-nowrap align-items-center" target="_blank" href="<?php echo esc_url(get_theme_mod('web_link')); ?>" rel="noopener noreferrer">
+                    <i class="bi bi-link d-flex me-2"></i>
+                    <div class="text-link lh-1">
+                        <span class="js-strip-protocol"><?php echo esc_html(get_theme_mod('web_link')); ?></span>
+                    </div>
+                </a>
+            </li>
+
+        <?php endif; ?>
+
+        <?php if (get_theme_mod('first_phone_label') || get_theme_mod('second_phone_label')) : ?>
+            <li>
+                <div class="d-flex flex-nowrap align-items-center">
+                    <i class="bi bi-telephone d-flex me-2"></i>
+                    <div class="d-flex gap-2 text-link lh-1">
+                        <?php if (get_theme_mod('first_phone_label')) : ?>
+                            <span>
+                                <?php echo esc_html(get_theme_mod('first_phone_label')); ?>
+                            </span>
+                        <?php endif; ?>
+                        <?php if (get_theme_mod('first_phone_label') && get_theme_mod('second_phone_label')) : ?>
+                            <span class="phone-number-divider"></span>
+                        <?php endif; ?>
+                        <?php if (get_theme_mod('second_phone_label')) : ?>
+                            <span>
+                                <?php echo esc_html(get_theme_mod('second_phone_label')); ?>
+                            </span>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </a>
-        </li>
-    <?php endif; ?>
-
-    <?php if (get_theme_mod('email_link')): ?>
-        <li>
-            <a class="d-flex flex-nowrap" href="mailto:<?php echo esc_attr(get_theme_mod('email_link')); ?>" rel="noopener noreferrer">
-                <i class="bi bi-envelope-fill"></i>
-                <div class="text-link lh-1">
-                    Email: <span class="js-strip-protocol"><?php echo esc_html(get_theme_mod('email_link')); ?></span></div>
-            </a>
-        </li>
-
-    <?php endif; ?>
-
-    <?php if (get_theme_mod('phone_label')): ?>
-        <li>
-            <a class="d-flex flex-nowrap" href="<?php echo esc_url(get_theme_mod('phone_link')); ?>">
-                <i class="bi bi-phone-fill"></i>
-                <div class="text-link lh-1">
-                    Tel: <?php echo esc_html(get_theme_mod('phone_label')); ?>
-                </div>
-            </a>
-        </li>
-    <?php endif; ?>
-</ul>
-
+            </li>
+        <?php endif; ?>
+        <?php if (get_theme_mod('address_label') && get_theme_mod('address_link')) : ?>
+            <li>
+                <a class="d-flex flex-nowrap align-items-center" target="_blank" href="<?php echo esc_url(get_theme_mod('address_link')); ?>">
+                    <i class="bi bi-geo-alt d-flex me-2"></i>
+                    <div class="text-link lh-1">
+                        <?php echo esc_html(get_theme_mod('address_label')); ?>
+                    </div>
+                </a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</div>
