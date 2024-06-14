@@ -61,11 +61,11 @@
 }
 
 .cgds.slide .card-link i{
-  color: #002266 ;
+  color: var(--cgds-secondary) ;
 }
 
 .cgds.slide .card-link {
-  color: #002266 ;
+  color: var(--cgds-secondary) ;
 }
 
 .cgds.slide .blog-btn:hover,

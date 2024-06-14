@@ -59,12 +59,12 @@ const save = ({ attributes, includeImage }) => {
             </div>
             <div className="news-nav d-flex flex-wrap align-items-center justify-content-between">
                 <ol className="carousel-indicators d-flex align-items-center flex-grow-1">
-                    <li>
+                    <li data-slide-to="0"  >
                         <a className="carousel-control-prev" href={`#${blockId}`} role="button" data-slide="prev">
                             <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous" aria-hidden="true" />
                         </a>
                     </li>
-                    {chunks.map((chunk, index) => (
+                    {chunks.slice(0, -1).map((chunk, index) => (
                         <li key={index} data-target={`#${blockId}`} data-slide-to={index} className={index === 0 ? 'active' : ''}></li>
                     ))}
                     <li>
