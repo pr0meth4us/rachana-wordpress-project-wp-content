@@ -14,7 +14,11 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
     public function start_lvl(&$output, $depth = 0, $args = null): void
     {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
+        if ($depth === 0) {
+            $output .= "\n$indent<ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n";
+        } else {
+            $output .= "\n$indent<ul class=\"sub-menu dropdown-menu\" aria-labelledby=\"navbarSubDropdown\">\n";
+        }
     }
     public function end_lvl(&$output, $depth = 0, $args = null): void
     {
@@ -73,7 +77,12 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
 
 
         if ($args->walker->has_children) {
-            $item_output .= '<a class="nav-link ' . $active . '  cgds dropdown-toggle"' . $attributes . ' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+            if ($depth === 0) {
+                $item_output .= '<a class="nav-link ' . $active . '  cgds dropdown-toggle"' . $attributes . ' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+            } else {
+                $item_output .= '<a class="dropdown-item ' . $active . 'dropdown-toggle"' . $attributes . ' id="navbarSubDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+            }
+
             $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
             $item_output .= ' <i class="bi bi-chevron-down"></i>';
             $item_output .= '</a>';
@@ -94,7 +103,7 @@ class Main_Nav_Walker  extends Walker_Nav_Menu
 
     public function end_el(&$output, $item, $depth = 0, $args = null): void
     {
-        $output .= "</li>\n";
+        $output .= `x</li>\n`;
     }
 }
 
