@@ -68,7 +68,8 @@
   color: #002266 ;
 }
 
-.cgds.slide .a:hover{
+.cgds.slide .blog-btn:hover,
+.cgds.slide .blog-btn:hover > i {
   color: #f07d03 !important;
 }
 
@@ -118,4 +119,12 @@
 
 .block-title{
   margin: 2em;
+}
+
+.cgds.slide .category-links, .cgds.slide .card-link-wrapper{
+  z-index: 10;
+}
+
+.cgds.slide .carousel-indicators{
+  margin-bottom: -1.5em;
 }
