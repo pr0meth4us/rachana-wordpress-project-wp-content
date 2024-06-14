@@ -18,13 +18,13 @@ export const save = ({ attributes }) => {
                 {posts.map((post, index) => (
                     <div key={post.key} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
                         <div className="cgds card card-horizontal">
-                            {post.imageLink && <img className="card-img-left" src={post.imageLink} alt="Post Image" />}
+                            {post.imageLink && <img className="card-img-left" src={post.imageLink} alt="Post Image" ></img>}
                             <div className="card-body">
                                 <div className="container">
                                     <p className="card-text">
-                                        <img src={TimeIcon} className="slide-icon" alt="Time Icon" />
+                                        <img src={TimeIcon} className="slide-icon" alt="Time Icon"></img>
                                         <small className="text-muted card-text-muted">{" "}{post.date}{" "}|{" "}</small>
-                                        <img src={PersonIcon} className="slide-icon" alt="Person Icon" />
+                                        <img src={PersonIcon} className="slide-icon" alt="Person Icon"> </img>
                                         <small className="text-muted card-text-muted">{" "}{post.author}</small>
                                     </p>
                                     <a href={post.link} className="link-primary h3 card-title" dangerouslySetInnerHTML={{ __html: post.title.rendered }}></a>
@@ -54,10 +54,10 @@ export const save = ({ attributes }) => {
             </div>
 
             <a className="carousel-control-prev" href={`#${blockId}`}  role="button" data-slide="prev">
-                <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous" aria-hidden="true"/>
+                <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous" aria-hidden="true"> </img>
             </a>
             <a className="carousel-control-next" href={`#${blockId}`}  role="button" data-slide="next">
-                <img src={ChevronIcon} className="carousel-control-next-icon" alt="Next" aria-hidden="true" />
+                <img src={ChevronIcon} className="carousel-control-next-icon" alt="Next" aria-hidden="true"> </img>
             </a>
         </div>
     );

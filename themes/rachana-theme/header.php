@@ -55,13 +55,13 @@ $header_layout = get_theme_mod('header_layout');
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
-                        <div class="d-flex align-items-center justify-content-between gap-2 me-5">
+                        <div class="left-header-container">
                             <?php
                             include get_template_directory() . '/template-parts/header/search-bar.php';
                             ?>
 
                             <?php if (function_exists('pll_the_languages')) : ?>
-                                <span class="border-right" style="height: 20px;"></span>
+                                <span class=" border-right divider" style="height: 24px;"></span>
                                 <div class="dropdown dropdown-language color-gray-600">
                                     <?php
                                     $args = [
@@ -71,9 +71,9 @@ $header_layout = get_theme_mod('header_layout');
                                     ?>
                                     <?php foreach (pll_the_languages($args) as $key => $value) : ?>
                                         <?php if (pll_current_language() === $value['slug']) : ?>
-                                            <div class="dropdown-active d-flex px-2 border rounded" id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <div class="dropdown-active d-flex border rounded" id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <figure class="mb-0 text-center me-1 d-flex align-items-center gap-2">
-                                                    <img class="mb-0" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/icons/<?php echo $value['slug'] ?>.png" width="auto" height="20px" alt="<?php echo $value['name'] ?>">
+                                                    <img class="mb-0" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/icons/<?php echo $value['slug'] ?>.png" width="auto" height="29px" alt="<?php echo $value['name'] ?>">
                                                     <figcaption class="text-white"><?php echo $value['name'] ?></figcaption>
                                                 </figure>
                                             </div>
@@ -85,7 +85,7 @@ $header_layout = get_theme_mod('header_layout');
                                                 <li>
                                                     <a class="dropdown-item" href="<?php echo $value['url'] ?>">
                                                         <figure class="mb-0 d-flex align-items-center">
-                                                            <img class="me-1 lh-1" height="16" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/icons/<?php echo $value['slug'] ?>.png" alt="<?php echo $value['name'] ?>">
+                                                            <img class="me-1 lh-1" height="29" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/icons/<?php echo $value['slug'] ?>.png" alt="<?php echo $value['name'] ?>">
                                                             <figcaption><?php echo $value['name'] ?></figcaption>
                                                         </figure>
                                                     </a>
@@ -95,27 +95,14 @@ $header_layout = get_theme_mod('header_layout');
                                     </ul>
                                 </div>
                             <?php endif ?>
-                            <!-- <div class="d-flex align-items-center">
-                            <nav class="social d-flex me-3">
-                                <?php
-                                require_once('template-parts/header/icons.php');
-                                render_nav_icons();
-                                ?>
-                            </nav>
-                        </div>
-                        <?php if ($header_layout === "layout-2") : ?>
-                            <ul class="navbar-nav" style="display: block;">
-                                <li class="nav-item align-self-center">
-                                    <a class="cgds btn-gt" aria-current="page" href="">Sign In</a>
-                                </li>
-                            </ul>
-                        <?php endif; ?>
 
-                        <ul class="navbar-nav">
-                            <li class="nav-item align-self-center">
-                                <a class="cgds btn-gt" aria-current="page" href="">Sign In</a>
-                            </li>
-                        </ul> -->
+                            <!-- <?php
+                                    require_once('template-parts/header/icons.php');
+                                    render_nav_icons();
+                                    ?>
+
+                        <?php if ($header_layout === "layout-2") : ?>
+                        <?php endif; ?> -->
 
                             <div class="mobile-toggle d-flex align-items-center d-lg-none">
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavExample1" aria-controls="navbarNavExample1" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,7 +112,6 @@ $header_layout = get_theme_mod('header_layout');
                         </div>
                     </div>
                 </header>
-
                 <!--NAVIGATION BAR-->
                 <div class="px-4 px-md-5">
                     <?php include('template-parts/navigation/header-menu.php'); ?>
