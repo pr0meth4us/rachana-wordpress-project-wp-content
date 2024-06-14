@@ -64,7 +64,7 @@ const save = ({ attributes, includeImage }) => {
                             <img src={ChevronIcon} className="carousel-control-prev-icon" alt="Previous" aria-hidden="true" />
                         </a>
                     </li>
-                    {chunks.slice(0, -1).map((chunk, index) => (
+                    {chunks.slice(0, -2).map((chunk, index) => (
                         <li key={index} data-target={`#${blockId}`} data-slide-to={index} className={index === 0 ? 'active' : ''}></li>
                     ))}
                     <li>
