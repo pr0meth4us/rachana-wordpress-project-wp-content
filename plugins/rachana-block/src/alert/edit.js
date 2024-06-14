@@ -1,4 +1,4 @@
-import { PanelBody, PanelRow, SelectControl, TextControl } from '@wordpress/components';
+import { PanelBody, PanelRow, SelectControl } from '@wordpress/components';
 import {InspectorControls, RichText, useBlockProps} from '@wordpress/block-editor';
 
 const edit = (props) => {
@@ -12,10 +12,6 @@ const edit = (props) => {
 
     const onChangeMessage = (newMessage) => {
         setAttributes({ message: newMessage });
-    };
-
-    const onChangeFont = (newFont) => {
-        setAttributes({ font: newFont });
     };
 
     return (

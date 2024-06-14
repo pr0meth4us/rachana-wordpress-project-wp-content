@@ -1,4 +1,4 @@
-import {PanelBody, TextControl, Button, RadioControl, RangeControl} from "@wordpress/components";
+import {PanelBody, Button, RangeControl} from "@wordpress/components";
 import { InspectorControls, RichText, useBlockProps } from "@wordpress/block-editor";
 import {addNewBlockItem, customizeBlockItem, onChangeAttribute} from '../blockHelpers';
 import defaultAttr from "./defaultAttr.json";

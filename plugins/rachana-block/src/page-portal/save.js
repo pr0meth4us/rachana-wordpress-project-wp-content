@@ -31,7 +31,7 @@ const Card = ({ icon, url, text }) => (
 const save = () => {
     const blockProps = useBlockProps.save();
     return (
-        <div {...blockProps} className="icon-container">
+        <div {...blockProps} className="page-portal">
             {cardData.map((card) => <Card key={card.id} {...card} />)}
         </div>
     );
