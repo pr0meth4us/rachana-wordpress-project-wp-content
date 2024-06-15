@@ -5,23 +5,21 @@
   padding: 2rem;
   background-color: var(--cgds-gray-100);
 }
-
 .cgds-example:last-child {
   border-top: none;
 }
-
 .cgds-example.grid-auto-column {
   display: grid;
   gap: 2rem;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
 }
-
 @media (max-width: 575.98px) {
   .cgds-example {
     padding: 0.25rem;
   }
 }
+
 [class*=cgds-example] {
   margin-top: 1rem;
 }
@@ -29,28 +27,22 @@
 .cgds-example.highlight {
   padding: 0;
 }
-
 .cgds-example.highlight figure {
   margin-bottom: 0;
 }
-
 .cgds-example.highlight figure pre {
   padding: 1rem 2rem;
   margin: 0;
 }
-
 .cgds-example.highlight figure pre code {
   color: inherit;
 }
-
 .cgds-example > .btn {
   margin: 0.25rem;
 }
-
 .cgds-example .cgds.card {
   width: 20rem;
 }
-
 @media (max-width: 36rem) {
   .cgds-example .cgds.card {
     width: 100%;
@@ -59,7 +51,6 @@
 .cgds-example .cgds.card[variant=card-action-quantity-toggle] {
   width: 30rem;
 }
-
 @media (max-width: 75rem) {
   .cgds-example .cgds.card[variant=card-action-quantity-toggle] {
     width: 100%;
@@ -80,7 +71,6 @@
   margin-bottom: 1rem;
   border-radius: 0.375rem;
 }
-
 .cgds-example-image-grid {
   display: grid;
   grid-auto-flow: column;
@@ -88,7 +78,6 @@
   gap: 1rem;
   place-items: center;
 }
-
 .cgds-example-image-grid img,
 .cgds-example-image-grid svg {
   max-width: 100%;
@@ -96,7 +85,6 @@
   background: transparent;
   padding: 0;
 }
-
 @media (max-width: 991.98px) {
   .cgds-example-image-grid {
     grid-auto-flow: row;
@@ -109,14 +97,10 @@
   gap: 1rem;
   place-items: center;
 }
-
 .cgds-example-card-grid > .card > .card-body {
   min-width: 300px;
   min-height: 170px;
 }
-
-.cgds.card {
-  margin: 2rem;
+.cgds.card{
+  margin: calc(1rem * 2);
 }
-
-/*# sourceMappingURL=style.css.map */
