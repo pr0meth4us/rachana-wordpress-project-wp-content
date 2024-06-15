@@ -1,0 +1,130 @@
+.chevron-left {
+  transform: rotate(180deg);
+}
+
+.cgds.slide .carousel-item {
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.cgds.slide .carousel-item.active {
+  opacity: 1;
+}
+
+.cgds.slide .card-body {
+  background-color: #768cad;
+}
+
+.cgds.slide .card-text-muted {
+  color: white !important;
+}
+
+.cgds.slide .card-body .card-title {
+  color: white !important;
+}
+
+.cgds.slide .category-link {
+  margin-right: 1em !important;
+}
+.cgds.slide .carousel-control-prev{
+    left: -5% !important
+}
+.cgds.slide .carousel-control-next{
+    right: -5% !important
+}
+
+.cgds.slide .card-body{
+  background-color: #25487c;
+}
+
+.cgds.slide .card-body .card-text-muted{
+  color: white !important;
+}
+
+.cgds.slide {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.cgds.slide .category-links-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.cgds.slide .category-links {
+  margin-bottom: 1em;
+}
+
+.cgds.slide .card-link-wrapper {
+  margin-top: auto;
+}
+
+.cgds.slide .card-link i{
+  color: var(--cgds-secondary) ;
+}
+
+.cgds.slide .card-link {
+  color: var(--cgds-secondary) ;
+}
+
+.cgds.slide .blog-btn:hover,
+.cgds.slide .blog-btn:hover > i {
+  color: #f07d03 !important;
+}
+
+.cgds.slide i:hover{
+  color: #f07d03 !important;
+}
+
+.cgds.slide .card {
+  border: none !important;
+  border-radius: 0 !important;
+  height: 444px;
+}
+
+.cgds.slide .card .card-img-left {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.carousel-control-prev-icon {
+  transform: rotate(180deg);
+}
+.cgds.slide .carousel-control-prev-icon{
+  width: 3em !important;
+  height: 3em !important;
+}
+
+.cgds.slide .carousel-control-next-icon{
+  width: 3em !important;
+  height: 3em !important;
+}
+
+.cgds.slide .carousel-item {
+  -webkit-transition: 0s !important;
+  -o-transition: 0s !important;
+  transition: 0s !important;
+}
+.cgds.slide .card .slide-icon {
+  width: auto;
+  margin-bottom: 0;
+}
+.cgds.slide .carousel-inner .card-img-left{
+  height: 444px;
+}
+.sr-only{
+  display: none;
+}
+
+.block-title{
+  margin: 2em;
+}
+
+.cgds.slide .category-links, .cgds.slide .card-link-wrapper{
+  z-index: 10;
+}
+
+.cgds.slide .carousel-indicators{
+  margin-bottom: -1.5em;
+}

@@ -1,9 +1,11 @@
 services:
   db:
     image: mariadb:latest
+#    uncomment whichever data u want to use
     volumes:
       - db_data:/var/lib/mysql
-      - ./local.sql:/docker-entrypoint-initdb.d/local.sql
+      # - ./kandal.sql:/docker-entrypoint-initdb.d/kandal.sql
+      - ./shv.sql:/docker-entrypoint-initdb.d/shv.sql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: wordpress

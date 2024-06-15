@@ -1,0 +1,35 @@
+.cgds.navbar {
+  background-color: var(--cgds-primary);
+}
+
+.cgds.navbar header {
+  background-color: var(--cgds-primary) !important;
+}
+
+.cgds.navbar .nav-item {
+  a.nav-link {
+    color: var(--cgds-text-color-theme) !important;
+  }
+}
+
+.cgds.footer {
+  color: var(--cgds-text-color-theme);
+
+  .footer-top {
+    background-color: var(--cgds-primary);
+
+    a {
+      color: var(--cgds-text-color-theme) !important;
+    }
+  }
+
+  .footer-bottom {
+    background-color: var(--cgds-primary);
+
+    a {
+      color: var(--cgds-text-color-theme) !important;
+    }
+  }
+}
+
+

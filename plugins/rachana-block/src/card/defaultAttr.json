@@ -5,11 +5,7 @@
     "contentColor": "var(--cgds-text-color)",
     "titleColor": "var(--cgds-primary)",
     "href": "",
-    "font": "Kantumruy Pro",
     "linkText": "",
     "lastUpdated": "",
-    "styles": {
-        "vertical": "",
-        "horizontal": "variant=\"card-horizontal\""
-    }
+    "id": ""
 }

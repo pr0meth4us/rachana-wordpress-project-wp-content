@@ -1,0 +1,15 @@
+<svg width="72" height="73" viewBox="0 0 72 73" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect y="0.705078" width="72" height="72" rx="10" fill="#EBF1FF"/>
+<mask id="mask0_415_7575" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="4" width="64" height="65">
+<rect width="64" height="64" transform="translate(4 4.70508)" fill="url(#pattern0_415_7575)"/>
+</mask>
+<g mask="url(#mask0_415_7575)">
+<rect x="-13" y="-3.29492" width="89" height="81" fill="#1C4076"/>
+</g>
+<defs>
+<pattern id="pattern0_415_7575" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_415_7575" transform="scale(0.00666667)"/>
+</pattern>
+<image id="image0_415_7575" width="150" height="150" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAQAAACWCLlpAAAABGdBTUEAALGPC/xhBQAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5gMdAQYAvoJqHAAAA5hJREFUeNrt3D1rU2EYxvHrJKYtRimCgkeUiqBIg5MEpLMUQVzEj9DBoeimIn6DjiIVF5eOujlIQDcR3JRWMPiCSogiUYmoSZs2DmKItCTPlfuQu4dcv6kpOU+f/Js85+TtRG1IqIz3BNJEsQiKRVAsgmIRFIugWATFIigWQbEIikVQLIJiERSLoFgExSIoFkGxCIpFUCyCYhEUi6BYBMUiKBZBsQiKRVAsgmIRFIugWATFIigWQbEIikVQLIJiERSLoFgExSIoFmGHdYDqoBtOIsYY2C94RGiggp/hG8TWG9jFHGtAM7iIkxgfINYvPMEiXnhMOrJ+d2ege9ZZLOKQ4Y++xByehl01yXuWx5q1HzdMqYBpXMXu4U/cI1YRJ8xjnEJh+BP3iBVjwjxGHnuGP3GPBT7679JnvNr0u83ayOA49nZdduC1N/znC+bxqG8qAIhwDjexy3Oy3rHeo4R64HUfo+Yby/sIfoP4d+Wc5+oSK4ds5+c8MYMs8l3bZYO3S4zHw7CMe8iiDSCDMprB29VxH/sA/D2Orwx/4h5H8LnOAyrCOprBe7YIE51dQRurWA/ZKO3PDdewNtB2bfx2mG0X7wU+VZK6Z2VwFFO+O/atVet4i3dxIgexycSaxhWcxqTHHqqvFmp4UF2IP9iHSmKBL+Auit5N+ihhLv5oHcS+Zu3EtW2fCpjFfHXMOog9VgFnvEsEOY/D1iHssaa6XgvYzg7goHUIe6xx7wqBIvvOzB4rPSfgMs9UB6UExSIoFkGxCKMTK+R1/j7ssdKSe8w+U/sT6TLuYPsfQERowvxU2uezDkOU9s86pJZiEexrVsb9jdqeupaJVrxhG8t+Q2dwGe0ULPCrWMBz2yD2WEdwwbtEoCVrLPua1fJuEKgR9j5jL6OzwCewUIxOrAQoFkGxCIpFUCyCYhEUi6BYBMUiKBZBsQiKRVAsgmIRFIugWATFIigWQbEIikVQLIJiERSLoFgExSIoFkGxCIpFsMeqoeF9I4L8wDfrEPZYy1j27hDkGV5bh7DHquA2cSILL19xK/5uHSSJNWsJ1/HJu0ZPb3AJJfswSX0OvohZHPM/tc4WGljBw3gliaHMsUaJDh0IikVQLIJiERSLoFgExSIoFkGxCIpFUCyCYhEUi6BYBMUiKBZBsQiKRVAsgmIRFIugWATFIigWQbEIikVQLIJiERSLoFgExSIoFkGxCIpFUCyCYhH+APdpdPS5kvvXAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTAzLTI5VDAxOjA2OjAwKzAwOjAwWFUeAAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wMy0yOVQwMTowNjowMCswMDowMCkIprwAAAAASUVORK5CYII="/>
+</defs>
+</svg>
